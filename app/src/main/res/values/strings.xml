@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">compose2</string>
+    <string name="description">coil image</string>
+    <string name="login_title">The Tolet</string>
+    <string name="login_subtitle">Find Your House</string>
+    <string name="login">Login\n</string>
+    <string name="notification_channel">notificationChannel</string>
+    <string name="notification_channel_description">notificationChannelDescription</string>
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "680820125901",
+    "project_id": "compose-2",
+    "storage_bucket": "compose-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680820125901:android:11cb5892a7678ce5c5b984",
+        "android_client_info": {
+          "package_name": "com.bosch.composewithkotlin20"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8cejohwXfGHaz8yoW7hjNcNlTMsdSobU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="App.Starting.Theme" parent="Theme.SplashScreen">
+        <item name="android:windowSplashScreenBackground">#4CAF50</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/google_icon</item>
+        <item name="postSplashScreenTheme">@style/Theme.ComposeWithKotlin20</item>
+
+    </style>
+</resources>

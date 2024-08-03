@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="New.Starting.Theme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#FFFFFF</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/google_icon</item>
+        <item name="postSplashScreenTheme">@style/Theme.ComposeWithKotlin20</item>
+    </style>
+    <style name="Theme.ComposeWithKotlin20" parent="android:Theme.Material.Light.NoActionBar" >
+    </style>
+</resources>
