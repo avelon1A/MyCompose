@@ -71,6 +71,8 @@ fun BottomNavigationBar() {
 	var selected by rememberSaveable { mutableIntStateOf(0) }
 	Scaffold(
 		bottomBar = {
+
+
 			NavigationBar(containerColor = MaterialTheme.colorScheme.primary,
 				contentColor = MaterialTheme.colorScheme.secondary,){
 				items.forEachIndexed { index, item ->
