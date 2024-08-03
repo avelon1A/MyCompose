@@ -72,6 +72,7 @@ fun BottomNavigationBar() {
 	Scaffold(
 		bottomBar = {
 
+
 			NavigationBar(containerColor = MaterialTheme.colorScheme.primary,
 				contentColor = MaterialTheme.colorScheme.tertiary,){
 				items.forEachIndexed { index, item ->
