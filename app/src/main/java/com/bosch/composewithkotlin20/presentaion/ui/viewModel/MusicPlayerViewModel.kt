@@ -123,6 +123,7 @@ class AudioViewModel (
 					PlayerEvent.SeekTo,
 					seekPosition = ((duration * uiEvents.position) / 100f).toLong()
 				)
+				progress = uiEvents.position
 			}
 			
 			is UIEvents.SelectedAudioChange -> {

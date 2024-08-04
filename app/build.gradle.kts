@@ -89,6 +89,7 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.common)
     implementation(libs.firebase.crashlytics)
+    implementation(libs.androidx.ui.text.google.fonts)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -133,15 +134,13 @@ dependencies {
     implementation(kotlin("test"))
     
     
-    testImplementation ("junit:junit:4.13.2")
-    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
-    testImplementation ("org.mockito:mockito-core:3.12.4")
-    testImplementation ("org.mockito:mockito-inline:3.12.4")
-    testImplementation ("org.mockito.kotlin:mockito-kotlin:4.0.0")
-    
-    testImplementation ("androidx.arch.core:core-testing:2.1.0")
-    
-    implementation ("androidx.work:work-runtime:2.9.0")
+    testImplementation (libs.junit)
+    testImplementation (libs.kotlinx.coroutines.test)
+    testImplementation (libs.mockito.core)
+    testImplementation (libs.mockito.inline)
+    testImplementation (libs.mockito.kotlin)
+    testImplementation (libs.androidx.core.testing)
+    implementation (libs.androidx.work.runtime)
     
 }
 
