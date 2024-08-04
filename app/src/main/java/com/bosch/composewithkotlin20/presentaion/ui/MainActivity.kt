@@ -38,7 +38,6 @@ class MainActivity : ComponentActivity() {
 			}
 		}
 		enableEdgeToEdge()
-
 		setContent {
 			AppTheme {
 				val permissionState = rememberPermissionState(
