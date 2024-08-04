@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.google.firebase.crashlytics)
     id("kotlin-parcelize")
     id("org.jetbrains.kotlinx.kover") version "0.8.3"
+    id("org.jlleitschuh.gradle.ktlint") version "11.0.0"
 }
 
 android {
@@ -69,6 +70,13 @@ android {
         sourceSets.all {
             languageSettings.enableLanguageFeature("ExplicitBackingFields")
         }
+    }
+    ktlint {
+        version.set("0.50.0")
+        android.set(true) // Enable for Android projects
+        outputToConsole.set(true) // Print lint results to the console
+        outputColorName.set("RED") // Color of the output in console
+        ignoreFailures.set(false) // Fail the build if there are lint errors
     }
 
 }
