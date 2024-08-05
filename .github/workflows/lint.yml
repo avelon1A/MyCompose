@@ -28,18 +28,9 @@ jobs:
           name: lint-report
           path: app/build/reports/lint-results-debug.html
 
-      - name: Setup Git
-        run: |
-          git config --global user.name "aman"
-          git config --global user.email "amanavelon@gmail.com"
-          git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/avelon1A/MyCompose.git
-
-      - name: Copy Lint Report to GitHub Pages Branch
-        run: |
-          git fetch origin gh-pages
-          git checkout gh-pages || git checkout --orphan gh-pages
-          mkdir -p app/lint
-          powershell -Command "Copy-Item -Path 'app/build/reports/lint-results-debug.html' -Destination 'app/lint/' -Force"
-          git add app/lint
-          git commit -m "Update lint report" || echo "No changes to commit"
-          git push origin gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          publish_dir: ./app/build/reports/
+          destination_dir: lint
