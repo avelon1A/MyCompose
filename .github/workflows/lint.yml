@@ -3,7 +3,7 @@ name: Deploy Lint Report
 on:
   push:
     branches:
-      - main
+      - gh-pages
 
 jobs:
   lint_and_deploy:
