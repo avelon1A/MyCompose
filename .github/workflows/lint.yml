@@ -18,14 +18,6 @@ jobs:
           git config --global user.name "aman"
           git config --global user.email "amanavelon@gmail.com"
 
-      - name: Create Lint Report Directory
-        run: |
-          mkdir -p app/lint/report
-
-      - name: List Build Report Directory
-        run: |
-          dir app\build\reports
-
       - name: Copy Lint Report to GitHub Pages Branch
         run: |
           git fetch origin gh-pages
@@ -34,7 +26,3 @@ jobs:
           git add app/lint/report
           git commit -m "Update lint report" || echo "No changes to commit"
           git push origin gh-pages
-
-      - name: List Contents of gh-pages Branch
-        run: |
-          git ls-tree -r gh-pages --name-only
