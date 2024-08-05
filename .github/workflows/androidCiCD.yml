@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: lint-report
-          path: app/build/reports/lint-results.html
+          path: app/build/reports/lint-results-debug.html
 
   test:
     runs-on: windows-latest
