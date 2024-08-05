@@ -6,6 +6,7 @@ on:
 
   push:
     branches: [main]
+
 jobs:
   lint:
     runs-on: windows-latest
@@ -33,19 +34,15 @@ jobs:
       - name: Run Lint
         run: ./gradlew lint
 
-      - name: Upload Lint Reports
-        uses: actions/upload-artifact@v3
-        with:
-          name: lint-report
-          path: app/build/reports/lint-results-debug.html
+      - name: Copy Lint Report
+        run: mkdir -p ./temp-report && cp app/build/reports/lint-results-debug.html ./temp-report/
 
       - name: Deploy Lint Report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./app/build/reports
-          # Specify the target branch (typically `gh-pages`)
+          publish_dir: ./temp-report
           publish_branch: gh-pages
 
   test:
