@@ -22,6 +22,9 @@ jobs:
         run: |
           mkdir lint-reports
 
+      - name: List Build Report Directory
+        run: dir app\build\reports
+
       - name: Copy Lint Report to GitHub Pages Branch
         run: |
           git fetch origin gh-pages
