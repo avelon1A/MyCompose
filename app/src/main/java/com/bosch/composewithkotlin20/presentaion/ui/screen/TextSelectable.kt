@@ -20,7 +20,7 @@ fun TextSelectable() {
             .padding(16.dp)
     ) {
         SelectionContainer {
-            Text(text = "Selectable text by default the text on compose is not selectable ")
+            Text(text = "Selectable text by default the text on Compose is not selectable ")
             DisableSelection {
                 Text(text = "this text cannot be selected ")
             }
