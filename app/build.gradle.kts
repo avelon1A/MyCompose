@@ -67,9 +67,7 @@ android {
         }
     }
     kotlin {
-        sourceSets.all {
-            languageSettings.enableLanguageFeature("ExplicitBackingFields")
-        }
+
     }
     ktlint {
         version.set("0.50.0")

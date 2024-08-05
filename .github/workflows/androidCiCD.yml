@@ -31,31 +31,23 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle
 
-      - name: Cache Ktlint
-        uses: actions/cache@v3
-        with:
-          path: ~/.ktlint
-          key: ${{ runner.os }}-ktlint-${{ hashFiles('**/build.gradle.kts', '**/*.kt') }}
-          restore-keys: |
-            ${{ runner.os }}-ktlint
-
-      - name: Install Ktlint
-        run: curl -sSLO https://github.com/pinterest/ktlint/releases/download/0.50.0/ktlint && chmod +x ktlint && mv ktlint ~/.ktlint/ktlint
-
-      - name: Run Ktlint Check
-        run: ~/.ktlint/ktlint --android --verbose "app/**/*.kt"
-
-      - name: Run Ktlint Format
-        run: ~/.ktlint/ktlint --android --format "app/**/*.kt"
-
       - name: Build with Gradle
         run: ./gradlew build
+
+      - name: Run Lint
+        run: ./gradlew lint
 
       - name: Run Tests
         run: ./gradlew test
 
       - name: Generate XML Coverage Report
         run: ./gradlew koverXmlReport
+
+      - name: Upload Lint Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: lint-report
+          path: app/build/reports/lint-results.html
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
