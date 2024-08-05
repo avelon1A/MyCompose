@@ -20,16 +20,21 @@ jobs:
 
       - name: Create Lint Report Directory
         run: |
-          mkdir lint-reports
+          mkdir -p app/lint/report
 
       - name: List Build Report Directory
-        run: dir app\build\reports
+        run: |
+          dir app\build\reports
 
       - name: Copy Lint Report to GitHub Pages Branch
         run: |
           git fetch origin gh-pages
           git checkout gh-pages || git checkout --orphan gh-pages
-          powershell -Command "Copy-Item -Path 'app\build\reports\lint-results-debug.html' -Destination 'lint-reports\' -Force"
-          git add lint-reports
+          powershell -Command "Copy-Item -Path 'app\build\reports\lint-results-debug.html' -Destination 'app\lint\report\' -Force"
+          git add app/lint/report
           git commit -m "Update lint report" || echo "No changes to commit"
           git push origin gh-pages
+
+      - name: List Contents of gh-pages Branch
+        run: |
+          git ls-tree -r gh-pages --name-only
