@@ -6,27 +6,40 @@ on:
       - main
 
 jobs:
-  deploy:
+  lint_and_deploy:
     runs-on: windows-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+
+      - name: Run Lint
+        run: ./gradlew lint
+
+      - name: Upload Lint Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: lint-report
+          path: app/build/reports/lint-results-debug.html
+
       - name: Setup Git
         run: |
           git config --global user.name "aman"
           git config --global user.email "amanavelon@gmail.com"
-
-      - name: Create Lint Report Directory
-        run: |
-          mkdir lint-reports
+          git remote set-url origin https://github.com/${{ secrets.GH_PAT }}@github.com/avelon1A/MyCompose.git
 
       - name: Copy Lint Report to GitHub Pages Branch
         run: |
           git fetch origin gh-pages
           git checkout gh-pages || git checkout --orphan gh-pages
-          powershell -Command "Copy-Item -Path 'app\build\reports\lint-results-debug.html' -Destination 'lint-reports\' -Force"
-          git add lint-reports
+          mkdir -p app/lint
+          powershell -Command "Copy-Item -Path 'app/build/reports/lint-results-debug.html' -Destination 'app/lint/' -Force"
+          git add app/lint
           git commit -m "Update lint report" || echo "No changes to commit"
           git push origin gh-pages
