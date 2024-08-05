@@ -22,6 +22,12 @@ jobs:
       - name: Run Lint
         run: ./gradlew lint
 
+      - name: Upload Lint Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: lint-report
+          path: app/build/reports/lint-results-debug.html
+
       - name: Setup Git
         run: |
           git config --global user.name "aman"
@@ -31,7 +37,8 @@ jobs:
         run: |
           git fetch origin gh-pages
           git checkout gh-pages || git checkout --orphan gh-pages
-          powershell -Command "Copy-Item -Path 'app\build\reports\lint-results-debug.html' -Destination 'app\lint\' -Force"
+          mkdir -p app/lint
+          powershell -Command "Copy-Item -Path 'app/build/reports/lint-results-debug.html' -Destination 'app/lint/' -Force"
           git add app/lint
           git commit -m "Update lint report" || echo "No changes to commit"
           git push origin gh-pages
