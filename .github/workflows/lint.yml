@@ -24,8 +24,9 @@ jobs:
 
       - name: Copy Lint Report to GitHub Pages Branch
         run: |
+          git fetch origin gh-pages
           git checkout gh-pages || git checkout --orphan gh-pages
-          copy /Y app\build\reports\lint-results-debug.html lint-reports\
+          powershell -Command "Copy-Item -Path 'app\build\reports\lint-results-debug.html' -Destination 'lint-reports\' -Force"
           git add lint-reports
           git commit -m "Update lint report" || echo "No changes to commit"
           git push origin gh-pages
