@@ -32,7 +32,7 @@ jobs:
         run: |
           git config --global user.name "aman"
           git config --global user.email "amanavelon@gmail.com"
-          git remote set-url origin https://github.com/${{ secrets.GH_PAT }}@github.com/avelon1A/MyCompose.git
+          git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/avelon1A/MyCompose.git
 
       - name: Copy Lint Report to GitHub Pages Branch
         run: |
