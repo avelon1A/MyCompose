@@ -140,7 +140,7 @@ fun HomeCustomButton(modifier: Modifier, text: String, onClick: () -> Unit,color
 
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun MyButton() {
     HomeCustomButton(modifier = Modifier, text = "Auto", onClick = { },Color.Red)
