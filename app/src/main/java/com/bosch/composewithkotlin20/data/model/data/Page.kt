@@ -12,16 +12,16 @@ val pages = listOf(
 	Page(
 		"Introduction to Jetpack Compose",
 		"Learn about Jetpack Compose, the modern toolkit for building native Android UI. Understand its advantages over the traditional XML-based approach.",
-		R.drawable.firstjt
+		R.drawable.landing2
 	),
 	Page(
 		"Building Layouts in Compose",
 		"Discover how to build complex layouts using Jetpack Compose's Composables. Learn about different layout components like Column, Row, Box, and more.",
-		R.drawable.sec
+		R.drawable.landing1
 	),
 	Page(
 		"State Management in Compose",
 		"Understand state management in Jetpack Compose. Explore how to handle state using Compose's state APIs and see how state flows through a composable hierarchy.",
-		R.drawable.thirdjt
+		R.drawable.landin3
 	),
 	)

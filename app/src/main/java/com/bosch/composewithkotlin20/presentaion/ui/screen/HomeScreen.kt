@@ -93,13 +93,13 @@ fun HomeScreen(navController: NavController, modifier: Modifier) {
 			}
 		},
 		content = { innerPadding ->
-			ButtonGrid(buttonList, navController, innerPadding)
+			ButtonGrid(buttonList, navController, innerPadding,Modifier)
 		}
 	)
 }
 
 @Composable
-fun ButtonGrid(list: List<ButtonInfo>, navController: NavController, innerPadding: PaddingValues) {
+fun ButtonGrid(list: List<ButtonInfo>, navController: NavController, innerPadding: PaddingValues,modifier: Modifier) {
 	LazyColumn(
 		modifier = Modifier
 			.fillMaxSize()
@@ -118,7 +118,7 @@ fun ButtonGrid(list: List<ButtonInfo>, navController: NavController, innerPaddin
 			) {
 				rowButtons.forEach {
 
-					CustomButton(modifier = Modifier, text = it.title, onClick = { navController.navigate(it.route) })
+					CustomButton(modifier = modifier, text = it.title, onClick = { navController.navigate(it.route) })
 				}
 			}
 		}
