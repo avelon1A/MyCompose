@@ -183,9 +183,7 @@ fun HomeCustomButton(modifier: Modifier,
 }
 
 
-@Preview(
-    name = "light mode",
-    showBackground = true,
+@Preview(showBackground = true,
     showSystemUi = true,
 )
 @Composable
