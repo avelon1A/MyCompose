@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
 				viewModel._splashCondition
 			}
 		}
-		enableEdgeToEdge()
+//		enableEdgeToEdge()
 		setContent {
 			AppTheme {
 				val permissionState = rememberPermissionState(
