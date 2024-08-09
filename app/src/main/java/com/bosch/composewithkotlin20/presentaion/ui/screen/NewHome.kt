@@ -48,10 +48,10 @@ import kotlinx.serialization.Serializable
 @Composable
 fun NewHome(navController: NavController, modifier: Modifier) {
     val buttonList = listOf(
-        ButtonInfo("ui ", HomeScreen),
-        ButtonInfo("Apps", ScreenC),
-        ButtonInfo("Animation", ThirdScreen),
-        ButtonInfo("Text", TextScreen),
+        MainScreenButtons("ui ", HomeScreen, Color.Red,R.drawable.sun_svgrepo_com),
+        MainScreenButtons("Apps", ScreenC, Color.Blue,R.drawable.app_store_svgrepo_com),
+        MainScreenButtons("Animation", ThirdScreen, Color.Magenta,R.drawable.animation_gif_image_svgrepo_com),
+        MainScreenButtons("Text", TextScreen, Color.Green,R.drawable.text_view_svgrepo_com),
 
         )
 
@@ -92,9 +92,10 @@ fun NewHome(navController: NavController, modifier: Modifier) {
     )
 }
 
+data class MainScreenButtons(val title: String, val route: Any,val color:Color,val image:Int)
 @Composable
 fun HomeButton(
-    buttonList: List<ButtonInfo>,
+    buttonList: List<MainScreenButtons>,
     navController: NavController,
     innerPadding: PaddingValues,
     modifier: Modifier.Companion
@@ -121,8 +122,8 @@ fun HomeButton(
                     HomeCustomButton(modifier = modifier,
                         text = it.title,
                         onClick = { navController.navigate(it.route) },
-                        color = Color.Red,
-                        image = R.drawable.sun_svgrepo_com,
+                        color = it.color,
+                        image = it.image,
 
                     )
                 }

@@ -29,8 +29,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.bosch.composewithkotlin20.R
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import kotlinx.serialization.Serializable
@@ -66,7 +69,7 @@ fun HomeScreen(navController: NavController, modifier: Modifier) {
 			Box(
 				modifier = Modifier
 					.fillMaxWidth()
-					.shadow(8.dp)
+					.shadow(4.dp)
 			) {
 				
 				TopAppBar(
@@ -103,53 +106,43 @@ fun ButtonGrid(list: List<ButtonInfo>, navController: NavController, innerPaddin
 	LazyColumn(
 		modifier = Modifier
 			.fillMaxSize()
-			.padding(innerPadding),
-		verticalArrangement = Arrangement.spacedBy(20.dp),
+			.padding(innerPadding), 
 		horizontalAlignment = Alignment.CenterHorizontally
 	) {
-		items(list.chunked(2), key = { rowButtons ->
-			rowButtons.hashCode()
-		}) { rowButtons ->
-			
-			Row(
-				modifier = Modifier.fillMaxWidth(),
-				horizontalArrangement = Arrangement.SpaceAround,
-				verticalAlignment = Alignment.CenterVertically
-			) {
-				rowButtons.forEach {
 
-					CustomButton(modifier = modifier, text = it.title, onClick = { navController.navigate(it.route) })
-				}
+			items(list) { buttonItem ->
+				CustomButton(
+					modifier = Modifier
+						.fillMaxWidth(),
+					text = buttonItem.title,
+					onClick = { navController.navigate(buttonItem.route) }
+				)
 			}
 		}
-		
-		
-	}
-	
 }
 
 @Composable
 fun CustomButton(modifier: Modifier,text: String, onClick: () -> Unit) {
 	Box(
 		modifier = Modifier
-			.padding(10.dp)
+			.padding(5.dp)
 			.shadow(
-				elevation = 8.dp,
-				shape = RoundedCornerShape(10.dp),
+				elevation = 4.dp,
+				shape = RoundedCornerShape(5.dp),
 				clip = true
 			)
-			.clip(RoundedCornerShape(10.dp))
+			.clip(RoundedCornerShape(5.dp))
 			.background(Color.Transparent)
 	) {
 		Box(
 			modifier = Modifier
-				.requiredWidth(119.dp)
-				.requiredHeight(97.dp)
-				.clip(shape = RoundedCornerShape(10.dp))
+				.fillMaxWidth()
+				.requiredHeight(50.dp)
+				.clip(shape = RoundedCornerShape(5.dp))
 				.background(color = Color.White)
 				.border(
 					border = BorderStroke(1.dp, Color(0xFFCECECE)),
-					shape = RoundedCornerShape(10.dp)
+					shape = RoundedCornerShape(5.dp)
 				)
 				.clickable(onClick = onClick),
 			contentAlignment = Alignment.Center
@@ -161,6 +154,18 @@ fun CustomButton(modifier: Modifier,text: String, onClick: () -> Unit) {
 }
 
 data class ButtonInfo(val title: String, val route: Any)
+
+
+@Preview
+@Composable
+fun HomeScreenPreview() {
+	val fakeNavController = fakeNavController()
+	HomeScreen(navController = fakeNavController, modifier = Modifier)
+}
+@Composable
+fun fakeNavController(): NavController {
+	return rememberNavController()
+}
 
 @Serializable
 object HomeScreen
