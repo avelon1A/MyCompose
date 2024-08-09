@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 81 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 84 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Aug 06 05:22:43 UTC 2024 by AGP (8.4.2)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Aug 09 03:39:39 UTC 2024 by AGP (8.4.2)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -187,14 +187,15 @@ document.getElementById(id).style.display = 'none';
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
-      <a class="mdl-navigation__link" href="#SuspiciousIndentation"><i class="material-icons warning-icon">warning</i>Suspicious indentation (1)</a>
+      <a class="mdl-navigation__link" href="#VectorRaster"><i class="material-icons warning-icon">warning</i>Vector Image Generation (2)</a>
       <a class="mdl-navigation__link" href="#AndroidGradlePluginVersion"><i class="material-icons warning-icon">warning</i>Obsolete Android Gradle Plugin Version (3)</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (18)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (6)</a>
+      <a class="mdl-navigation__link" href="#ModifierParameter"><i class="material-icons warning-icon">warning</i>Guidelines for Modifier parameters in a Composable function (1)</a>
       <a class="mdl-navigation__link" href="#Typos"><i class="material-icons warning-icon">warning</i>Spelling error (35)</a>
       <a class="mdl-navigation__link" href="#ExportedService"><i class="material-icons warning-icon">warning</i>Exported service does not require permission (1)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
-      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (14)</a>
-      <a class="mdl-navigation__link" href="#IconLocation"><i class="material-icons warning-icon">warning</i>Image defined in density-independent drawable folder (7)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (21)</a>
+      <a class="mdl-navigation__link" href="#IconLocation"><i class="material-icons warning-icon">warning</i>Image defined in density-independent drawable folder (13)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -213,14 +214,17 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#OldTargetApi">OldTargetApi</a>: Target SDK attribute is not targeting latest version</td></tr>
 <tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#SuspiciousIndentation">SuspiciousIndentation</a>: Suspicious indentation</td></tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#VectorRaster">VectorRaster</a>: Vector Image Generation</td></tr>
 <tr>
 <td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#AndroidGradlePluginVersion">AndroidGradlePluginVersion</a>: Obsolete Android Gradle Plugin Version</td></tr>
 <tr>
-<td class="countColumn">18</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">6</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#ModifierParameter">ModifierParameter</a>: Guidelines for Modifier parameters in a Composable function</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness:Messages">Correctness:Messages</a>
 </td></tr>
 <tr>
@@ -237,12 +241,12 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#ObsoleteSdkInt">ObsoleteSdkInt</a>: Obsolete SDK_INT Version Check</td></tr>
 <tr>
-<td class="countColumn">14</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">21</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability:Icons">Usability:Icons</a>
 </td></tr>
 <tr>
-<td class="countColumn">7</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">13</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#IconLocation">IconLocation</a>: Image defined in density-independent drawable folder</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (90)</a>
 </td></tr>
@@ -306,64 +310,42 @@ To suppress this error, use the issue id "OldTargetApi" as explained in the <a h
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="OldTargetApiCardLink" onclick="hideid('OldTargetApiCard');">
 Dismiss</button>            </div>
             </div>
-          </section><a name="SuspiciousIndentation"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="SuspiciousIndentationCard" style="display: block;">
+          </section><a name="VectorRaster"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="VectorRasterCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Suspicious indentation</h2>
+    <h2 class="mdl-card__title-text">Vector Image Generation</h2>
   </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/viewModel/MainViewModel.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/viewModel/MainViewModel.kt</a>:29</span>: <span class="message">The indentation string here is different from on the previous line (<code>" "</code> vs <code>\t</code>)</span><br /><pre class="errorlines">
-<span class="lineno"> 26 </span>         } <span class="keyword">else</span> {
-<span class="lineno"> 27 </span>             <span class="string">"onBoarding"</span>
-<span class="lineno"> 28 </span>         }
-<span class="caretline"><span class="lineno"> 29 </span>        <span class="warning">    </span>delay(<span class="number">300</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 30 </span>            _splashCondition = <span class="keyword">false</span>
-<span class="lineno"> 31 </span>        }.launchIn(viewModelScope )
-<span class="lineno"> 32 </span>    }
+<span class="location"><a href="../../src/main/res/drawable/night_software_star_svgrepo_com.xml">../../src/main/res/drawable/night_software_star_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
+<span class="lineno">   1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
+<span class="caretline"><span class="lineno">   2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">   3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
+<span class="lineno">   4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"12.7"</span>
+<span class="lineno">   5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"12.7"</span>>
 </pre>
 
-<ul><span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/viewModel/MainViewModel.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/viewModel/MainViewModel.kt</a>:24</span>: <span class="message">Previous line indentation here</span><br /><pre class="errorlines">
-<span class="lineno"> 21 </span>    
-<span class="lineno"> 22 </span>    init {
-<span class="lineno"> 23 </span>        appEntryUseCase.getAppEntry().onEach { entryStatus ->
-<span class="caretline"><span class="lineno"> 24 </span>        <span class="warning"> </span>_startDestination = <span class="keyword">if</span> (entryStatus){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 25 </span>             <span class="string">"home"</span>
-<span class="lineno"> 26 </span>         } <span class="keyword">else</span> {
-<span class="lineno"> 27 </span>             <span class="string">"onBoarding"</span></pre>
-</ul></div>
-<div class="metadata"><div class="explanation" id="explanationSuspiciousIndentation" style="display: none;">
-This check looks for cases where the indentation suggests a grouping that isn't actually there in the code. A common example of this would be something like
-<pre>
-if (column > width)
-    line++
-    column = 0
+<span class="location"><a href="../../src/main/res/drawable/sun_svgrepo_com.xml">../../src/main/res/drawable/sun_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
+<span class="caretline"><span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"512"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"512"</span>>
 </pre>
-Here, the <code>column = 0</code> line will be executed every single time, not just if the condition is true.<br/><br/>
-This check can be configured via the following options:<br/><br/>
-<div class="options">
-<b>always-run</b> (default is false):<br/>
-Whether this check should be included while editing.<br/>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationVectorRaster" style="display: none;">
+Vector icons require API 21 or API 24 depending on used features, but when <code>minSdkVersion</code> is less than 21 or 24 and Android Gradle plugin 1.4 or higher is used, a vector drawable placed in the <code>drawable</code> folder is automatically moved to <code>drawable-anydpi-v21</code> or <code>drawable-anydpi-v24</code> and bitmap images are generated for different screen resolutions for backwards compatibility.<br/>
 <br/>
-While you're editing, it's common to have a temporary situation where you have suspicious indentation scenarios -- e.g. you start typing an <code>if</code> statement on the line above something you want to make conditional, and you haven't indented it yet. It can be distracting and misleading to suddenly have both statements light up as errors. Therefore, lint will avoid including this check when running on the fly in the editor, unless it looks like the file has not been recently edited. With this option, you can turn it on in all cases.<br/>
-<br/>
-To configure this option, use a `lint.xml` file in the project or source folder using an <code>&lt;option&gt;</code> block like the following:
-<pre class="errorlines">
-<span class="lineno"> 1 </span><span class="tag">&lt;lint></span>
-<span class="lineno"> 2 </span>    <span class="tag">&lt;issue</span><span class="attribute"> id</span>=<span class="value">"SuspiciousIndentation"</span>>
-<span class="caretline"><span class="lineno"> 3 </span>        <span class="tag">&lt;option</span><span class="attribute"> name</span>=<span class="warning"><span class="value">"always-run"</span> <span class="attribute">value</span>=<span class="value">"false"</span></span> />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 4 </span>    <span class="tag">&lt;/issue></span>
-<span class="lineno"> 5 </span><span class="tag">&lt;/lint></span>
-</pre>
-</div>To suppress this error, use the issue id "SuspiciousIndentation" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+However, there are some limitations to this raster image generation, and this lint check flags elements and attributes that are not fully supported. You should manually check whether the generated output is acceptable for those older devices.<br/>To suppress this error, use the issue id "VectorRaster" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 <br/></div>
 </div>
 </div>
 <div class="chips">
 <span class="mdl-chip">
-    <span class="mdl-chip__text">SuspiciousIndentation</span>
+    <span class="mdl-chip__text">VectorRaster</span>
 </span>
 <span class="mdl-chip">
     <span class="mdl-chip__text">Correctness</span>
@@ -372,13 +354,13 @@ To configure this option, use a `lint.xml` file in the project or source folder 
     <span class="mdl-chip__text">Warning</span>
 </span>
 <span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 6/10</span>
+    <span class="mdl-chip__text">Priority 5/10</span>
 </span>
 </div>
               </div>
               <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationSuspiciousIndentationLink" onclick="reveal('explanationSuspiciousIndentation');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="SuspiciousIndentationCardLink" onclick="hideid('SuspiciousIndentationCard');">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationVectorRasterLink" onclick="reveal('explanationVectorRaster');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="VectorRasterCardLink" onclick="hideid('VectorRasterCard');">
 Dismiss</button>            </div>
             </div>
           </section><a name="AndroidGradlePluginVersion"></a>
@@ -390,30 +372,30 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:4</span>: <span class="message">A newer version of com.android.application than 8.4.2 is available: 8.5.1</span><br /><pre class="errorlines">
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:4</span>: <span class="message">A newer version of com.android.application than 8.4.2 is available: 8.5.2</span><br /><pre class="errorlines">
 <span class="lineno">   1 </span>[versions]
 <span class="lineno">   2 </span>accompanistPermissions = "0.31.0-alpha"
-<span class="lineno">   3 </span>accompanistSystemuicontroller = "0.33.2-alpha"
+<span class="lineno">   3 </span>accompanistSystemuicontroller = "0.34.0"
 <span class="caretline"><span class="lineno">   4 </span>agp = <span class="warning">"8.4.2"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">   5 </span>cameraViewfinderCompose = "1.0.0-alpha02"
 <span class="lineno">   6 </span>coil = "2.6.0"
 <span class="lineno">   7 </span>coilCompose = "2.6.0"
 </pre>
 
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:4</span>: <span class="message">A newer version of com.android.application than 8.4.2 is available: 8.5.1</span><br /><pre class="errorlines">
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:4</span>: <span class="message">A newer version of com.android.application than 8.4.2 is available: 8.5.2</span><br /><pre class="errorlines">
 <span class="lineno">   1 </span>[versions]
 <span class="lineno">   2 </span>accompanistPermissions = "0.31.0-alpha"
-<span class="lineno">   3 </span>accompanistSystemuicontroller = "0.33.2-alpha"
+<span class="lineno">   3 </span>accompanistSystemuicontroller = "0.34.0"
 <span class="caretline"><span class="lineno">   4 </span>agp = <span class="warning">"8.4.2"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">   5 </span>cameraViewfinderCompose = "1.0.0-alpha02"
 <span class="lineno">   6 </span>coil = "2.6.0"
 <span class="lineno">   7 </span>coilCompose = "2.6.0"
 </pre>
 
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:4</span>: <span class="message">A newer version of com.android.application than 8.4.2 is available: 8.5.1</span><br /><pre class="errorlines">
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:4</span>: <span class="message">A newer version of com.android.application than 8.4.2 is available: 8.5.2</span><br /><pre class="errorlines">
 <span class="lineno">   1 </span>[versions]
 <span class="lineno">   2 </span>accompanistPermissions = "0.31.0-alpha"
-<span class="lineno">   3 </span>accompanistSystemuicontroller = "0.33.2-alpha"
+<span class="lineno">   3 </span>accompanistSystemuicontroller = "0.34.0"
 <span class="caretline"><span class="lineno">   4 </span>agp = <span class="warning">"8.4.2"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">   5 </span>cameraViewfinderCompose = "1.0.0-alpha02"
 <span class="lineno">   6 </span>coil = "2.6.0"
@@ -456,189 +438,66 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:29</span>: <span class="message">A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.7.1 is available: 1.7.3</span><br /><pre class="errorlines">
-<span class="lineno">  26 </span>junit = "4.13.2"
-<span class="lineno">  27 </span>junitVersion = "1.2.1"
-<span class="lineno">  28 </span>espressoCore = "3.6.1"
-<span class="caretline"><span class="lineno">  29 </span>kotlinxCoroutinesTest = <span class="warning">"1.7.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:33</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-beta07</span><br /><pre class="errorlines">
 <span class="lineno">  30 </span>lifecycleRuntimeKtx = "2.8.4"
 <span class="lineno">  31 </span>activityCompose = "1.9.1"
 <span class="lineno">  32 </span>composeBom = "2024.06.00"
+<span class="caretline"><span class="lineno">  33 </span>composeNavigation = <span class="warning">"2.8.0-beta06"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
+<span class="lineno">  35 </span>media3Exoplayer = "1.4.0"
+<span class="lineno">  36 </span>media3ExoplayerVersion = "1.4.0"
 </pre>
 
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:29</span>: <span class="message">A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.7.1 is available: 1.7.3</span><br /><pre class="errorlines">
-<span class="lineno">  26 </span>junit = "4.13.2"
-<span class="lineno">  27 </span>junitVersion = "1.2.1"
-<span class="lineno">  28 </span>espressoCore = "3.6.1"
-<span class="caretline"><span class="lineno">  29 </span>kotlinxCoroutinesTest = <span class="warning">"1.7.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:33</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-beta07</span><br /><pre class="errorlines">
 <span class="lineno">  30 </span>lifecycleRuntimeKtx = "2.8.4"
 <span class="lineno">  31 </span>activityCompose = "1.9.1"
 <span class="lineno">  32 </span>composeBom = "2024.06.00"
+<span class="caretline"><span class="lineno">  33 </span>composeNavigation = <span class="warning">"2.8.0-beta06"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
+<span class="lineno">  35 </span>media3Exoplayer = "1.4.0"
+<span class="lineno">  36 </span>media3ExoplayerVersion = "1.4.0"
 </pre>
 
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:29</span>: <span class="message">A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.7.1 is available: 1.7.3</span><br /><pre class="errorlines">
-<span class="lineno">  26 </span>junit = "4.13.2"
-<span class="lineno">  27 </span>junitVersion = "1.2.1"
-<span class="lineno">  28 </span>espressoCore = "3.6.1"
-<span class="caretline"><span class="lineno">  29 </span>kotlinxCoroutinesTest = <span class="warning">"1.7.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:33</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-beta07</span><br /><pre class="errorlines">
 <span class="lineno">  30 </span>lifecycleRuntimeKtx = "2.8.4"
 <span class="lineno">  31 </span>activityCompose = "1.9.1"
 <span class="lineno">  32 </span>composeBom = "2024.06.00"
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:35</span>: <span class="message">A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  32 </span>composeBom = "2024.06.00"
-<span class="lineno">  33 </span>composeNavigation = "2.8.0-beta06"
+<span class="caretline"><span class="lineno">  33 </span>composeNavigation = <span class="warning">"2.8.0-beta06"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
-<span class="caretline"><span class="lineno">  35 </span>media3Exoplayer = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  36 </span>media3ExoplayerVersion = "1.3.1"
-<span class="lineno">  37 </span>media3UiVersion = "1.3.1"
-<span class="lineno">  38 </span>mockitoCore = "4.4.0"
+<span class="lineno">  35 </span>media3Exoplayer = "1.4.0"
+<span class="lineno">  36 </span>media3ExoplayerVersion = "1.4.0"
 </pre>
 
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:35</span>: <span class="message">A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  32 </span>composeBom = "2024.06.00"
-<span class="lineno">  33 </span>composeNavigation = "2.8.0-beta06"
-<span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
-<span class="caretline"><span class="lineno">  35 </span>media3Exoplayer = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  36 </span>media3ExoplayerVersion = "1.3.1"
-<span class="lineno">  37 </span>media3UiVersion = "1.3.1"
-<span class="lineno">  38 </span>mockitoCore = "4.4.0"
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:57</span>: <span class="message">A newer version of androidx.work:work-runtime than 2.9.0 is available: 2.9.1</span><br /><pre class="errorlines">
+<span class="lineno">  54 </span>googleGmsGoogleServices = "4.4.2"
+<span class="lineno">  55 </span>googleFirebaseCrashlytics = "3.0.2"
+<span class="lineno">  56 </span>uiTextGoogleFonts = "1.6.8"
+<span class="caretline"><span class="lineno">  57 </span>workRuntime = <span class="warning">"2.9.0"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  58 </span>
+<span class="lineno">  59 </span>[libraries]
+<span class="lineno">  60 </span>accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
 </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 13 More Occurrences...</button>
-<div id="GradleDependencyDiv" style="display: none">
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:35</span>: <span class="message">A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  32 </span>composeBom = "2024.06.00"
-<span class="lineno">  33 </span>composeNavigation = "2.8.0-beta06"
-<span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
-<span class="caretline"><span class="lineno">  35 </span>media3Exoplayer = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  36 </span>media3ExoplayerVersion = "1.3.1"
-<span class="lineno">  37 </span>media3UiVersion = "1.3.1"
-<span class="lineno">  38 </span>mockitoCore = "4.4.0"
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:57</span>: <span class="message">A newer version of androidx.work:work-runtime than 2.9.0 is available: 2.9.1</span><br /><pre class="errorlines">
+<span class="lineno">  54 </span>googleGmsGoogleServices = "4.4.2"
+<span class="lineno">  55 </span>googleFirebaseCrashlytics = "3.0.2"
+<span class="lineno">  56 </span>uiTextGoogleFonts = "1.6.8"
+<span class="caretline"><span class="lineno">  57 </span>workRuntime = <span class="warning">"2.9.0"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  58 </span>
+<span class="lineno">  59 </span>[libraries]
+<span class="lineno">  60 </span>accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
 </pre>
 
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:35</span>: <span class="message">A newer version of androidx.media3:media3-session than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  32 </span>composeBom = "2024.06.00"
-<span class="lineno">  33 </span>composeNavigation = "2.8.0-beta06"
-<span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
-<span class="caretline"><span class="lineno">  35 </span>media3Exoplayer = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  36 </span>media3ExoplayerVersion = "1.3.1"
-<span class="lineno">  37 </span>media3UiVersion = "1.3.1"
-<span class="lineno">  38 </span>mockitoCore = "4.4.0"
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:57</span>: <span class="message">A newer version of androidx.work:work-runtime than 2.9.0 is available: 2.9.1</span><br /><pre class="errorlines">
+<span class="lineno">  54 </span>googleGmsGoogleServices = "4.4.2"
+<span class="lineno">  55 </span>googleFirebaseCrashlytics = "3.0.2"
+<span class="lineno">  56 </span>uiTextGoogleFonts = "1.6.8"
+<span class="caretline"><span class="lineno">  57 </span>workRuntime = <span class="warning">"2.9.0"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  58 </span>
+<span class="lineno">  59 </span>[libraries]
+<span class="lineno">  60 </span>accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
 </pre>
 
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:35</span>: <span class="message">A newer version of androidx.media3:media3-session than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  32 </span>composeBom = "2024.06.00"
-<span class="lineno">  33 </span>composeNavigation = "2.8.0-beta06"
-<span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
-<span class="caretline"><span class="lineno">  35 </span>media3Exoplayer = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  36 </span>media3ExoplayerVersion = "1.3.1"
-<span class="lineno">  37 </span>media3UiVersion = "1.3.1"
-<span class="lineno">  38 </span>mockitoCore = "4.4.0"
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:35</span>: <span class="message">A newer version of androidx.media3:media3-session than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  32 </span>composeBom = "2024.06.00"
-<span class="lineno">  33 </span>composeNavigation = "2.8.0-beta06"
-<span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
-<span class="caretline"><span class="lineno">  35 </span>media3Exoplayer = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  36 </span>media3ExoplayerVersion = "1.3.1"
-<span class="lineno">  37 </span>media3UiVersion = "1.3.1"
-<span class="lineno">  38 </span>mockitoCore = "4.4.0"
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:36</span>: <span class="message">A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  33 </span>composeNavigation = "2.8.0-beta06"
-<span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
-<span class="lineno">  35 </span>media3Exoplayer = "1.3.1"
-<span class="caretline"><span class="lineno">  36 </span>media3ExoplayerVersion = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  37 </span>media3UiVersion = "1.3.1"
-<span class="lineno">  38 </span>mockitoCore = "4.4.0"
-<span class="lineno">  39 </span>mockitoInline = "4.4.0"
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:36</span>: <span class="message">A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  33 </span>composeNavigation = "2.8.0-beta06"
-<span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
-<span class="lineno">  35 </span>media3Exoplayer = "1.3.1"
-<span class="caretline"><span class="lineno">  36 </span>media3ExoplayerVersion = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  37 </span>media3UiVersion = "1.3.1"
-<span class="lineno">  38 </span>mockitoCore = "4.4.0"
-<span class="lineno">  39 </span>mockitoInline = "4.4.0"
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:36</span>: <span class="message">A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  33 </span>composeNavigation = "2.8.0-beta06"
-<span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
-<span class="lineno">  35 </span>media3Exoplayer = "1.3.1"
-<span class="caretline"><span class="lineno">  36 </span>media3ExoplayerVersion = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  37 </span>media3UiVersion = "1.3.1"
-<span class="lineno">  38 </span>mockitoCore = "4.4.0"
-<span class="lineno">  39 </span>mockitoInline = "4.4.0"
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:37</span>: <span class="message">A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
-<span class="lineno">  35 </span>media3Exoplayer = "1.3.1"
-<span class="lineno">  36 </span>media3ExoplayerVersion = "1.3.1"
-<span class="caretline"><span class="lineno">  37 </span>media3UiVersion = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  38 </span>mockitoCore = "4.4.0"
-<span class="lineno">  39 </span>mockitoInline = "4.4.0"
-<span class="lineno">  40 </span>mockitoKotlin = "4.0.0"
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:37</span>: <span class="message">A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
-<span class="lineno">  35 </span>media3Exoplayer = "1.3.1"
-<span class="lineno">  36 </span>media3ExoplayerVersion = "1.3.1"
-<span class="caretline"><span class="lineno">  37 </span>media3UiVersion = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  38 </span>mockitoCore = "4.4.0"
-<span class="lineno">  39 </span>mockitoInline = "4.4.0"
-<span class="lineno">  40 </span>mockitoKotlin = "4.0.0"
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:37</span>: <span class="message">A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  34 </span>materialIconsExtended = "1.6.8"
-<span class="lineno">  35 </span>media3Exoplayer = "1.3.1"
-<span class="lineno">  36 </span>media3ExoplayerVersion = "1.3.1"
-<span class="caretline"><span class="lineno">  37 </span>media3UiVersion = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  38 </span>mockitoCore = "4.4.0"
-<span class="lineno">  39 </span>mockitoInline = "4.4.0"
-<span class="lineno">  40 </span>mockitoKotlin = "4.0.0"
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:48</span>: <span class="message">A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  45 </span>ksp = "2.0.0-1.0.21"
-<span class="lineno">  46 </span>hilt = "2.49"
-<span class="lineno">  47 </span>datastoreCoreAndroid = "1.1.1"
-<span class="caretline"><span class="lineno">  48 </span>media3Ui = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  49 </span>androidbrowserhelper = "2.5.0"
-<span class="lineno">  50 </span>runtimeLivedata = "1.6.8"
-<span class="lineno">  51 </span>roomKtx = "2.6.1"
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:48</span>: <span class="message">A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  45 </span>ksp = "2.0.0-1.0.21"
-<span class="lineno">  46 </span>hilt = "2.49"
-<span class="lineno">  47 </span>datastoreCoreAndroid = "1.1.1"
-<span class="caretline"><span class="lineno">  48 </span>media3Ui = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  49 </span>androidbrowserhelper = "2.5.0"
-<span class="lineno">  50 </span>runtimeLivedata = "1.6.8"
-<span class="lineno">  51 </span>roomKtx = "2.6.1"
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:48</span>: <span class="message">A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.4.0</span><br /><pre class="errorlines">
-<span class="lineno">  45 </span>ksp = "2.0.0-1.0.21"
-<span class="lineno">  46 </span>hilt = "2.49"
-<span class="lineno">  47 </span>datastoreCoreAndroid = "1.1.1"
-<span class="caretline"><span class="lineno">  48 </span>media3Ui = <span class="warning">"1.3.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  49 </span>androidbrowserhelper = "2.5.0"
-<span class="lineno">  50 </span>runtimeLivedata = "1.6.8"
-<span class="lineno">  51 </span>roomKtx = "2.6.1"
-</pre>
-
-</div>
 </div>
 <div class="metadata"><div class="explanation" id="explanationGradleDependency" style="display: none;">
 This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
@@ -664,6 +523,60 @@ To suppress this error, use the issue id "GradleDependency" as explained in the 
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationGradleDependencyLink" onclick="reveal('explanationGradleDependency');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="GradleDependencyCardLink" onclick="hideid('GradleDependencyCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="ModifierParameter"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ModifierParameterCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Guidelines for Modifier parameters in a Composable function</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/NewHome.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/NewHome.kt</a>:100</span>: <span class="message">Modifier parameter should have a type of Modifier</span><br /><pre class="errorlines">
+<span class="lineno">  97 </span>    buttonList: List&lt;ButtonInfo>,
+<span class="lineno">  98 </span>    navController: NavController,
+<span class="lineno">  99 </span>    innerPadding: PaddingValues,
+<span class="caretline"><span class="lineno"> 100 </span>    <span class="warning">modifier</span>: Modifier.Companion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 101 </span>) {
+<span class="lineno"> 102 </span>
+<span class="lineno"> 103 </span>    LazyColumn(
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationModifierParameter" style="display: none;">
+The first (or only) Modifier parameter in a Composable function should follow the following rules:<br/>
+- Be named <code>modifier</code><br/>
+- Have a type of <code>Modifier</code><br/>
+- Either have no default value, or have a default value of <code>Modifier</code><br/>
+- If optional, be the first optional parameter in the parameter list<br/>To suppress this error, use the issue id "ModifierParameter" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="vendor">
+Vendor: Jetpack Compose<br/>
+Identifier: androidx.compose.ui<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">ModifierParameter</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 3/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationModifierParameterLink" onclick="reveal('explanationModifierParameter');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ModifierParameterCardLink" onclick="hideid('ModifierParameterCard');">
 Dismiss</button>            </div>
             </div>
           </section>
@@ -1159,6 +1072,7 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
+<span class="location"><a href="../../src/main/res/drawable/additional.png">../../src/main/res/drawable/additional.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/additional.png" /><span class="message">The resource <code>R.drawable.additional</code> appears to be unused</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/baseline_pause_24.xml">../../src/main/res/drawable/baseline_pause_24.xml</a>:1</span>: <span class="message">The resource <code>R.drawable.baseline_pause_24</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="caretline"><span class="lineno"> 1 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span> <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"24dp"</span> <span class="prefix">android:</span><span class="attribute">tint</span>=<span class="value">"#000000"</span> <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"24"</span> <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"24"</span> <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"24dp"</span>></span></span>
 <span class="lineno"> 2 </span>      
@@ -1192,6 +1106,8 @@ Dismiss</button>            </div>
 <span class="lineno">  7 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"teal_700"</span>>#FF018786<span class="tag">&lt;/color></span>
 </pre>
 
+<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 16 More Occurrences...</button>
+<div id="UnusedResourcesDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:5</span>: <span class="message">The resource <code>R.color.purple_700</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  2 </span><span class="tag">&lt;resources></span>
 <span class="lineno">  3 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"purple_200"</span>>#FFBB86FC<span class="tag">&lt;/color></span>
@@ -1202,8 +1118,6 @@ Dismiss</button>            </div>
 <span class="lineno">  8 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"black"</span>>#FF000000<span class="tag">&lt;/color></span>
 </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 9 More Occurrences...</button>
-<div id="UnusedResourcesDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:6</span>: <span class="message">The resource <code>R.color.teal_200</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  3 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"purple_200"</span>>#FFBB86FC<span class="tag">&lt;/color></span>
 <span class="lineno">  4 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"purple_500"</span>>#FF6200EE<span class="tag">&lt;/color></span>
@@ -1238,7 +1152,17 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno">  9 </span>    <span class="tag">&lt;color</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"white"</span></span>>#FFFFFFFF<span class="tag">&lt;/color></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 10 </span><span class="tag">&lt;/resources></span></pre>
 
+<span class="location"><a href="../../src/main/res/drawable/firstjt.png">../../src/main/res/drawable/firstjt.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/firstjt.png" /><span class="message">The resource <code>R.drawable.firstjt</code> appears to be unused</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/googleicon.png">../../src/main/res/drawable/googleicon.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/googleicon.png" /><span class="message">The resource <code>R.drawable.googleicon</code> appears to be unused</span><br clear="right"/>
+<span class="location"><a href="../../src/main/res/drawable/night.png">../../src/main/res/drawable/night.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/night.png" /><span class="message">The resource <code>R.drawable.night</code> appears to be unused</span><br clear="right"/>
+<span class="location"><a href="../../src/main/res/drawable/night_software_star_svgrepo_com.xml">../../src/main/res/drawable/night_software_star_svgrepo_com.xml</a>:1</span>: <span class="message">The resource <code>R.drawable.night_software_star_svgrepo_com</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="caretline"><span class="lineno">   1 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">   2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"800dp"</span>
+<span class="lineno">   3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
+<span class="lineno">   4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"12.7"</span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/sec.jpg">../../src/main/res/drawable/sec.jpg</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/sec.jpg" /><span class="message">The resource <code>R.drawable.sec</code> appears to be unused</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/values-v31/splashScreen.xml">../../src/main/res/values-v31/splashScreen.xml</a>:4</span>: <span class="message">The resource <code>R.style.App_Starting_Theme</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
 <span class="lineno">  2 </span><span class="tag">&lt;resources></span>
@@ -1264,6 +1188,8 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno"> 8 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"notification_channel_description"</span></span>>notificationChannelDescription<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 9 </span><span class="tag">&lt;/resources></span></pre>
 
+<span class="location"><a href="../../src/main/res/drawable/sun.png">../../src/main/res/drawable/sun.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/sun.png" /><span class="message">The resource <code>R.drawable.sun</code> appears to be unused</span><br clear="right"/>
+<span class="location"><a href="../../src/main/res/drawable/thirdjt.jpg">../../src/main/res/drawable/thirdjt.jpg</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/thirdjt.jpg" /><span class="message">The resource <code>R.drawable.thirdjt</code> appears to be unused</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/top.jpg">../../src/main/res/drawable/top.jpg</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/top.jpg" /><span class="message">The resource <code>R.drawable.top</code> appears to be unused</span><br clear="right"/>
 </div>
 </div>
@@ -1310,13 +1236,22 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
+<span class="location"><a href="../../src/main/res/drawable/additional.png">../../src/main/res/drawable/additional.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/additional.png" /><span class="message">Found bitmap drawable <code>res/drawable/additional.png</code> in densityless folder</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/firstjt.png">../../src/main/res/drawable/firstjt.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/firstjt.png" /><span class="message">Found bitmap drawable <code>res/drawable/firstjt.png</code> in densityless folder</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/googleicon.png">../../src/main/res/drawable/googleicon.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/googleicon.png" /><span class="message">Found bitmap drawable <code>res/drawable/googleicon.png</code> in densityless folder</span><br clear="right"/>
+<span class="location"><a href="../../src/main/res/drawable/landin3.jpg">../../src/main/res/drawable/landin3.jpg</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/landin3.jpg" /><span class="message">Found bitmap drawable <code>res/drawable/landin3.jpg</code> in densityless folder</span><br clear="right"/>
+<span class="location"><a href="../../src/main/res/drawable/landing1.jpg">../../src/main/res/drawable/landing1.jpg</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/landing1.jpg" /><span class="message">Found bitmap drawable <code>res/drawable/landing1.jpg</code> in densityless folder</span><br clear="right"/>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="IconLocationDivLink" onclick="reveal('IconLocationDiv');" />+ 8 More Occurrences...</button>
+<div id="IconLocationDiv" style="display: none">
+<span class="location"><a href="../../src/main/res/drawable/landing2.jpg">../../src/main/res/drawable/landing2.jpg</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/landing2.jpg" /><span class="message">Found bitmap drawable <code>res/drawable/landing2.jpg</code> in densityless folder</span><br clear="right"/>
+<span class="location"><a href="../../src/main/res/drawable/night.png">../../src/main/res/drawable/night.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/night.png" /><span class="message">Found bitmap drawable <code>res/drawable/night.png</code> in densityless folder</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/nightnew.png">../../src/main/res/drawable/nightnew.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/nightnew.png" /><span class="message">Found bitmap drawable <code>res/drawable/nightnew.png</code> in densityless folder</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/sec.jpg">../../src/main/res/drawable/sec.jpg</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/sec.jpg" /><span class="message">Found bitmap drawable <code>res/drawable/sec.jpg</code> in densityless folder</span><br clear="right"/>
+<span class="location"><a href="../../src/main/res/drawable/sun.png">../../src/main/res/drawable/sun.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/sun.png" /><span class="message">Found bitmap drawable <code>res/drawable/sun.png</code> in densityless folder</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/thirdjt.jpg">../../src/main/res/drawable/thirdjt.jpg</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/thirdjt.jpg" /><span class="message">Found bitmap drawable <code>res/drawable/thirdjt.jpg</code> in densityless folder</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/top.jpg">../../src/main/res/drawable/top.jpg</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/top.jpg" /><span class="message">Found bitmap drawable <code>res/drawable/top.jpg</code> in densityless folder</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/topnew.png">../../src/main/res/drawable/topnew.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/topnew.png" /><span class="message">Found bitmap drawable <code>res/drawable/topnew.png</code> in densityless folder</span><br clear="right"/>
+</div>
 </div>
 <div class="metadata"><div class="explanation" id="explanationIconLocation" style="display: none;">
 The res/drawable folder is intended for density-independent graphics such as shapes defined in XML. For bitmaps, move it to <code>drawable-mdpi</code> and consider providing higher and lower resolution versions in <code>drawable-ldpi</code>, <code>drawable-hdpi</code> and <code>drawable-xhdpi</code>. If the icon <b>really</b> is density independent (for example a solid color) you can place it in <code>drawable-nodpi</code>.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/guide/practices/screens_support.html">https://developer.android.com/guide/practices/screens_support.html</a>

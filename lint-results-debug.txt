@@ -20,45 +20,32 @@ D:\a\MyCompose\MyCompose\app\build.gradle.kts:21: Warning: Not targeting the lat
 
    https://developer.android.com/distribute/best-practices/develop/target-sdk.html
 
-D:\a\MyCompose\MyCompose\app\src\main\java\com\bosch\composewithkotlin20\presentaion\ui\viewModel\MainViewModel.kt:29: Warning: The indentation string here is different from on the previous line (" " vs \t) [SuspiciousIndentation]
-   delay(300)
-  ~
-    D:\a\MyCompose\MyCompose\app\src\main\java\com\bosch\composewithkotlin20\presentaion\ui\viewModel\MainViewModel.kt:24: Previous line indentation here
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\night_software_star_svgrepo_com.xml:2: Warning: Limit vector icons sizes to 200×200 to keep icon drawing fast; see https://developer.android.com/studio/write/vector-asset-studio#when for more [VectorRaster]
+    android:width="800dp"
+                   ~~~~~
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\sun_svgrepo_com.xml:2: Warning: Limit vector icons sizes to 200×200 to keep icon drawing fast; see https://developer.android.com/studio/write/vector-asset-studio#when for more [VectorRaster]
+    android:width="800dp"
+                   ~~~~~
 
-   Explanation for issues of type "SuspiciousIndentation":
-   This check looks for cases where the indentation suggests a grouping that
-   isn't actually there in the code. A common example of this would be
-   something like
-   if (column > width)
-       line++
-       column = 0
-   Here, the column = 0 line will be executed every single time, not just if
-   the condition is true.
+   Explanation for issues of type "VectorRaster":
+   Vector icons require API 21 or API 24 depending on used features, but when
+   minSdkVersion is less than 21 or 24 and Android Gradle plugin 1.4 or higher
+   is used, a vector drawable placed in the drawable folder is automatically
+   moved to drawable-anydpi-v21 or drawable-anydpi-v24 and bitmap images are
+   generated for different screen resolutions for backwards compatibility.
 
-   Available options:
+   However, there are some limitations to this raster image generation, and
+   this lint check flags elements and attributes that are not fully supported.
+   You should manually check whether the generated output is acceptable for
+   those older devices.
 
-   **always-run** (default is false):
-   Whether this check should be included while editing.
-
-   While you're editing, it's common to have a temporary situation where you have suspicious indentation scenarios -- e.g. you start typing an `if` statement on the line above something you want to make conditional, and you haven't indented it yet. It can be distracting and misleading to suddenly have both statements light up as errors. Therefore, lint will avoid including this check when running on the fly in the editor, unless it looks like the file has not been recently edited. With this option, you can turn it on in all cases.
-
-   To configure this option, use a `lint.xml` file with an <option> like this:
-
-   ```xml
-   <lint>
-       <issue id="SuspiciousIndentation">
-           <option name="always-run" value="false" />
-       </issue>
-   </lint>
-   ```
-
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:4: Warning: A newer version of com.android.application than 8.4.2 is available: 8.5.1 [AndroidGradlePluginVersion]
+D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:4: Warning: A newer version of com.android.application than 8.4.2 is available: 8.5.2 [AndroidGradlePluginVersion]
 agp = "8.4.2"
       ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:4: Warning: A newer version of com.android.application than 8.4.2 is available: 8.5.1 [AndroidGradlePluginVersion]
+D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:4: Warning: A newer version of com.android.application than 8.4.2 is available: 8.5.2 [AndroidGradlePluginVersion]
 agp = "8.4.2"
       ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:4: Warning: A newer version of com.android.application than 8.4.2 is available: 8.5.1 [AndroidGradlePluginVersion]
+D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:4: Warning: A newer version of com.android.application than 8.4.2 is available: 8.5.2 [AndroidGradlePluginVersion]
 agp = "8.4.2"
       ~~~~~~~
 
@@ -69,60 +56,24 @@ agp = "8.4.2"
    with an older version. However, you may simply not be aware that a more
    recent version is available, and that is what this lint check helps find.
 
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:29: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.7.1 is available: 1.7.3 [GradleDependency]
-kotlinxCoroutinesTest = "1.7.1"
-                        ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:29: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.7.1 is available: 1.7.3 [GradleDependency]
-kotlinxCoroutinesTest = "1.7.1"
-                        ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:29: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-test than 1.7.1 is available: 1.7.3 [GradleDependency]
-kotlinxCoroutinesTest = "1.7.1"
-                        ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:35: Warning: A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3Exoplayer = "1.3.1"
-                  ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:35: Warning: A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3Exoplayer = "1.3.1"
-                  ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:35: Warning: A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3Exoplayer = "1.3.1"
-                  ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:35: Warning: A newer version of androidx.media3:media3-session than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3Exoplayer = "1.3.1"
-                  ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:35: Warning: A newer version of androidx.media3:media3-session than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3Exoplayer = "1.3.1"
-                  ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:35: Warning: A newer version of androidx.media3:media3-session than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3Exoplayer = "1.3.1"
-                  ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:36: Warning: A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3ExoplayerVersion = "1.3.1"
-                         ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:36: Warning: A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3ExoplayerVersion = "1.3.1"
-                         ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:36: Warning: A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3ExoplayerVersion = "1.3.1"
-                         ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:37: Warning: A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3UiVersion = "1.3.1"
-                  ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:37: Warning: A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3UiVersion = "1.3.1"
-                  ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:37: Warning: A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3UiVersion = "1.3.1"
-                  ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:48: Warning: A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3Ui = "1.3.1"
-           ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:48: Warning: A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3Ui = "1.3.1"
-           ~~~~~~~
-D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:48: Warning: A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.4.0 [GradleDependency]
-media3Ui = "1.3.1"
-           ~~~~~~~
+D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:33: Warning: A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-beta07 [GradleDependency]
+composeNavigation = "2.8.0-beta06"
+                    ~~~~~~~~~~~~~~
+D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:33: Warning: A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-beta07 [GradleDependency]
+composeNavigation = "2.8.0-beta06"
+                    ~~~~~~~~~~~~~~
+D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:33: Warning: A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-beta07 [GradleDependency]
+composeNavigation = "2.8.0-beta06"
+                    ~~~~~~~~~~~~~~
+D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:57: Warning: A newer version of androidx.work:work-runtime than 2.9.0 is available: 2.9.1 [GradleDependency]
+workRuntime = "2.9.0"
+              ~~~~~~~
+D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:57: Warning: A newer version of androidx.work:work-runtime than 2.9.0 is available: 2.9.1 [GradleDependency]
+workRuntime = "2.9.0"
+              ~~~~~~~
+D:\a\MyCompose\MyCompose\gradle\libs.versions.toml:57: Warning: A newer version of androidx.work:work-runtime than 2.9.0 is available: 2.9.1 [GradleDependency]
+workRuntime = "2.9.0"
+              ~~~~~~~
 
    Explanation for issues of type "GradleDependency":
    This detector looks for usages of libraries where the version you are using
@@ -130,6 +81,22 @@ media3Ui = "1.3.1"
    are cases where you deliberately want to stick with an older version.
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
+
+D:\a\MyCompose\MyCompose\app\src\main\java\com\bosch\composewithkotlin20\presentaion\ui\screen\NewHome.kt:100: Warning: Modifier parameter should have a type of Modifier [ModifierParameter from androidx.compose.ui]
+    modifier: Modifier.Companion
+    ~~~~~~~~
+
+   Explanation for issues of type "ModifierParameter":
+   The first (or only) Modifier parameter in a Composable function should
+   follow the following rules:
+   - Be named modifier
+   - Have a type of Modifier
+   - Either have no default value, or have a default value of Modifier
+   - If optional, be the first optional parameter in the parameter list
+
+   Vendor: Jetpack Compose
+   Identifier: androidx.compose.ui
+   Feedback: https://issuetracker.google.com/issues/new?component=612128
 
 D:\a\MyCompose\MyCompose\app\src\main\res\values-v23\font_certs.xml:24: Warning: Did you mean "CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA!" instead of "CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA1"? [Typos]
             MIIEqDCCA5CgAwIBAgIJANWFuGx90071MA0GCSqGSIb3DQEBBAUAMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTAeFw0wODA0MTUyMzM2NTZaFw0zNTA5MDEyMzM2NTZaMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBANbOLggKv+IxTdGNs8/TGFy0PTP6DHThvbbR24kT9ixcOd9W+EaBPWW+wPPKQmsHxajtWjmQwWfna8mZuSeJS48LIgAZlKkpFeVyxW0qMBujb8X8ETrWy550NaFtI6t9+u7hZeTfHwqNvacKhp1RbE6dBRGWynwMVX8XW8N1+UjFaq6GCJukT4qmpN2afb8sCjUigq0GuMwYXrFVee74bQgLHWGJwPmvmLHC69EH6kWr22ijx4OKXlSIx2xT1AsSHee70w5iDBiK4aph27yH3TxkXy9V89TDdexAcKk/cVHYNnDBapcavl7y0RiQ4biu8ymM8Ga/nmzhRKya6G0cGw8CAQOjgfwwgfkwHQYDVR0OBBYEFI0cxb6VTEM8YYY6FbBMvAPyT+CyMIHJBgNVHSMEgcEwgb6AFI0cxb6VTEM8YYY6FbBMvAPyT+CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbYIJANWFuGx90071MAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEEBQADggEBABnTDPEF+3iSP0wNfdIjIz1AlnrPzgAIHVvXxunW7SBrDhEglQZBbKJEk5kT0mtKoOD1JMrSu1xuTKEBahWRbqHsXclaXjoBADb0kkjVEJu/Lh5hgYZnOjvlba8Ld7HCKePCVePoTJBdI4fvugnL8TsgK05aIskyY0hKI9L8KfqfGTl1lzOv2KoWD0KWwtAWPoGChZxmQ+nBli+gwYMzM1vAkP+aayLe0a1EQimlOalO762r0GXO0ks+UeXde2Z4e+8S/pf7pITEI/tP+MxJTALw9QUWEv9lKTk+jkbqxbsh8nfBUapfKqYn0eidpwq2AzVp3juYl7//fKnaPhJD9gs=
@@ -264,6 +231,7 @@ D:\a\MyCompose\MyCompose\app\src\main\res\values-v23: Warning: This folder confi
    where the version qualifier is less than or equal to the minSdkVersion,
    where the contents should be merged into the best folder.
 
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\additional.png: Warning: The resource R.drawable.additional appears to be unused [UnusedResources]
 D:\a\MyCompose\MyCompose\app\src\main\res\drawable\baseline_pause_24.xml:1: Warning: The resource R.drawable.baseline_pause_24 appears to be unused [UnusedResources]
 <vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:tint="#000000" android:viewportHeight="24" android:viewportWidth="24" android:width="24dp">
 ^
@@ -291,7 +259,13 @@ D:\a\MyCompose\MyCompose\app\src\main\res\values\colors.xml:8: Warning: The reso
 D:\a\MyCompose\MyCompose\app\src\main\res\values\colors.xml:9: Warning: The resource R.color.white appears to be unused [UnusedResources]
     <color name="white">#FFFFFFFF</color>
            ~~~~~~~~~~~~
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\firstjt.png: Warning: The resource R.drawable.firstjt appears to be unused [UnusedResources]
 D:\a\MyCompose\MyCompose\app\src\main\res\drawable\googleicon.png: Warning: The resource R.drawable.googleicon appears to be unused [UnusedResources]
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\night.png: Warning: The resource R.drawable.night appears to be unused [UnusedResources]
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\night_software_star_svgrepo_com.xml:1: Warning: The resource R.drawable.night_software_star_svgrepo_com appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+^
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\sec.jpg: Warning: The resource R.drawable.sec appears to be unused [UnusedResources]
 D:\a\MyCompose\MyCompose\app\src\main\res\values-v31\splashScreen.xml:4: Warning: The resource R.style.App_Starting_Theme appears to be unused [UnusedResources]
     <style name="App.Starting.Theme" parent="Theme.SplashScreen">
            ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -301,6 +275,8 @@ D:\a\MyCompose\MyCompose\app\src\main\res\values\strings.xml:7: Warning: The res
 D:\a\MyCompose\MyCompose\app\src\main\res\values\strings.xml:8: Warning: The resource R.string.notification_channel_description appears to be unused [UnusedResources]
     <string name="notification_channel_description">notificationChannelDescription</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\sun.png: Warning: The resource R.drawable.sun appears to be unused [UnusedResources]
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\thirdjt.jpg: Warning: The resource R.drawable.thirdjt appears to be unused [UnusedResources]
 D:\a\MyCompose\MyCompose\app\src\main\res\drawable\top.jpg: Warning: The resource R.drawable.top appears to be unused [UnusedResources]
 
    Explanation for issues of type "UnusedResources":
@@ -317,10 +293,16 @@ D:\a\MyCompose\MyCompose\app\src\main\res\drawable\top.jpg: Warning: The resourc
    lint.unused-resources.exclude-tests =true.
    ,
 
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\additional.png: Warning: Found bitmap drawable res/drawable/additional.png in densityless folder [IconLocation]
 D:\a\MyCompose\MyCompose\app\src\main\res\drawable\firstjt.png: Warning: Found bitmap drawable res/drawable/firstjt.png in densityless folder [IconLocation]
 D:\a\MyCompose\MyCompose\app\src\main\res\drawable\googleicon.png: Warning: Found bitmap drawable res/drawable/googleicon.png in densityless folder [IconLocation]
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\landin3.jpg: Warning: Found bitmap drawable res/drawable/landin3.jpg in densityless folder [IconLocation]
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\landing1.jpg: Warning: Found bitmap drawable res/drawable/landing1.jpg in densityless folder [IconLocation]
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\landing2.jpg: Warning: Found bitmap drawable res/drawable/landing2.jpg in densityless folder [IconLocation]
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\night.png: Warning: Found bitmap drawable res/drawable/night.png in densityless folder [IconLocation]
 D:\a\MyCompose\MyCompose\app\src\main\res\drawable\nightnew.png: Warning: Found bitmap drawable res/drawable/nightnew.png in densityless folder [IconLocation]
 D:\a\MyCompose\MyCompose\app\src\main\res\drawable\sec.jpg: Warning: Found bitmap drawable res/drawable/sec.jpg in densityless folder [IconLocation]
+D:\a\MyCompose\MyCompose\app\src\main\res\drawable\sun.png: Warning: Found bitmap drawable res/drawable/sun.png in densityless folder [IconLocation]
 D:\a\MyCompose\MyCompose\app\src\main\res\drawable\thirdjt.jpg: Warning: Found bitmap drawable res/drawable/thirdjt.jpg in densityless folder [IconLocation]
 D:\a\MyCompose\MyCompose\app\src\main\res\drawable\top.jpg: Warning: Found bitmap drawable res/drawable/top.jpg in densityless folder [IconLocation]
 D:\a\MyCompose\MyCompose\app\src\main\res\drawable\topnew.png: Warning: Found bitmap drawable res/drawable/topnew.png in densityless folder [IconLocation]
@@ -334,4 +316,4 @@ D:\a\MyCompose\MyCompose\app\src\main\res\drawable\topnew.png: Warning: Found bi
 
    https://developer.android.com/guide/practices/screens_support.html
 
-0 errors, 81 warnings
+0 errors, 84 warnings
