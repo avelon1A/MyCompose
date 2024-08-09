@@ -183,13 +183,7 @@ fun HomeCustomButton(modifier: Modifier,
 }
 
 
-@Preview(showBackground = true,
-    showSystemUi = true,
-)
-@Composable
-fun MyButton() {
-    HomeCustomButton(modifier = Modifier, text = "Auto", onClick = { },Color.Red,R.drawable.sun_svgrepo_com)
-}
+
 
 @Preview(
     name = "Dark Mode",
