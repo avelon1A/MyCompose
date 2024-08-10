@@ -35,10 +35,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.bosch.composewithkotlin20.R
+import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import kotlinx.serialization.Serializable
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(navController: NavController, modifier: Modifier) {
 	val buttonList = listOf(
@@ -66,34 +66,7 @@ fun HomeScreen(navController: NavController, modifier: Modifier) {
 	
 	Scaffold(
 		topBar = {
-			Box(
-				modifier = Modifier
-					.fillMaxWidth()
-					.shadow(4.dp)
-			) {
-				
-				TopAppBar(
-					title = {},
-					navigationIcon = {
-						IconButton(onClick = { }) {
-							Image(
-								painter = painterResource(id = R.drawable.__icon__hamburger_button_),
-								contentDescription = "Localized description"
-							)
-						}
-					},
-					actions = {
-						IconButton(onClick = { /* doSomething() */ }) {
-							Image(
-								painter = painterResource(id = R.drawable.__icon__me_),
-								contentDescription = "Localized description"
-							)
-						}
-						
-					},
-				)
-				
-			}
+			AppBar()
 		},
 		content = { innerPadding ->
 			ButtonGrid(buttonList, navController, innerPadding,Modifier)

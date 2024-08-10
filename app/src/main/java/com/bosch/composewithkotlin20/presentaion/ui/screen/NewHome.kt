@@ -1,7 +1,6 @@
 package com.bosch.composewithkotlin20.presentaion.ui.screen
 
 
-
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -42,49 +41,28 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.bosch.composewithkotlin20.R
+import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
 import kotlinx.serialization.Serializable
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NewHome(navController: NavController, modifier: Modifier) {
     val buttonList = listOf(
-        MainScreenButtons("ui ", HomeScreen, Color.Red,R.drawable.sun_svgrepo_com),
-        MainScreenButtons("Apps", ScreenC, Color.Blue,R.drawable.app_store_svgrepo_com),
-        MainScreenButtons("Animation", ThirdScreen, Color.Magenta,R.drawable.animation_gif_image_svgrepo_com),
-        MainScreenButtons("Text", TextScreen, Color.Green,R.drawable.text_view_svgrepo_com),
+        MainScreenButtons("ui ", HomeScreen, Color.Red, R.drawable.sun_svgrepo_com),
+        MainScreenButtons("Apps", ScreenC, Color.Blue, R.drawable.app_store_svgrepo_com),
+        MainScreenButtons(
+            "Animation",
+            ThirdScreen,
+            Color.Magenta,
+            R.drawable.animation_gif_image_svgrepo_com
+        ),
+        MainScreenButtons("Text", TextScreen, Color.Green, R.drawable.text_view_svgrepo_com),
 
         )
 
     Scaffold(
         topBar = {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .shadow(8.dp)
-            ) {
-
-                TopAppBar(
-                    title = {},
-                    navigationIcon = {
-                        IconButton(onClick = { }) {
-                            Image(
-                                painter = painterResource(id = R.drawable.__icon__hamburger_button_),
-                                contentDescription = "Localized description"
-                            )
-                        }
-                    },
-                    actions = {
-                        IconButton(onClick = { /* doSomething() */ }) {
-                            Image(
-                                painter = painterResource(id = R.drawable.__icon__me_),
-                                contentDescription = "Localized description"
-                            )
-                        }
-
-                    },
-                )
-
-            }
+            AppBar()
         },
         content = { innerPadding ->
             HomeButton(buttonList, navController, innerPadding, Modifier)
@@ -92,7 +70,8 @@ fun NewHome(navController: NavController, modifier: Modifier) {
     )
 }
 
-data class MainScreenButtons(val title: String, val route: Any,val color:Color,val image:Int)
+data class MainScreenButtons(val title: String, val route: Any, val color: Color, val image: Int)
+
 @Composable
 fun HomeButton(
     buttonList: List<MainScreenButtons>,
@@ -104,8 +83,7 @@ fun HomeButton(
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(innerPadding)
-            ,verticalArrangement = Arrangement.Center,
+            .padding(innerPadding), verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         items(buttonList.chunked(2), key = { rowButtons ->
@@ -119,13 +97,14 @@ fun HomeButton(
             ) {
                 rowButtons.forEach {
 
-                    HomeCustomButton(modifier = modifier,
+                    HomeCustomButton(
+                        modifier = modifier,
                         text = it.title,
                         onClick = { navController.navigate(it.route) },
                         color = it.color,
                         image = it.image,
 
-                    )
+                        )
                 }
             }
         }
@@ -135,10 +114,12 @@ fun HomeButton(
 }
 
 @Composable
-fun HomeCustomButton(modifier: Modifier,
-                     text: String, onClick: () -> Unit,
-                     color: Color,
-                     image:Int ) {
+fun HomeCustomButton(
+    modifier: Modifier,
+    text: String, onClick: () -> Unit,
+    color: Color,
+    image: Int
+) {
     Card(
         modifier = modifier
             .size(
@@ -161,29 +142,33 @@ fun HomeCustomButton(modifier: Modifier,
                 indication = rememberRipple(color = color),
                 interactionSource = remember { MutableInteractionSource() }
             )
-            .background(MaterialTheme.colorScheme.surface), shape = RoundedCornerShape(2.dp)
-        ,colors = CardDefaults.cardColors(
+            .background(MaterialTheme.colorScheme.surface),
+        shape = RoundedCornerShape(2.dp),
+        colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface,
         )
     ) {
-        Column(modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
-        ){
+        ) {
             Image(
-                modifier = Modifier.size(90.dp),painter = painterResource(id = image), contentDescription = null,)
+                modifier = Modifier.size(90.dp),
+                painter = painterResource(id = image),
+                contentDescription = null,
+            )
 
-            Text(text = text,
+            Text(
+                text = text,
                 color = color.copy(0.5f),
                 fontSize = 15.sp
-                )
+            )
         }
 
 
     }
 }
-
-
 
 
 @Preview(
