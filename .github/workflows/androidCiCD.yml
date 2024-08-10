@@ -106,7 +106,9 @@ jobs:
         run: ./gradlew build
 
       - name: Copy existing index.html to output directory
-        run: cp app/index.html app/build/outputs/
+        run: cp app/index.html app/build/outputs/apk/debug/
+      - name: Copy Lint Report to output directory
+        run: cp app/build/reports/lint/lint-results-debug.html app/build/outputs/apk/debug/
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
@@ -119,5 +121,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GH_PAT }}
-          publish_dir: app/build/outputs
+          publish_dir: app/build/outputs/apk/debug
           publish_branch: gh-pages
