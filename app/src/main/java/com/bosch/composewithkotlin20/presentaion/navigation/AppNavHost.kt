@@ -20,6 +20,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.GradientScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.HomeScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.LoginScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.MusicScreenContent
+import com.bosch.composewithkotlin20.presentaion.ui.screen.NewHome
 import com.bosch.composewithkotlin20.presentaion.ui.screen.OnBoardingScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ScreenB
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ScreenC
@@ -107,6 +108,9 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
         }
         composable<DropDown> {
             DropDown()
+        }
+        composable<NewHome> {
+            NewHome(navController,Modifier)
         }
         
         

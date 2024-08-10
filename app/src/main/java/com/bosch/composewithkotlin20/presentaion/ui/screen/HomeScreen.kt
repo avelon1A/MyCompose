@@ -29,13 +29,16 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.bosch.composewithkotlin20.R
+import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import kotlinx.serialization.Serializable
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(navController: NavController, modifier: Modifier) {
 	val buttonList = listOf(
@@ -63,93 +66,56 @@ fun HomeScreen(navController: NavController, modifier: Modifier) {
 	
 	Scaffold(
 		topBar = {
-			Box(
-				modifier = Modifier
-					.fillMaxWidth()
-					.shadow(8.dp)
-			) {
-				
-				TopAppBar(
-					title = {},
-					navigationIcon = {
-						IconButton(onClick = { }) {
-							Image(
-								painter = painterResource(id = R.drawable.__icon__hamburger_button_),
-								contentDescription = "Localized description"
-							)
-						}
-					},
-					actions = {
-						IconButton(onClick = { /* doSomething() */ }) {
-							Image(
-								painter = painterResource(id = R.drawable.__icon__me_),
-								contentDescription = "Localized description"
-							)
-						}
-						
-					},
-				)
-				
-			}
+			AppBar()
 		},
 		content = { innerPadding ->
-			ButtonGrid(buttonList, navController, innerPadding)
+			ButtonGrid(buttonList, navController, innerPadding,Modifier)
 		}
 	)
 }
 
 @Composable
-fun ButtonGrid(list: List<ButtonInfo>, navController: NavController, innerPadding: PaddingValues) {
+fun ButtonGrid(list: List<ButtonInfo>, navController: NavController, innerPadding: PaddingValues,modifier: Modifier) {
 	LazyColumn(
 		modifier = Modifier
 			.fillMaxSize()
-			.padding(innerPadding),
-		verticalArrangement = Arrangement.spacedBy(20.dp),
+			.padding(innerPadding), 
 		horizontalAlignment = Alignment.CenterHorizontally
 	) {
-		items(list.chunked(2), key = { rowButtons ->
-			rowButtons.hashCode()
-		}) { rowButtons ->
-			
-			Row(
-				modifier = Modifier.fillMaxWidth(),
-				horizontalArrangement = Arrangement.SpaceAround,
-				verticalAlignment = Alignment.CenterVertically
-			) {
-				rowButtons.forEach {
 
-					CustomButton(modifier = Modifier, text = it.title, onClick = { navController.navigate(it.route) })
-				}
+			items(list) { buttonItem ->
+				CustomButton(
+					modifier = Modifier
+						.fillMaxWidth(),
+					text = buttonItem.title,
+					onClick = { navController.navigate(buttonItem.route) }
+				)
 			}
 		}
-		
-		
-	}
-	
 }
 
 @Composable
 fun CustomButton(modifier: Modifier,text: String, onClick: () -> Unit) {
 	Box(
 		modifier = Modifier
-			.padding(10.dp)
+			.padding(5.dp)
 			.shadow(
-				elevation = 8.dp,
-				shape = RoundedCornerShape(10.dp),
+				elevation = 4.dp,
+				shape = RoundedCornerShape(5.dp),
 				clip = true
 			)
-			.clip(RoundedCornerShape(10.dp))
+			.clip(RoundedCornerShape(5.dp))
 			.background(Color.Transparent)
 	) {
 		Box(
 			modifier = Modifier
-				.requiredWidth(119.dp)
-				.requiredHeight(97.dp)
-				.clip(shape = RoundedCornerShape(10.dp))
+				.fillMaxWidth()
+				.requiredHeight(50.dp)
+				.clip(shape = RoundedCornerShape(5.dp))
 				.background(color = Color.White)
 				.border(
 					border = BorderStroke(1.dp, Color(0xFFCECECE)),
-					shape = RoundedCornerShape(10.dp)
+					shape = RoundedCornerShape(5.dp)
 				)
 				.clickable(onClick = onClick),
 			contentAlignment = Alignment.Center
@@ -161,6 +127,18 @@ fun CustomButton(modifier: Modifier,text: String, onClick: () -> Unit) {
 }
 
 data class ButtonInfo(val title: String, val route: Any)
+
+
+@Preview
+@Composable
+fun HomeScreenPreview() {
+	val fakeNavController = fakeNavController()
+	HomeScreen(navController = fakeNavController, modifier = Modifier)
+}
+@Composable
+fun fakeNavController(): NavController {
+	return rememberNavController()
+}
 
 @Serializable
 object HomeScreen
