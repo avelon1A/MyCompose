@@ -6,6 +6,7 @@ on:
 
   push:
     branches: [main]
+
 jobs:
   lint:
     runs-on: windows-latest
@@ -45,7 +46,6 @@ jobs:
         with:
           github_token: ${{ secrets.GH_PAT }}
           publish_dir: ./app/build/reports
-          # Specify the target branch (typically `gh-pages`)
           publish_branch: gh-pages
 
   test:
@@ -113,8 +113,25 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
+      - name: Generate index.html
+        run: |
+          echo "<html>" > app/build/outputs/apk/debug/index.html
+          echo "<body>" >> app/build/outputs/apk/debug/index.html
+          echo "<h1>Download APK</h1>" >> app/build/outputs/apk/debug/index.html
+          echo "<a href='app-debug.apk'>Click here to download the APK</a>" >> app/build/outputs/apk/debug/index.html
+          echo "</body>" >> app/build/outputs/apk/debug/index.html
+          echo "</html>" >> app/build/outputs/apk/debug/index.html
+
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
         with:
           name: compose2.apk
           path: app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Deploy APK and index.html to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          publish_dir: app/build/outputs/apk/debug
+          publish_branch: gh-pages
