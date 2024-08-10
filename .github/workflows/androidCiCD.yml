@@ -40,14 +40,6 @@ jobs:
           name: lint-report
           path: app/build/reports/lint-results-debug.html
 
-      - name: Deploy Lint Report to GitHub Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v3.9.3
-        with:
-          github_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./app/build/reports
-          publish_branch: gh-pages
-
   test:
     runs-on: windows-latest
     needs: lint
@@ -113,14 +105,8 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Generate index.html
-        run: |
-          echo "<html>" > app/build/outputs/apk/debug/index.html
-          echo "<body>" >> app/build/outputs/apk/debug/index.html
-          echo "<h1>Download APK</h1>" >> app/build/outputs/apk/debug/index.html
-          echo "<a href='app-debug.apk'>Click here to download the APK</a>" >> app/build/outputs/apk/debug/index.html
-          echo "</body>" >> app/build/outputs/apk/debug/index.html
-          echo "</html>" >> app/build/outputs/apk/debug/index.html
+      - name: Copy existing index.html to output directory
+        run: cp cp app/scr/index.html app/build/outputs/
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
@@ -128,10 +114,10 @@ jobs:
           name: compose2.apk
           path: app/build/outputs/apk/debug/app-debug.apk
 
-      - name: Deploy APK and index.html to GitHub Pages
+      - name: Deploy APK, Lint Report, and index.html to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GH_PAT }}
-          publish_dir: app/build/outputs/apk/debug
+          publish_dir: app/build/outputs
           publish_branch: gh-pages
