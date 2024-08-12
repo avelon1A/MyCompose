@@ -40,6 +40,9 @@ jobs:
           name: lint-report
           path: app/build/reports/lint-results-debug.html
 
+      - name: Copy existing lint to gh page
+        run: cp app/build/reports/lint-results-debug.html app/build/outputs/apk/debug/
+
   test:
     runs-on: windows-latest
     needs: lint
