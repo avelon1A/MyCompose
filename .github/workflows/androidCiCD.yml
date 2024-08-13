@@ -110,8 +110,7 @@ jobs:
 
       - name: Copy existing index.html to output directory
         run: cp app/index.html app/build/outputs/apk/debug/
-      - name: Copy Lint Report to output directory
-        run: cp app/build/reports/lint/lint-results-debug.html app/build/outputs/apk/debug/
+
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3

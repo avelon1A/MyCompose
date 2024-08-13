@@ -76,16 +76,10 @@ fun TodoScreen(viewModel: TodoViewModel) {
 		)
 		{
 			Image(
-				painter = painterResource(id = R.drawable.google_icon), contentDescription = "icon",
+				painter = painterResource(id = R.drawable.area_chart_svgrepo_com), contentDescription = "icon",
 				modifier = Modifier
 					.fillMaxSize()
-					.shadow(
-						clip = true,
-						elevation = 69.dp,
-						shape = CircleShape,
-						spotColor = Color.Gray
-					)
-			
+					.padding(10.dp)
 			)
 		}
 		

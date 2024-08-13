@@ -63,18 +63,6 @@ fun TaskItem(task: Tasks, onTaskCompleted: (Boolean) -> Unit, onClick: () -> Uni
 				start.linkTo(fileIcon.start, margin = 7.dp)
 				bottom.linkTo(fileIcon.bottom, margin = 3.dp)
 			})
-		LinearProgressIndicator(progress = { 0.5f },
-			modifier = Modifier
-				.background(shape = RoundedCornerShape(10.dp), color = Color.Transparent)
-				.constrainAs(progressbar) {
-					start.linkTo(fileIcon.start)
-					end.linkTo(fileIcon.end)
-					bottom.linkTo(fileIcon.bottom)
-					width = Dimension.fillToConstraints
-					height = Dimension.value(2.dp)
-					
-				}
-		
-		)
+
 	}
 }
