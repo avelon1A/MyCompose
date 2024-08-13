@@ -33,6 +33,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import com.bosch.composewithkotlin20.presentaion.ui.todo.Tasks
+import com.bosch.composewithkotlin20.presentaion.ui.todo.data.local.database.TaskEntity
 
 @Composable
 fun ViewTask(

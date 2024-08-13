@@ -17,7 +17,6 @@ import com.bosch.composewithkotlin20.domain.manger.LocalUserManager
 import com.bosch.composewithkotlin20.domain.usecases.AppEntryUseCase
 import com.bosch.composewithkotlin20.domain.usecases.GetAppEntry
 import com.bosch.composewithkotlin20.domain.usecases.SaveAppEntry
-import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.LoginViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.MainViewModel
@@ -55,7 +54,6 @@ val appModule = module {
 	viewModel { MainViewModel(get()) }
 	
 	viewModel { LoginViewModel(get()) }
-	viewModel { TodoViewModel() }
 	viewModel { (savedStateHandle: SavedStateHandle) ->
 		AudioViewModel(
 			get(),

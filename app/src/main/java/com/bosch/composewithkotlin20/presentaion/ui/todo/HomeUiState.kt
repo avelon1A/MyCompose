@@ -1,5 +1,7 @@
 package com.bosch.composewithkotlin20.presentaion.ui.todo
 
+import com.bosch.composewithkotlin20.presentaion.ui.todo.data.local.database.TaskEntity
+
 data class HomeUiState(
 	val loading: Boolean = false,
 	val showDialog: Boolean = false,
@@ -11,14 +13,14 @@ data class HomeUiState(
 	val errorMessage: String = ""
 )
 
-sealed interface  TodoUIEvent {
+sealed interface TodoUIEvent {
 	data object ToggleDialog : TodoUIEvent
 	data class AddTask(val task: Tasks) : TodoUIEvent
-	data class CompletedTask(val taskIndex: Int) : TodoUIEvent
+	data class CompletedTask(val taskId: Int) : TodoUIEvent
 	data class OpenTaskDialog(val task: Tasks) : TodoUIEvent
 	data object CloseTaskDialog : TodoUIEvent
-	
 }
+
 
 data class Tasks(
 	val taskId: Long,
@@ -26,4 +28,13 @@ data class Tasks(
 	val taskDetails: String,
 	val taskEndDate: String,
 	val taskFiles: List<String> = emptyList()
-)
+) {
+	val toEntity: TaskEntity
+		get() = TaskEntity(
+			taskId = this.taskId,
+			taskName = this.taskName,
+			taskDetails = this.taskDetails,
+			taskEndDate = this.taskEndDate,
+			taskFiles = this.taskFiles.joinToString(",")
+		)
+}

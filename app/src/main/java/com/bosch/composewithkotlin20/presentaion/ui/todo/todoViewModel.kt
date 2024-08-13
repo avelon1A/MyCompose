@@ -1,17 +1,27 @@
-package com.bosch.composewithkotlin20.presentaion.ui.todo
-
 import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import androidx.lifecycle.viewModelScope
+import com.bosch.composewithkotlin20.presentaion.ui.todo.HomeUiState
+import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoUIEvent
+import com.bosch.composewithkotlin20.presentaion.ui.todo.domain.usecase.TaskUseCases
+import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
 
-class TodoViewModel  : ViewModel() {
-	
+class TodoViewModel(private val taskUseCases: TaskUseCases) : ViewModel() {
+
 	private val _todoUiState = MutableStateFlow(HomeUiState())
 	val todoUiState: StateFlow<HomeUiState> = _todoUiState.asStateFlow()
 
+	init {
+		viewModelScope.launch {
+			taskUseCases.getAllTasks().collect { taskEntities ->
+				val tasks = taskEntities.map { it.toDomain() }
+				_todoUiState.value = _todoUiState.value.copy(tasksList = tasks)
+			}
+		}
+	}
+
 	fun todoUiEvent(event: TodoUIEvent) {
-		when(event){
+		when (event) {
 			is TodoUIEvent.AddTask -> addTask(event)
 			TodoUIEvent.CloseTaskDialog -> closeTaskDialog()
 			is TodoUIEvent.CompletedTask -> completeTask(event)
@@ -19,61 +29,38 @@ class TodoViewModel  : ViewModel() {
 			TodoUIEvent.ToggleDialog -> toggleDialog()
 		}
 	}
-	
+
 	private fun closeTaskDialog() {
 		_todoUiState.value = _todoUiState.value.copy(
 			showDialog = false,
 			openTaskDialog = false
 		)
 	}
-	
+
 	private fun toggleDialog() {
 		_todoUiState.value = _todoUiState.value.copy(
 			showDialog = !_todoUiState.value.showDialog
-		
 		)
 	}
-	
+
 	private fun openTaskDialog(event: TodoUIEvent.OpenTaskDialog) {
-		val taskItem = event.task
 		_todoUiState.value = _todoUiState.value.copy(
 			openTaskDialog = true,
-			selectedTask = taskItem
-			
+			selectedTask = event.task
 		)
-		
+	}
 
-		
-	}
-	
 	private fun completeTask(event: TodoUIEvent.CompletedTask) {
-		val taskItem = event.taskIndex
-		val taskList = _todoUiState.value.tasksList.toMutableList()
-		val completedTaskList = _todoUiState.value.completedTasks.toMutableList()
-		
-		
-		val task = taskList[taskItem]
-		completedTaskList.add(task)
-		taskList.removeAt(taskItem)
-		_todoUiState.value = _todoUiState.value.copy(
-			tasksList =taskList,
-			completedTasks = completedTaskList
-		)
-		
-	
+		val taskId = event.taskId
+		viewModelScope.launch {
+			taskUseCases.completeTask(taskId.toLong())
+		}
 	}
-	
+
 	private fun addTask(event: TodoUIEvent.AddTask) {
 		val task = event.task
-		val taskList = _todoUiState.value.tasksList.toMutableList()
-		
-		taskList.add(task)
-		_todoUiState.value = _todoUiState.value.copy(
-			tasksList =taskList,
-
-		)
-		
+		viewModelScope.launch {
+			taskUseCases.addTask(task.toEntity)
+		}
 	}
-	
 }
-

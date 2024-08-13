@@ -138,7 +138,7 @@ dependencies {
     testImplementation (libs.mockito.kotlin)
     testImplementation (libs.androidx.core.testing)
     implementation (libs.androidx.work.runtime)
-    
+    ksp("androidx.room:room-compiler:2.5.1")
 }
 
 
