@@ -105,7 +105,7 @@ jobs:
         run: ./gradlew lint
 
       - name: Copy Lint Report to Output Directory
-        run: cp app/build/reports/lint-results-debug.html app/build/outputs/apk/debug/lint-results.html
+        run: cp app/build/reports/lint-results-debug.html app/build/outputs/apk/debug/
 
       - name: Build with Gradle
         run: ./gradlew build
