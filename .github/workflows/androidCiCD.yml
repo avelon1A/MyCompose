@@ -101,6 +101,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle
 
+      - name: Run Lint
+        run: ./gradlew lint
+
+      - name: Copy Lint Report to Output Directory
+        run: cp app/build/reports/lint-results-debug.html app/build/outputs/apk/debug/lint-results.html
+
       - name: Build with Gradle
         run: ./gradlew build
 
@@ -114,7 +120,7 @@ jobs:
           name: compose2.apk
           path: app/build/outputs/apk/debug/app-debug.apk
 
-      - name: Deploy APK, Lint Report, and index.html to GitHub Pages
+      - name: Deploy APK and Lint Report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
