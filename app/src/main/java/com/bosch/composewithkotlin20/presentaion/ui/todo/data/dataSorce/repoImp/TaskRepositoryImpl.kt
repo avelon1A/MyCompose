@@ -23,4 +23,8 @@ class TaskRepositoryImpl(private val taskDao: TaskDao) : TaskRepository {
     override suspend fun deleteTask(taskId: Long) {
         taskDao.deleteTask(taskId)
     }
+
+    override suspend fun updateTaskCompletedStatus(id: Long, isCompleted: Boolean) {
+        taskDao.updateTaskCompletedStatus(id, isCompleted)
+    }
 }

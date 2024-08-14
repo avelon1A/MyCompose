@@ -10,7 +10,8 @@ data class TaskEntity(
     val taskName: String,
     val taskDetails: String,
     val taskEndDate: String,
-    val taskFiles: String
+    val taskFiles: String,
+    val completed: Boolean = false
 ) {
     fun toDomain(): Tasks {
         return Tasks(
@@ -18,7 +19,8 @@ data class TaskEntity(
             taskName = this.taskName,
             taskDetails = this.taskDetails,
             taskEndDate = this.taskEndDate,
-            taskFiles = this.taskFiles.split(",")
+            taskFiles = this.taskFiles.split(","),
+            completed = this.completed
         )
     }
 }

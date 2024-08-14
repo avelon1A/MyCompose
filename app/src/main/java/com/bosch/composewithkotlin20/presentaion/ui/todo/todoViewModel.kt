@@ -3,7 +3,9 @@ import androidx.lifecycle.viewModelScope
 import com.bosch.composewithkotlin20.presentaion.ui.todo.HomeUiState
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoUIEvent
 import com.bosch.composewithkotlin20.presentaion.ui.todo.domain.usecase.TaskUseCases
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class TodoViewModel(private val taskUseCases: TaskUseCases) : ViewModel() {
@@ -51,11 +53,22 @@ class TodoViewModel(private val taskUseCases: TaskUseCases) : ViewModel() {
 	}
 
 	private fun completeTask(event: TodoUIEvent.CompletedTask) {
-		val taskId = event.taskId
 		viewModelScope.launch {
-			taskUseCases.completeTask(taskId.toLong())
+
+			taskUseCases.updateTaskCompletedStatus(event.taskId.toLong() + 1, true)
+
+			_todoUiState.value = _todoUiState.value.copy(
+				tasksList = _todoUiState.value.tasksList.map { task ->
+					if (task.taskId == event.taskId.toLong()) {
+						task.copy(completed = true)
+					} else {
+						task
+					}
+				}
+			)
 		}
 	}
+
 
 	private fun addTask(event: TodoUIEvent.AddTask) {
 		val task = event.task

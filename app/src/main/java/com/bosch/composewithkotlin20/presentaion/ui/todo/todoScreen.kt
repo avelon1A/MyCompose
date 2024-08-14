@@ -99,8 +99,9 @@ fun TodoScreen(viewModel: TodoViewModel) {
 				bottom.linkTo(CompletedTaskText.top)
 				height = Dimension.fillToConstraints
 			}) {
-			items(uiState.tasksList.size) { index ->
-				TaskItem(task = uiState.tasksList[index], onTaskCompleted = { checked ->
+			val uncompletedTasks = uiState.tasksList.filter { !it.completed }
+			items(uncompletedTasks.size) { index ->
+				TaskItem(task = uncompletedTasks[index], onTaskCompleted = { checked ->
 					if (checked) {
 						viewModel.todoUiEvent(event = TodoUIEvent.CompletedTask(index))
 					}

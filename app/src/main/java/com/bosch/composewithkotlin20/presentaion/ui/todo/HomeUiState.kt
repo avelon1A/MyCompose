@@ -27,7 +27,8 @@ data class Tasks(
 	val taskName: String,
 	val taskDetails: String,
 	val taskEndDate: String,
-	val taskFiles: List<String> = emptyList()
+	val taskFiles: List<String> = emptyList(),
+	val completed: Boolean = false
 ) {
 	val toEntity: TaskEntity
 		get() = TaskEntity(
@@ -35,6 +36,7 @@ data class Tasks(
 			taskName = this.taskName,
 			taskDetails = this.taskDetails,
 			taskEndDate = this.taskEndDate,
-			taskFiles = this.taskFiles.joinToString(",")
+			taskFiles = this.taskFiles.joinToString(","),
+			completed = this.completed
 		)
 }

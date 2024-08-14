@@ -22,4 +22,8 @@ class TaskUseCasesImpl(private val taskRepository: TaskRepository) : TaskUseCase
     override suspend fun deleteTask(taskId: Long) {
         taskRepository.deleteTask(taskId)
     }
+
+    override suspend fun updateTaskCompletedStatus(id: Long, isCompleted: Boolean) {
+        taskRepository.updateTaskCompletedStatus(id, isCompleted)
+    }
 }

@@ -3,9 +3,8 @@ name: AndroidBuild
 on:
   pull_request:
     branches: [ main ]
-
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   lint:
@@ -39,9 +38,6 @@ jobs:
         with:
           name: lint-report
           path: app/build/reports/lint-results-debug.html
-
-      - name: Copy existing lint to gh page
-        run: cp app/build/reports/lint-results-debug.html app/build/outputs/apk/debug/
 
   test:
     runs-on: windows-latest
@@ -77,7 +73,7 @@ jobs:
         uses: codecov/codecov-action@v4.0.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: build/reports/kover/report.xml
+          files: app/build/reports/kover/report.xml
           flags: unittests
           name: codecov-coverage
 
