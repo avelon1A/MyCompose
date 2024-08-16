@@ -9,7 +9,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -23,12 +22,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -42,9 +38,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.bosch.composewithkotlin20.R
 import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
+import com.bosch.composewithkotlin20.presentaion.ui.screen.naviagtions.NavigationHome
 import kotlinx.serialization.Serializable
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NewHome(navController: NavController, modifier: Modifier) {
     val buttonList = listOf(
@@ -52,7 +48,7 @@ fun NewHome(navController: NavController, modifier: Modifier) {
         MainScreenButtons("Apps", ScreenC, Color.Blue, R.drawable.app_store_svgrepo_com),
         MainScreenButtons(
             "Animation",
-            ThirdScreen,
+            NavigationHome,
             Color.Magenta,
             R.drawable.animation_gif_image_svgrepo_com
         ),
@@ -60,14 +56,11 @@ fun NewHome(navController: NavController, modifier: Modifier) {
 
         )
 
-    Scaffold(
-        topBar = {
-            AppBar()
-        },
-        content = { innerPadding ->
-            HomeButton(buttonList, navController, innerPadding, Modifier)
-        }
-    )
+    Scaffold(topBar = {
+        AppBar(R.drawable.__icon__hamburger_button_, navController)
+    }, content = { innerPadding ->
+        HomeButton(buttonList, navController, innerPadding, Modifier)
+    })
 }
 
 data class MainScreenButtons(val title: String, val route: Any, val color: Color, val image: Int)
@@ -83,7 +76,8 @@ fun HomeButton(
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(innerPadding), verticalArrangement = Arrangement.Center,
+            .padding(innerPadding),
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         items(buttonList.chunked(2), key = { rowButtons ->
@@ -115,16 +109,12 @@ fun HomeButton(
 
 @Composable
 fun HomeCustomButton(
-    modifier: Modifier,
-    text: String, onClick: () -> Unit,
-    color: Color,
-    image: Int
+    modifier: Modifier, text: String, onClick: () -> Unit, color: Color, image: Int
 ) {
     Card(
         modifier = modifier
             .size(
-                height = 200.dp,
-                width = 200.dp
+                height = 200.dp, width = 200.dp
             )
             .padding(16.dp)
             .border(
@@ -137,11 +127,9 @@ fun HomeCustomButton(
                 ambientColor = color,
                 spotColor = color
             )
-            .clickable(
-                onClick = onClick,
+            .clickable(onClick = onClick,
                 indication = rememberRipple(color = color),
-                interactionSource = remember { MutableInteractionSource() }
-            )
+                interactionSource = remember { MutableInteractionSource() })
             .background(MaterialTheme.colorScheme.surface),
         shape = RoundedCornerShape(2.dp),
         colors = CardDefaults.cardColors(
@@ -160,9 +148,7 @@ fun HomeCustomButton(
             )
 
             Text(
-                text = text,
-                color = color.copy(0.5f),
-                fontSize = 15.sp
+                text = text, color = color.copy(0.5f), fontSize = 15.sp
             )
         }
 
@@ -172,9 +158,7 @@ fun HomeCustomButton(
 
 
 @Preview(
-    name = "Dark Mode",
-    showBackground = true,
-    uiMode = UI_MODE_NIGHT_YES
+    name = "Dark Mode", showBackground = true, uiMode = UI_MODE_NIGHT_YES
 )
 @Composable
 fun DarkModeButton() {

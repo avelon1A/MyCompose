@@ -54,7 +54,7 @@ class JetAudioNotificationManager(
 		val notification = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
 			.setCategory(NotificationCompat.CATEGORY_SERVICE)
 			.setContentIntent(pendingIntent)
-			.setSmallIcon(R.drawable.google_icon)
+			.setSmallIcon(R.drawable.robot_android_svgrepo_com)
 			.build()
 		
 		mediaSessionService.startForeground(NOTIFICATION_ID, notification)
@@ -73,7 +73,7 @@ class JetAudioNotificationManager(
 					pendingIntent = mediaSession.sessionActivity
 				)
 			)
-			.setSmallIconResourceId(R.drawable.google_icon)
+			.setSmallIconResourceId(R.drawable.robot_android_svgrepo_com)
 			.build()
 			.also {
 				it.setMediaSessionToken(mediaSession.sessionCompatToken)

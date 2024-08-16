@@ -21,9 +21,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/robot_android_svgrepo_com"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+            android:roundIcon="@drawable/robot_android_svgrepo_com"
         android:supportsRtl="true"
         android:theme="@style/New.Starting.Theme"
         tools:targetApi="31">

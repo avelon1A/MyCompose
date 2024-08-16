@@ -35,7 +35,6 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.bosch.composewithkotlin20.R
 import com.bosch.composewithkotlin20.data.model.response.LoginResponse
@@ -53,9 +52,10 @@ fun LoginScreen(viewModel: LoginViewModel = koinViewModel()) {
 	val uiColor = if (isSystemInDarkTheme()) Color.White else Color.Black
 	
 	Surface() {
-		Column(modifier = Modifier.fillMaxSize()
-			.pointerInput(Unit){
-				detectTapGestures(onTap = {focusManager.clearFocus()})
+		Column(modifier = Modifier
+			.fillMaxSize()
+			.pointerInput(Unit) {
+				detectTapGestures(onTap = { focusManager.clearFocus() })
 			}
 		) {
 			TopSection()
@@ -98,7 +98,10 @@ fun LoginScreen(viewModel: LoginViewModel = koinViewModel()) {
 						}
 						
 						is ApiState.Error -> {
-							Text("${(loginState as ApiState.Error).message}")
+							Text(
+								"${(loginState as ApiState.Error).message}",
+								color = Color.Red
+							)
 						}
 						
 						is ApiState.Initial -> {

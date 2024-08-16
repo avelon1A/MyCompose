@@ -1,11 +1,10 @@
-package com.bosch.composewithkotlin20.presentaion.ui.todo.data.dataSorce.dataSorceImp
+package com.bosch.composewithkotlin20.presentaion.ui.todo.data.local.database
 
+import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import android.content.Context
 import com.bosch.composewithkotlin20.presentaion.ui.todo.data.local.dao.TaskDao
-import com.bosch.composewithkotlin20.presentaion.ui.todo.data.local.database.TaskEntity
 
 @Database(entities = [TaskEntity::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {

@@ -1,7 +1,8 @@
 package com.bosch.composewithkotlin20.presentaion.navigation
 
 
-import TodoViewModel
+import AnimatedChildren
+import AnimatedVisibilityExample
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -31,7 +32,11 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.TextScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.TextSelectable
 import com.bosch.composewithkotlin20.presentaion.ui.screen.Textfield
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ThirdScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.naviagtions.AnimatedContentScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.naviagtions.LottieAnimationScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.naviagtions.NavigationHome
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
+import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.OnBoardingViewModel
 import org.koin.androidx.compose.koinViewModel
@@ -112,7 +117,21 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
         composable<NewHome> {
             NewHome(navController,Modifier)
         }
-        
+        composable<NavigationHome> {
+            NavigationHome(navController)
+        }
+        composable<LottieAnimationScreen> {
+            LottieAnimationScreen()
+        }
+        composable<AnimatedVisibilityExample> {
+            AnimatedVisibilityExample()
+        }
+        composable<AnimatedChildren> {
+            AnimatedChildren()
+        }
+        composable<AnimatedContentScreen> {
+            AnimatedContentScreen()
+        }
         
     }
     

@@ -1,6 +1,5 @@
 package com.bosch.composewithkotlin20.presentaion.ui.todo
 
-import TodoViewModel
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -44,7 +43,7 @@ fun TodoScreen(viewModel: TodoViewModel) {
 	ConstraintLayout(
 		modifier = Modifier
 			.fillMaxSize()
-			.background(Color.White)
+			.background(MaterialTheme.colorScheme.surface)
 	) {
 		val (toolbar, logoBox, myTaskText, myTaskLazyColumn, CompletedTaskText, CompletedTaskLazyColumn, addFab) = createRefs()
 		
@@ -67,8 +66,8 @@ fun TodoScreen(viewModel: TodoViewModel) {
 			)
 		}
 		Box(modifier = Modifier
-			.height(130.dp)
-			.width(130.dp)
+			.height(110.dp)
+			.width(110.dp)
 			.padding(top = 15.dp)
 			.background(Color.Transparent)
 			.constrainAs(logoBox) {
@@ -88,7 +87,7 @@ fun TodoScreen(viewModel: TodoViewModel) {
 			.padding(horizontal = 20.dp)
 			.constrainAs(myTaskText) {
 				top.linkTo(logoBox.bottom)
-			}
+			}, color = MaterialTheme.colorScheme.scrim
 		)
 		LazyColumn(modifier = Modifier
 			.fillMaxSize()
@@ -106,7 +105,7 @@ fun TodoScreen(viewModel: TodoViewModel) {
 						viewModel.todoUiEvent(event = TodoUIEvent.CompletedTask(index))
 					}
 				}, onClick = {
-					viewModel.todoUiEvent(event = TodoUIEvent.OpenTaskDialog(uiState.tasksList[index]))
+					viewModel.todoUiEvent(event = TodoUIEvent.OpenTaskDialog(uncompletedTasks[index]))
 				}
 				)
 				
@@ -120,7 +119,7 @@ fun TodoScreen(viewModel: TodoViewModel) {
 			.constrainAs(CompletedTaskText) {
 				top.linkTo(myTaskLazyColumn.bottom)
 				bottom.linkTo(CompletedTaskLazyColumn.top)
-			}
+			}, color = MaterialTheme.colorScheme.scrim
 		)
 		LazyColumn(modifier = Modifier
 			.fillMaxSize()
@@ -131,8 +130,9 @@ fun TodoScreen(viewModel: TodoViewModel) {
 				bottom.linkTo(parent.bottom)
 				height = Dimension.fillToConstraints
 			}) {
-			items(uiState.completedTasks.size) { index ->
-				TaskItemDone(task = uiState.completedTasks[index])
+			val completedTasks = uiState.tasksList.filter { it.completed }
+			items(completedTasks.size) { index ->
+				TaskItemDone(task = completedTasks[index])
 			}
 			
 		}
@@ -194,15 +194,15 @@ fun TodoScreen(viewModel: TodoViewModel) {
 
 @Serializable
 object TodoScreen
-	
-	
-	@Preview
+
+
+@Preview
 	@Composable
 	fun TodoScreenPreview() {
 
 	}
-	
-	@Preview
+
+@Preview
 	@Composable
 	fun TaskItemPreview() {
 

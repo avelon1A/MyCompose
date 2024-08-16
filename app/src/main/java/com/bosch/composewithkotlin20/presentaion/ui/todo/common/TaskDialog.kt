@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Checkbox
-import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -20,7 +19,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
-import androidx.constraintlayout.compose.Dimension
 import com.bosch.composewithkotlin20.R
 import com.bosch.composewithkotlin20.presentaion.ui.todo.Tasks
 
@@ -31,7 +29,7 @@ fun TaskItemDone(task: Tasks) {
 		modifier = Modifier
 			.fillMaxWidth()
 			.padding(10.dp)
-			.background(shape = RoundedCornerShape(10.dp), color = Color.Gray)
+			.background(shape = RoundedCornerShape(10.dp), color = Color(0xFFFF4040))
 			.padding(5.dp)
 			.clickable {}
 	) {
@@ -63,18 +61,5 @@ fun TaskItemDone(task: Tasks) {
 				start.linkTo(fileIcon.start, margin = 7.dp)
 				bottom.linkTo(fileIcon.bottom, margin = 3.dp)
 			})
-		LinearProgressIndicator(progress = { 0.5f },
-			modifier = Modifier
-				.background(shape = RoundedCornerShape(10.dp), color = Color.Transparent)
-				.constrainAs(progressbar) {
-					start.linkTo(fileIcon.start)
-					end.linkTo(fileIcon.end)
-					bottom.linkTo(fileIcon.bottom)
-					width = Dimension.fillToConstraints
-					height = Dimension.value(2.dp)
-					
-				}
-		
-		)
 	}
 }
