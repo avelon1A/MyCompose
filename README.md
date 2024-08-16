@@ -2,7 +2,7 @@
 
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.0.0-blue.svg)
 [![codecov](https://codecov.io/gh/avelon1A/compose2.0/graph/badge.svg?token=GMHDKGGFHC)](https://app.codecov.io/gh/avelon1A/MyCompose)
-[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen.svg)](https://github.com/avelon1A/compose2.0/actions/runs/10201979980/artifacts/1765678811)
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen.svg)](https://avelon1a.github.io/MyCompose/app-debug.apk)
 
 
 ## Overview
