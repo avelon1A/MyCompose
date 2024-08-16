@@ -1,4 +1,4 @@
-package com.bosch.composewithkotlin20.presentaion.ui.screen.naviagtions
+package com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.ExperimentalAnimationApi

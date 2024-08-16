@@ -38,7 +38,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.bosch.composewithkotlin20.R
 import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
-import com.bosch.composewithkotlin20.presentaion.ui.screen.naviagtions.NavigationHome
+import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.NavigationHome
 import kotlinx.serialization.Serializable
 
 @Composable
@@ -70,7 +70,7 @@ fun HomeButton(
     buttonList: List<MainScreenButtons>,
     navController: NavController,
     innerPadding: PaddingValues,
-    modifier: Modifier.Companion
+    modifier: Modifier
 ) {
 
     LazyColumn(

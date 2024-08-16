@@ -31,7 +31,7 @@
             android:name=".util.service.mediaPlayer.JetAudioService"
             android:exported="true"
             android:foregroundServiceType="mediaPlayback"
-            tools:ignore="ForegroundServicePermission">
+                tools:ignore="ForegroundServicePermission">
             <intent-filter>
                 <action android:name="androidx.media3.session.MediaSessionService" />
             </intent-filter>

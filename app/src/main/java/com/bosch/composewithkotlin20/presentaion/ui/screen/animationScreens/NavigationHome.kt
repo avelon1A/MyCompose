@@ -1,6 +1,5 @@
-package com.bosch.composewithkotlin20.presentaion.ui.screen.naviagtions
+package com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens
 
-import AnimatedChildren
 import AnimatedVisibilityExample
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
