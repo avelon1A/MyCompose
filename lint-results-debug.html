@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 91 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 97 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Aug 16 05:14:41 UTC 2024 by AGP (8.4.2)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Aug 16 12:04:36 UTC 2024 by AGP (8.4.2)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -187,7 +187,7 @@ document.getElementById(id).style.display = 'none';
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
-      <a class="mdl-navigation__link" href="#VectorRaster"><i class="material-icons warning-icon">warning</i>Vector Image Generation (6)</a>
+      <a class="mdl-navigation__link" href="#VectorRaster"><i class="material-icons warning-icon">warning</i>Vector Image Generation (7)</a>
       <a class="mdl-navigation__link" href="#AndroidGradlePluginVersion"><i class="material-icons warning-icon">warning</i>Obsolete Android Gradle Plugin Version (3)</a>
       <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (7)</a>
       <a class="mdl-navigation__link" href="#ModifierParameter"><i class="material-icons warning-icon">warning</i>Guidelines for Modifier parameters in a Composable function (1)</a>
@@ -195,9 +195,10 @@ document.getElementById(id).style.display = 'none';
       <a class="mdl-navigation__link" href="#ExportedService"><i class="material-icons warning-icon">warning</i>Exported service does not require permission (1)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
       <a class="mdl-navigation__link" href="#VectorPath"><i class="material-icons warning-icon">warning</i>Long vector paths (1)</a>
-      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (21)</a>
+      <a class="mdl-navigation__link" href="#AutoboxingStateCreation"><i class="material-icons warning-icon">warning</i><code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead. (2)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (25)</a>
       <a class="mdl-navigation__link" href="#IconLocation"><i class="material-icons warning-icon">warning</i>Image defined in density-independent drawable folder (13)</a>
-      <a class="mdl-navigation__link" href="#UseTomlInstead"><i class="material-icons warning-icon">warning</i>Use TOML Version Catalog Instead (1)</a>
+      <a class="mdl-navigation__link" href="#UseTomlInstead"><i class="material-icons warning-icon">warning</i>Use TOML Version Catalog Instead (2)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -216,7 +217,7 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#OldTargetApi">OldTargetApi</a>: Target SDK attribute is not targeting latest version</td></tr>
 <tr>
-<td class="countColumn">6</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">7</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#VectorRaster">VectorRaster</a>: Vector Image Generation</td></tr>
 <tr>
 <td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -246,7 +247,10 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#VectorPath">VectorPath</a>: Long vector paths</td></tr>
 <tr>
-<td class="countColumn">21</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#AutoboxingStateCreation">AutoboxingStateCreation</a>: <code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead.</td></tr>
+<tr>
+<td class="countColumn">25</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability:Icons">Usability:Icons</a>
 </td></tr>
@@ -256,7 +260,7 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Productivity">Productivity</a>
 </td></tr>
 <tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UseTomlInstead">UseTomlInstead</a>: Use TOML Version Catalog Instead</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (94)</a>
 </td></tr>
@@ -359,6 +363,14 @@ Dismiss</button>            </div>
 <span class="lineno">   3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
 <span class="lineno">   4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"12.7"</span>
 <span class="lineno">   5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"12.7"</span>>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/robot_android_svgrepo_com.xml">../../src/main/res/drawable/robot_android_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
+<span class="caretline"><span class="lineno">  2 </span>        <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">212dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>        <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"222dp"</span>
+<span class="lineno">  4 </span>        <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"512"</span>
+<span class="lineno">  5 </span>        <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"512"</span>>
 </pre>
 
 <span class="location"><a href="../../src/main/res/drawable/sun_svgrepo_com.xml">../../src/main/res/drawable/sun_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
@@ -485,8 +497,8 @@ Dismiss</button>            </div>
 <span class="lineno"> 139 </span>    testImplementation (libs.androidx.core.testing)
 <span class="lineno"> 140 </span>    implementation (libs.androidx.work.runtime)
 <span class="caretline"><span class="lineno"> 141 </span>    ksp("<span class="warning">androidx.room:room-compiler:2.5.1</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 142 </span>}
-<span class="lineno"> 143 </span>
+<span class="lineno"> 142 </span>    implementation("com.airbnb.android:lottie-compose:6.5.0")
+<span class="lineno"> 143 </span>}
 </pre>
 
 <span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:33</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-beta07</span><br /><pre class="errorlines">
@@ -585,14 +597,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/NewHome.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/NewHome.kt</a>:80</span>: <span class="message">Modifier parameter should have a type of Modifier</span><br /><pre class="errorlines">
-<span class="lineno">  77 </span>    buttonList: List&lt;MainScreenButtons>,
-<span class="lineno">  78 </span>    navController: NavController,
-<span class="lineno">  79 </span>    innerPadding: PaddingValues,
-<span class="caretline"><span class="lineno">  80 </span>    <span class="warning">modifier</span>: Modifier.Companion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  81 </span>) {
-<span class="lineno">  82 </span>
-<span class="lineno">  83 </span>    LazyColumn(
+<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/NewHome.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/NewHome.kt</a>:73</span>: <span class="message">Modifier parameter should have a type of Modifier</span><br /><pre class="errorlines">
+<span class="lineno">  70 </span>    buttonList: List&lt;MainScreenButtons>,
+<span class="lineno">  71 </span>    navController: NavController,
+<span class="lineno">  72 </span>    innerPadding: PaddingValues,
+<span class="caretline"><span class="lineno">  73 </span>    <span class="warning">modifier</span>: Modifier.Companion&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  74 </span>) {
+<span class="lineno">  75 </span>
+<span class="lineno">  76 </span>    LazyColumn(
 </pre>
 
 </div>
@@ -1163,6 +1175,66 @@ Using long vector paths is bad for performance. There are several ways to make t
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="VectorPathCardLink" onclick="hideid('VectorPathCard');">
 Dismiss</button>            </div>
             </div>
+          </section><a name="AutoboxingStateCreation"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="AutoboxingStateCreationCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">State&lt;T> will autobox values assigned to this state. Use a specialized state type instead.</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/naviagtions/AnimatedContent.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/naviagtions/AnimatedContent.kt</a>:37</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno"> 34 </span><span class="annotation">@Composable</span>
+<span class="lineno"> 35 </span>
+<span class="lineno"> 36 </span><span class="keyword">fun</span> AnimatedContentScreen() {
+<span class="caretline"><span class="lineno"> 37 </span>    <span class="keyword">var</span> count by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 38 </span>    <span class="keyword">var</span> count1 by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="lineno"> 39 </span>
+<span class="lineno"> 40 </span>    Column(
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/naviagtions/AnimatedContent.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/naviagtions/AnimatedContent.kt</a>:38</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno"> 35 </span>
+<span class="lineno"> 36 </span><span class="keyword">fun</span> AnimatedContentScreen() {
+<span class="lineno"> 37 </span>    <span class="keyword">var</span> count by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="caretline"><span class="lineno"> 38 </span>    <span class="keyword">var</span> count1 by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 39 </span>
+<span class="lineno"> 40 </span>    Column(
+<span class="lineno"> 41 </span>        modifier = Modifier.fillMaxSize(),
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationAutoboxingStateCreation" style="display: none;">
+Calling <code>mutableStateOf&lt;T>()</code> when <code>T</code> is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for <code>Int</code>, <code>Long</code>, <code>Float</code>, and <code>Double</code> when the state does not need to track null values and does not override the default <code>SnapshotMutationPolicy</code>. See <code>mutableIntStateOf()</code>, <code>mutableLongStateOf()</code>, <code>mutableFloatStateOf()</code>, and <code>mutableDoubleStateOf()</code> for more information.<br/>To suppress this error, use the issue id "AutoboxingStateCreation" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="vendor">
+Vendor: Jetpack Compose<br/>
+Identifier: androidx.compose.runtime<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">AutoboxingStateCreation</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Performance</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Information</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 3/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationAutoboxingStateCreationLink" onclick="reveal('explanationAutoboxingStateCreation');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="AutoboxingStateCreationCardLink" onclick="hideid('AutoboxingStateCreationCard');">
+Dismiss</button>            </div>
+            </div>
           </section><a name="UnusedResources"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="UnusedResourcesCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
@@ -1206,7 +1278,7 @@ Dismiss</button>            </div>
 <span class="lineno">  7 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"teal_700"</span>>#FF018786<span class="tag">&lt;/color></span>
 </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 16 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 20 More Occurrences...</button>
 <div id="UnusedResourcesDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:5</span>: <span class="message">The resource <code>R.color.purple_700</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  2 </span><span class="tag">&lt;resources></span>
@@ -1254,6 +1326,23 @@ Dismiss</button>            </div>
 
 <span class="location"><a href="../../src/main/res/drawable/firstjt.png">../../src/main/res/drawable/firstjt.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/firstjt.png" /><span class="message">The resource <code>R.drawable.firstjt</code> appears to be unused</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/googleicon.png">../../src/main/res/drawable/googleicon.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/googleicon.png" /><span class="message">The resource <code>R.drawable.googleicon</code> appears to be unused</span><br clear="right"/>
+<span class="location"><a href="../../src/main/res/mipmap-hdpi/ic_launcher.webp">../../src/main/res/mipmap-hdpi/ic_launcher.webp</a></span>: <img class="embedimage" align="right" src="../../src/main/res/mipmap-hdpi/ic_launcher.webp" /><span class="message">The resource <code>R.mipmap.ic_launcher</code> appears to be unused</span><br clear="right"/>
+<span class="location"><a href="../../src/main/res/drawable/ic_launcher_background.xml">../../src/main/res/drawable/ic_launcher_background.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.ic_launcher_background</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">   1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno">   2 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">   3 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"108dp"</span>
+<span class="lineno">   4 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"108dp"</span>
+<span class="lineno">   5 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"108"</span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/ic_launcher_foreground.xml">../../src/main/res/drawable/ic_launcher_foreground.xml</a>:1</span>: <span class="message">The resource <code>R.drawable.ic_launcher_foreground</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="caretline"><span class="lineno">  1 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  2 </span>    <span class="prefix">xmlns:</span><span class="attribute">aapt</span>=<span class="value">"http://schemas.android.com/aapt"</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"108dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"108dp"</span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/mipmap-hdpi/ic_launcher_round.webp">../../src/main/res/mipmap-hdpi/ic_launcher_round.webp</a></span>: <img class="embedimage" align="right" src="../../src/main/res/mipmap-hdpi/ic_launcher_round.webp" /><span class="message">The resource <code>R.mipmap.ic_launcher_round</code> appears to be unused</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/night.png">../../src/main/res/drawable/night.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/night.png" /><span class="message">The resource <code>R.drawable.night</code> appears to be unused</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/night_software_star_svgrepo_com.xml">../../src/main/res/drawable/night_software_star_svgrepo_com.xml</a>:1</span>: <span class="message">The resource <code>R.drawable.night_software_star_svgrepo_com</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="caretline"><span class="lineno">   1 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -1269,8 +1358,8 @@ Dismiss</button>            </div>
 <span class="lineno">  3 </span>
 <span class="caretline"><span class="lineno">  4 </span>    <span class="tag">&lt;style</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"App.Starting.Theme"</span></span> <span class="attribute">parent</span>=<span class="value">"Theme.SplashScreen"</span>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  5 </span>        <span class="tag">&lt;item</span><span class="attribute"> name</span>=<span class="value">"android:windowSplashScreenBackground"</span>>#4CAF50<span class="tag">&lt;/item></span>
-<span class="lineno">  6 </span>        <span class="tag">&lt;item</span><span class="attribute"> name</span>=<span class="value">"android:windowSplashScreenAnimatedIcon"</span>>@drawable/google_icon<span class="tag">&lt;/item></span>
-<span class="lineno">  7 </span>        <span class="tag">&lt;item</span><span class="attribute"> name</span>=<span class="value">"postSplashScreenTheme"</span>>@style/Theme.ComposeWithKotlin20<span class="tag">&lt;/item></span>
+<span class="lineno">  6 </span>        <span class="tag">&lt;item</span><span class="attribute"> name</span>=<span class="value">"android:windowSplashScreenAnimatedIcon"</span>>@drawable/robot_android_svgrepo_com
+<span class="lineno">  7 </span>        <span class="tag">&lt;/item></span>
 </pre>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:7</span>: <span class="message">The resource <code>R.string.notification_channel</code> appears to be unused</span><br /><pre class="errorlines">
@@ -1398,8 +1487,17 @@ Dismiss</button>            </div>
 <span class="lineno"> 139 </span>    testImplementation (libs.androidx.core.testing)
 <span class="lineno"> 140 </span>    implementation (libs.androidx.work.runtime)
 <span class="caretline"><span class="lineno"> 141 </span>    ksp("<span class="warning">androidx.room:room-compiler:2.5.1</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 142 </span>}
-<span class="lineno"> 143 </span>
+<span class="lineno"> 142 </span>    implementation("com.airbnb.android:lottie-compose:6.5.0")
+<span class="lineno"> 143 </span>}
+</pre>
+
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:142</span>: <span class="message">Use version catalog instead</span><br /><pre class="errorlines">
+<span class="lineno"> 139 </span>    testImplementation (libs.androidx.core.testing)
+<span class="lineno"> 140 </span>    implementation (libs.androidx.work.runtime)
+<span class="lineno"> 141 </span>    ksp("androidx.room:room-compiler:2.5.1")
+<span class="caretline"><span class="lineno"> 142 </span>    implementation("<span class="warning">com.airbnb.android:lottie-compose:6.5.0</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 143 </span>}
+<span class="lineno"> 144 </span>
 </pre>
 
 </div>
