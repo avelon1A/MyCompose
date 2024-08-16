@@ -101,17 +101,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle
 
-      - name: Run Lint
-        run: ./gradlew lint
-
-      - name: Copy Lint Report to Output Directory
-        run: cp app/build/reports/lint-results-debug.html app/build/outputs/apk/debug/
-
       - name: Build with Gradle
         run: ./gradlew build
 
+      - name: Run Lint
+        run: ./gradlew lint
+
       - name: Copy existing index.html to output directory
         run: cp app/index.html app/build/outputs/apk/debug/
+
+      - name: Copy Lint Report to Output Directory
+        run: cp app/build/reports/lint-results-debug.html app/build/outputs/apk/debug/
 
 
       - name: Upload Build Artifacts
