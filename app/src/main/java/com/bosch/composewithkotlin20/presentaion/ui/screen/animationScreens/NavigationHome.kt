@@ -22,7 +22,8 @@ fun NavigationHome(navController: NavController) {
         ButtonInfo("lottie ", LottieAnimationScreen),
         ButtonInfo("Animated Visibility", AnimatedVisibilityExample),
         ButtonInfo("Animate enter and exit for children", AnimatedChildren),
-        ButtonInfo("Animated ContentScreen", AnimatedContentScreen)
+        ButtonInfo("Animated ContentScreen", AnimatedContentScreen),
+        ButtonInfo("vector animation", VectorAnimationScreen)
     )
     Scaffold(
         topBar = {
