@@ -8,7 +8,7 @@ on:
 
 jobs:
   lint:
-    runs-on: windows-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout
@@ -30,6 +30,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle
 
+      - name: Set execute permissions for gradlew
+        run: chmod +x ./gradlew
+
       - name: Run Lint
         run: ./gradlew lint
 
@@ -40,7 +43,7 @@ jobs:
           path: app/build/reports/lint-results-debug.html
 
   test:
-    runs-on: windows-latest
+    runs-on: macos-latest
     needs: lint
 
     steps:
@@ -63,6 +66,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle
 
+      - name: Set execute permissions for gradlew
+        run: chmod +x ./gradlew
+
       - name: Run Tests
         run: ./gradlew test
 
@@ -78,7 +84,7 @@ jobs:
           name: codecov-coverage
 
   build:
-    runs-on: windows-latest
+    runs-on: macos-latest
     needs: test
 
     steps:
@@ -101,6 +107,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle
 
+      - name: Set execute permissions for gradlew
+        run: chmod +x ./gradlew
+
       - name: Build with Gradle
         run: ./gradlew build
 
@@ -112,7 +121,6 @@ jobs:
 
       - name: Copy Lint Report to Output Directory
         run: cp app/build/reports/lint-results-debug.html app/build/outputs/apk/debug/
-
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
