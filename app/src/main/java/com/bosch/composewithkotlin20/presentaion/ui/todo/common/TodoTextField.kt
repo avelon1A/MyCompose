@@ -1,6 +1,7 @@
 package com.bosch.composewithkotlin20.presentaion.ui.todo.common
 
 import androidx.compose.foundation.Image
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,8 +24,8 @@ fun TodoTextField(
 ) {
 	OutlinedTextField(
 		value = value, onValueChange = onValueChange,
-		label = { Text(label) },
-		placeholder = { Text(placeholder) },
+		label = { Text(text = label, color = MaterialTheme.colorScheme.scrim) },
+		placeholder = { Text(text = placeholder, color = MaterialTheme.colorScheme.scrim) },
 		modifier = modifier,
 		enabled = enabled,
 		singleLine = singleLine,

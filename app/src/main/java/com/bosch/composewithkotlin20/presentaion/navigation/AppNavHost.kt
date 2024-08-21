@@ -11,6 +11,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.toRoute
 import com.bosch.composewithkotlin20.presentaion.ui.screen.BottomNavigationBar
 import com.bosch.composewithkotlin20.presentaion.ui.screen.CameraScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.CircularIndicatorScreen
@@ -31,6 +32,8 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.TextScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.TextSelectable
 import com.bosch.composewithkotlin20.presentaion.ui.screen.Textfield
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ThirdScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.TypeSafeNavigation
+import com.bosch.composewithkotlin20.presentaion.ui.screen.TypeSafeNavigationSecond
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.AnimatedChildren
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.AnimatedContentScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.LottieAnimationScreen
@@ -53,7 +56,7 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
             .background(MaterialTheme.colorScheme.background)
     ) {
         composable<HomeScreen> {
-            HomeScreen(navController = navController, modifier = modifier)
+            HomeScreen(navController = navController)
         }
         composable<ScreenB> {
             ScreenB(navController = navController)
@@ -135,6 +138,13 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
         }
         composable<VectorAnimationScreen> {
             VectorAnimationScreen()
+        }
+        composable<TypeSafeNavigation> {
+            TypeSafeNavigation(navController)
+        }
+        composable<TypeSafeNavigationSecond> {
+            val name = it.toRoute<TypeSafeNavigationSecond>()
+            TypeSafeNavigationSecond(name)
         }
         
     }

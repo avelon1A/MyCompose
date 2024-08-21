@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -56,7 +57,9 @@ fun TaskItemDone(task: Tasks) {
 					top.linkTo(parent.top)
 					bottom.linkTo(parent.bottom)
 				})
-		Text(text = task.taskFiles.size.toString(), fontSize = 12.sp,
+		Text(
+			text = task.taskFiles.size.toString(),
+			color = MaterialTheme.colorScheme.surface, fontSize = 12.sp,
 			modifier = Modifier.constrainAs(fileCount) {
 				start.linkTo(fileIcon.start, margin = 7.dp)
 				bottom.linkTo(fileIcon.bottom, margin = 3.dp)

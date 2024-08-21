@@ -22,6 +22,7 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -33,7 +34,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import com.bosch.composewithkotlin20.presentaion.ui.todo.Tasks
-import com.bosch.composewithkotlin20.presentaion.ui.todo.data.local.database.TaskEntity
 
 @Composable
 fun ViewTask(
@@ -47,7 +47,7 @@ fun ViewTask(
 				.fillMaxSize()
 				.wrapContentHeight()
 				.background(
-					color = Color.White,
+					color = MaterialTheme.colorScheme.surface,
 					shape = RoundedCornerShape(8.dp)
 				)
 				.padding(16.dp)
@@ -55,10 +55,12 @@ fun ViewTask(
 			Text(
 				text = tasks.taskName,
 				fontWeight = FontWeight.Bold,
+				color = MaterialTheme.colorScheme.scrim
 			)
 			Text(
 				text = tasks.taskDetails,
 				fontWeight = FontWeight.Bold,
+				color = MaterialTheme.colorScheme.scrim
 			)
 			LazyColumn {
 				items(tasks.taskFiles.size) {
@@ -138,11 +140,12 @@ fun AttachmentItems(url: String) {
 			rowBg = Color.Black.copy(alpha = 0.5f)
 			iconTint = Color.White
 		}
-		Row(modifier = Modifier.fillMaxWidth()
+		Row(modifier = Modifier
+			.fillMaxWidth()
 			.wrapContentHeight()
-			.clickable{
-			expand.value = !expand.value
-		}
+			.clickable {
+				expand.value = !expand.value
+			}
 			.background(
 				color = rowBg,
 				shape = RoundedCornerShape(10.dp)
@@ -162,7 +165,9 @@ fun AttachmentItems(url: String) {
 				imageVector = Icons.Default.KeyboardArrowDown,
 				contentDescription = "Complete button",
 				tint = iconTint,
-				modifier = Modifier.height(20.dp).width(20.dp)
+				modifier = Modifier
+					.height(20.dp)
+					.width(20.dp)
 			)
 		
 		}

@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -24,43 +25,52 @@ import com.bosch.composewithkotlin20.presentaion.ui.todo.Tasks
 
 @Composable
 fun TaskItem(task: Tasks, onTaskCompleted: (Boolean) -> Unit, onClick: () -> Unit) {
-	val checkedState = remember { mutableStateOf(false) }
-	ConstraintLayout(
-		modifier = Modifier
-			.fillMaxWidth()
-			.padding(10.dp)
-			.background(shape = RoundedCornerShape(10.dp), color = Color(0xFF69F0AE))
-			.padding(5.dp)
-			.clickable { onClick() }
-	) {
-		val (checkbox, taskName, fileIcon, fileCount, progressbar) = createRefs()
-		Checkbox(checked = checkedState.value, onCheckedChange = onTaskCompleted,
-			modifier = Modifier.constrainAs(checkbox) {
-				start.linkTo(parent.start)
-				top.linkTo(parent.top)
-				bottom.linkTo(parent.bottom)
-			})
-		
-		Text(text = task.taskName, modifier = Modifier.constrainAs(taskName) {
-			start.linkTo(checkbox.end)
-			top.linkTo(parent.top)
-			bottom.linkTo(parent.bottom)
-		})
-		Image(painter = painterResource(id = R.drawable.file), contentDescription = "file icon",
-			modifier = Modifier
-				.height(23.dp)
-				.width(23.dp)
-				.padding(1.dp)
-				.constrainAs(fileIcon) {
-					end.linkTo(parent.end)
-					top.linkTo(parent.top)
-					bottom.linkTo(parent.bottom)
-				})
-		Text(text = task.taskFiles.size.toString(), fontSize = 12.sp,
-			modifier = Modifier.constrainAs(fileCount) {
-				start.linkTo(fileIcon.start, margin = 7.dp)
-				bottom.linkTo(fileIcon.bottom, margin = 3.dp)
-			})
+    val checkedState = remember { mutableStateOf(false) }
+    ConstraintLayout(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(10.dp)
+            .background(shape = RoundedCornerShape(10.dp), color = Color(0xFF69F0AE))
+            .padding(5.dp)
+            .clickable { onClick() }
+    ) {
+        val (checkbox, taskName, fileIcon, fileCount, progressbar) = createRefs()
+        Checkbox(checked = checkedState.value,
+            colors = androidx.compose.material3.CheckboxDefaults.colors(
+                checkedColor = Color.Green,
+                uncheckedColor = Color.White,
+                checkmarkColor = Color.Black
+            ),
+            onCheckedChange = onTaskCompleted,
+            modifier = Modifier.constrainAs(checkbox) {
+                start.linkTo(parent.start)
+                top.linkTo(parent.top)
+                bottom.linkTo(parent.bottom)
+            })
 
-	}
+        Text(text = task.taskName,
+            color = MaterialTheme.colorScheme.scrim,
+            modifier = Modifier.constrainAs(taskName) {
+                start.linkTo(checkbox.end)
+                top.linkTo(parent.top)
+                bottom.linkTo(parent.bottom)
+            })
+        Image(painter = painterResource(id = R.drawable.file), contentDescription = "file icon",
+            modifier = Modifier
+                .height(23.dp)
+                .width(23.dp)
+                .padding(1.dp)
+                .constrainAs(fileIcon) {
+                    end.linkTo(parent.end)
+                    top.linkTo(parent.top)
+                    bottom.linkTo(parent.bottom)
+                })
+        Text(text = task.taskFiles.size.toString(),
+            color = MaterialTheme.colorScheme.surface, fontSize = 12.sp,
+            modifier = Modifier.constrainAs(fileCount) {
+                start.linkTo(fileIcon.start, margin = 7.dp)
+                bottom.linkTo(fileIcon.bottom, margin = 3.dp)
+            })
+
+    }
 }

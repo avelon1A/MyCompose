@@ -20,6 +20,7 @@ import com.bosch.composewithkotlin20.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppBar(icon: Int, navController: NavController) {
+    val uiMode = MaterialTheme.colorScheme.onSurface
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -33,7 +34,8 @@ fun AppBar(icon: Int, navController: NavController) {
                 IconButton(onClick = { performActionBasedOnIcon(icon, navController) }) {
                     Image(
                         painter = painterResource(id = icon),
-                        contentDescription = "Localized description"
+                        contentDescription = "Localized description",
+                        colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(uiMode)
                     )
                 }
             },
@@ -41,7 +43,8 @@ fun AppBar(icon: Int, navController: NavController) {
                 IconButton(onClick = { }) {
                     Image(
                         painter = painterResource(id = R.drawable.__icon__me_),
-                        contentDescription = "Localized description"
+                        contentDescription = "Localized description",
+                        colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(uiMode)
                     )
                 }
 

@@ -31,87 +31,89 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import kotlinx.serialization.Serializable
 
 data class BottomNavigationItem(
-	val title: String,
-	val selectedIcon: ImageVector,
-	val unselectedIcon: ImageVector,
-	val hasBadge: Boolean = false,
-	val badgeCount: Int? = null,
-	val route: String
+    val title: String,
+    val selectedIcon: ImageVector,
+    val unselectedIcon: ImageVector,
+    val hasBadge: Boolean = false,
+    val badgeCount: Int? = null,
+    val route: String
 )
 
 @Composable
 fun BottomNavigationBar() {
-	
-	val items = listOf(
-		BottomNavigationItem(
-			title = "Home",
-			selectedIcon = Icons.Filled.Home,
-			unselectedIcon = Icons.Outlined.Home,
-			hasBadge = false,
-			badgeCount = null,
-			route = "home"
-		),
-		BottomNavigationItem(
-			title = "Search",
-			selectedIcon = Icons.Filled.Search,
-			unselectedIcon = Icons.Outlined.Search,
-			hasBadge = false,
-			badgeCount = 5,
-			route = "search"
-		),
-		BottomNavigationItem(
-			title = "Setting",
-			selectedIcon = Icons.Filled.Settings,
-			unselectedIcon = Icons.Outlined.Settings,
-			hasBadge = true,
-			badgeCount = null,
-			route = "setting",
-		)
-	)
-	var selected by rememberSaveable { mutableIntStateOf(0) }
-	Scaffold(
-		bottomBar = {
-			NavigationBar(containerColor = MaterialTheme.colorScheme.primary,
-				contentColor = MaterialTheme.colorScheme.secondary,){
-				items.forEachIndexed { index, item ->
-					NavigationBarItem(
-						colors = NavigationBarItemDefaults.colors(MaterialTheme.colorScheme.secondary),
-						selected = selected == index,
-						onClick = { selected = index },
-						icon = {
-							BadgedBox(badge = {
-								if (item.badgeCount != null) {
-									Badge {
-										Text(item.badgeCount.toString())
-									}
-								} else if (item.hasBadge) {
-									Badge()
-								}
-							}) {
-								Icon(
-									imageVector = if (selected == index) item.selectedIcon else item.unselectedIcon,
-									contentDescription = item.title
-								)
-							}
-						},
-						label = { Text(item.title) }
-					)
-				}
-			}
-		}
-	) {
-		Column(
-			modifier = Modifier
-				.padding(it)
-				.fillMaxSize(),
-			horizontalAlignment = Alignment.CenterHorizontally,
-			verticalArrangement = Arrangement.Center
-		) {
-			Text(text = selected.toString())
-		}
-		
-	}
-	
+
+    val items = listOf(
+        BottomNavigationItem(
+            title = "Home",
+            selectedIcon = Icons.Filled.Home,
+            unselectedIcon = Icons.Outlined.Home,
+            hasBadge = false,
+            badgeCount = null,
+            route = "home"
+        ),
+        BottomNavigationItem(
+            title = "Search",
+            selectedIcon = Icons.Filled.Search,
+            unselectedIcon = Icons.Outlined.Search,
+            hasBadge = false,
+            badgeCount = 5,
+            route = "search"
+        ),
+        BottomNavigationItem(
+            title = "Setting",
+            selectedIcon = Icons.Filled.Settings,
+            unselectedIcon = Icons.Outlined.Settings,
+            hasBadge = true,
+            badgeCount = null,
+            route = "setting",
+        )
+    )
+    var selected by rememberSaveable { mutableIntStateOf(0) }
+    Scaffold(
+        bottomBar = {
+            NavigationBar(
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = MaterialTheme.colorScheme.secondary,
+            ) {
+                items.forEachIndexed { index, item ->
+                    NavigationBarItem(
+                        colors = NavigationBarItemDefaults.colors(MaterialTheme.colorScheme.secondary),
+                        selected = selected == index,
+                        onClick = { selected = index },
+                        icon = {
+                            BadgedBox(badge = {
+                                if (item.badgeCount != null) {
+                                    Badge {
+                                        Text(item.badgeCount.toString())
+                                    }
+                                } else if (item.hasBadge) {
+                                    Badge()
+                                }
+                            }) {
+                                Icon(
+                                    imageVector = if (selected == index) item.selectedIcon else item.unselectedIcon,
+                                    contentDescription = item.title
+                                )
+                            }
+                        },
+                        label = { Text(item.title) }
+                    )
+                }
+            }
+        }
+    ) {
+        Column(
+            modifier = Modifier
+                .padding(it)
+                .fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Text(text = selected.toString())
+        }
+
+    }
+
 }
 
 @Serializable

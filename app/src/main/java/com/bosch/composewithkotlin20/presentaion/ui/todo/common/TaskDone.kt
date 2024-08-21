@@ -26,6 +26,7 @@ import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.DatePickerState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.runtime.Composable
@@ -68,20 +69,26 @@ fun AddTaskDialog(onDismiss: () -> Unit, onSave: (Tasks) -> Unit) {
 				.fillMaxWidth()
 				.wrapContentHeight()
 				.padding(16.dp)
-				.background(Color.White, shape = RoundedCornerShape(16.dp))
+				.background(
+					MaterialTheme.colorScheme.onSecondary,
+					shape = RoundedCornerShape(16.dp)
+				)
 				.padding(16.dp)
 		
 		) {
 			val (title, foreColumn) = createRefs()
-			
-			Text(text = "Add Task", modifier = Modifier
-				.fillMaxWidth()
-				.constrainAs(title) {
-					top.linkTo(parent.top)
-					start.linkTo(parent.start)
-					end.linkTo(parent.end)
-					height = Dimension.fillToConstraints
-				})
+
+			Text(
+				text = "Add Task",
+				color = MaterialTheme.colorScheme.scrim,
+				modifier = Modifier
+					.fillMaxWidth()
+					.constrainAs(title) {
+						top.linkTo(parent.top)
+						start.linkTo(parent.start)
+						end.linkTo(parent.end)
+						height = Dimension.fillToConstraints
+					})
 			Column(modifier = Modifier.constrainAs(foreColumn) {
 				top.linkTo(title.bottom, 10.dp)
 				start.linkTo(parent.start)
@@ -155,7 +162,7 @@ fun AddTaskDialog(onDismiss: () -> Unit, onSave: (Tasks) -> Unit) {
 								.background(Color.Transparent)
 								.clickable {
 									launcher.launch("image/*")
-									
+
 								},
 							border = BorderStroke(1.dp, color = Color.Black),
 							

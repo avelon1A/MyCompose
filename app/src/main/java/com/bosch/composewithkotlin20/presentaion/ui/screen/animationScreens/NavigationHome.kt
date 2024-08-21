@@ -10,8 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.bosch.composewithkotlin20.R
+import com.bosch.composewithkotlin20.data.model.data.ButtonInfo
 import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
-import com.bosch.composewithkotlin20.presentaion.ui.screen.ButtonInfo
 import com.bosch.composewithkotlin20.presentaion.ui.screen.CustomButton
 import kotlinx.serialization.Serializable
 
@@ -45,7 +45,6 @@ fun NavigationScreen(
     LazyColumn(modifier = Modifier.padding(innerPadding)) {
         items(list) { buttonItem ->
             CustomButton(
-                modifier = Modifier,
                 text = buttonItem.title,
                 onClick = { navController.navigate(buttonItem.route) })
         }
