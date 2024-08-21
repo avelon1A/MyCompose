@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 90 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 95 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Aug 20 09:25:06 UTC 2024 by AGP (8.4.2)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Wed Aug 21 13:38:48 UTC 2024 by AGP (8.4.2)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -187,15 +187,15 @@ document.getElementById(id).style.display = 'none';
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
-      <a class="mdl-navigation__link" href="#VectorRaster"><i class="material-icons warning-icon">warning</i>Vector Image Generation (7)</a>
+      <a class="mdl-navigation__link" href="#VectorRaster"><i class="material-icons warning-icon">warning</i>Vector Image Generation (9)</a>
       <a class="mdl-navigation__link" href="#AndroidGradlePluginVersion"><i class="material-icons warning-icon">warning</i>Obsolete Android Gradle Plugin Version (3)</a>
       <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (3)</a>
       <a class="mdl-navigation__link" href="#Typos"><i class="material-icons warning-icon">warning</i>Spelling error (35)</a>
       <a class="mdl-navigation__link" href="#ExportedService"><i class="material-icons warning-icon">warning</i>Exported service does not require permission (1)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
-      <a class="mdl-navigation__link" href="#VectorPath"><i class="material-icons warning-icon">warning</i>Long vector paths (1)</a>
+      <a class="mdl-navigation__link" href="#VectorPath"><i class="material-icons warning-icon">warning</i>Long vector paths (2)</a>
       <a class="mdl-navigation__link" href="#AutoboxingStateCreation"><i class="material-icons warning-icon">warning</i><code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead. (2)</a>
-      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (25)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (27)</a>
       <a class="mdl-navigation__link" href="#IconLocation"><i class="material-icons warning-icon">warning</i>Image defined in density-independent drawable folder (13)</a>
     </nav>
   </div>
@@ -215,7 +215,7 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#OldTargetApi">OldTargetApi</a>: Target SDK attribute is not targeting latest version</td></tr>
 <tr>
-<td class="countColumn">7</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">9</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#VectorRaster">VectorRaster</a>: Vector Image Generation</td></tr>
 <tr>
 <td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -239,13 +239,13 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#ObsoleteSdkInt">ObsoleteSdkInt</a>: Obsolete SDK_INT Version Check</td></tr>
 <tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#VectorPath">VectorPath</a>: Long vector paths</td></tr>
 <tr>
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#AutoboxingStateCreation">AutoboxingStateCreation</a>: <code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead.</td></tr>
 <tr>
-<td class="countColumn">25</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">27</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability:Icons">Usability:Icons</a>
 </td></tr>
@@ -363,12 +363,30 @@ Dismiss</button>            </div>
 <span class="lineno">  5 </span>        <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"512"</span>>
 </pre>
 
+<button class="mdl-button mdl-js-button mdl-button--primary" id="VectorRasterDivLink" onclick="reveal('VectorRasterDiv');" />+ 4 More Occurrences...</button>
+<div id="VectorRasterDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/drawable/sun_svgrepo_com.xml">../../src/main/res/drawable/sun_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
 <span class="caretline"><span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
 <span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"512"</span>
 <span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"512"</span>>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/task_svgrepo_com.xml">../../src/main/res/drawable/task_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
+<span class="caretline"><span class="lineno">  2 </span>        <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>        <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
+<span class="lineno">  4 </span>        <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"1024"</span>
+<span class="lineno">  5 </span>        <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"1024"</span>>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/task_svgrepo_com__1_.xml">../../src/main/res/drawable/task_svgrepo_com__1_.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
+<span class="caretline"><span class="lineno">  2 </span>        <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>        <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
+<span class="lineno">  4 </span>        <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"1024"</span>
+<span class="lineno">  5 </span>        <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"1024"</span>>
 </pre>
 
 <span class="location"><a href="../../src/main/res/drawable/text_view_svgrepo_com.xml">../../src/main/res/drawable/text_view_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
@@ -379,6 +397,7 @@ Dismiss</button>            </div>
 <span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"1024"</span>>
 </pre>
 
+</div>
 </div>
 <div class="metadata"><div class="explanation" id="explanationVectorRaster" style="display: none;">
 Vector icons require API 21 or API 24 depending on used features, but when <code>minSdkVersion</code> is less than 21 or 24 and Android Gradle plugin 1.4 or higher is used, a vector drawable placed in the <code>drawable</code> folder is automatically moved to <code>drawable-anydpi-v21</code> or <code>drawable-anydpi-v24</code> and bitmap images are generated for different screen resolutions for backwards compatibility.<br/>
@@ -1025,6 +1044,15 @@ Dismiss</button>            </div>
 <span class="lineno"> 39 </span>  <span class="tag">&lt;path</span><span class="attribute">
 </span><span class="lineno"> 40 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"M46.07,52.08a1,1 0,0 1,0.81 -1.16h0a1,1 0,0 1,1.16 0.81h0a1,1 0,0 1,-0.81 1.16h0l-0.17,0h0A1,1 0,0 1,46.07 52.08ZM42.52,52.08a1,1 0,0 1,-0.37 -1.37h0a1,1 0,0 1,1.37 -0.37h0a1,1 0,0 1,0.37 1.37h0a1,1 0,0 1,-0.87 0.5h0A1,1 0,0 1,42.52 52.08ZM39.43,48.43A1,1 0,0 1,40 47.14h0a1,1 0,0 1,1.29 0.59h0A1,1 0,0 1,40.72 49h0a1.12,1.12 0,0 1,-0.35 0.06h0A1,1 0,0 1,39.43 48.43ZM40,44.92a1,1 0,0 1,-0.6 -1.27h0A1,1 0,0 1,40.68 43h0a1,1 0,0 1,0.61 1.28h0a1,1 0,0 1,-0.94 0.66h0A1,1 0,0 1,40 44.92ZM42.09,41.33A1,1 0,0 1,42.45 40h0a1,1 0,0 1,1.37 0.36h0a1,1 0,0 1,-0.35 1.37h0a1.06,1.06 0,0 1,-0.51 0.14h0A1,1 0,0 1,42.1 41.33ZM46.81,41.07h0A1,1 0,0 1,46 39.92h0a1,1 0,0 1,1.15 -0.83h0A1,1 0,0 1,48 40.25h0a1,1 0,0 1,-1 0.83h-0.17Z"</span></pre>
 
+<span class="location"><a href="../../src/main/res/drawable/task_svgrepo_com.xml">../../src/main/res/drawable/task_svgrepo_com.xml</a>:7</span>: <span class="message">Very long vector path (944 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector.</span><br /><pre class="errorlines">
+<span class="lineno">  4 </span>      <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"1024"</span>
+<span class="lineno">  5 </span>      <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"1024"</span>>
+<span class="lineno">  6 </span>  <span class="tag">&lt;path</span><span class="attribute">
+</span><span class="caretline"><span class="lineno">  7 </span><span class="attribute">          </span><span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"</span><span class="warning"><span class="value">M861.6,240.1v-65.8c0,-36.2 -29.4,-65.6 -65.6,-65.6h-21.9c-36.2,0 -65.6,29.4 -65.6,65.6v65.6L314.7,240v-65.6c0,-36.2 -29.4,-65.6 -65.6,-65.6h-21.9c-36.2,0 -65.6,29.4 -65.6,65.6v65.8c-36.3,0.9 -65.6,30.5 -65.6,67.1v543.7c0,37.1 30.2,67.2 67.2,67.2h696.9c37.1,0 67.2,-30.2 67.2,-67.2L927.2,307.2c-0,-36.5 -29.3,-66.2 -65.6,-67.1zM752.2,174.3c0,-12.1 9.8,-21.9 21.9,-21.9h21.9c12.1,0 21.9,9.8 21.9,21.9v175c0,12.1 -9.8,21.9 -21.9,21.9h-21.9c-12.1,0 -21.9,-9.8 -21.9,-21.9L752.2,174.3zM205.3,174.3c0,-12.1 9.8,-21.9 21.9,-21.9h21.9c12.1,0 21.9,9.8 21.9,21.9v175c0,12.1 -9.8,21.9 -21.9,21.9h-21.9c-12.1,0 -21.9,-9.8 -21.9,-21.9L205.3,174.3zM883.5,850.9c0,12.9 -10.5,23.5 -23.5,23.5L163.1,874.4c-12.9,0 -23.5,-10.5 -23.5,-23.5L139.6,307.2c0,-12.4 9.7,-22.6 21.9,-23.4v65.6c0,36.2 29.4,65.6 65.6,65.6h21.9c36.2,0 65.6,-29.4 65.6,-65.6v-65.6h393.8v65.6c0,36.2 29.4,65.6 65.6,65.6h21.9c36.2,0 65.6,-29.4 65.6,-65.6v-65.6c12.2,0.8 21.9,11 21.9,23.4v543.7z</span></span><span class="value">"</span></span>
+<span class="lineno">  8 </span>          <span class="prefix">android:</span><span class="attribute">fillColor</span>=<span class="value">"#22C67F"</span> />
+<span class="lineno">  9 </span>  <span class="tag">&lt;path</span><span class="attribute">
+</span><span class="lineno"> 10 </span><span class="attribute">          </span><span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"M706.7,478.3l-48,-44.7 -182.3,195.6 -111.5,-122.6 -48.6,44.1 159.5,172.7z"</span></pre>
+
 </div>
 <div class="metadata"><div class="explanation" id="explanationVectorPath" style="display: none;">
 Using long vector paths is bad for performance. There are several ways to make the <code>pathData</code> shorter:<br/>
@@ -1125,6 +1153,12 @@ Dismiss</button>            </div>
 <div class="issue">
 <div class="warningslist">
 <span class="location"><a href="../../src/main/res/drawable/additional.png">../../src/main/res/drawable/additional.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/additional.png" /><span class="message">The resource <code>R.drawable.additional</code> appears to be unused</span><br clear="right"/>
+<span class="location"><a href="../../src/main/res/drawable/area_chart_svgrepo_com.xml">../../src/main/res/drawable/area_chart_svgrepo_com.xml</a>:1</span>: <span class="message">The resource <code>R.drawable.area_chart_svgrepo_com</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="caretline"><span class="lineno">  1 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"800dp"</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"1024"</span></pre>
+
 <span class="location"><a href="../../src/main/res/drawable/baseline_pause_24.xml">../../src/main/res/drawable/baseline_pause_24.xml</a>:1</span>: <span class="message">The resource <code>R.drawable.baseline_pause_24</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="caretline"><span class="lineno"> 1 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span> <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"24dp"</span> <span class="prefix">android:</span><span class="attribute">tint</span>=<span class="value">"#000000"</span> <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"24"</span> <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"24"</span> <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"24dp"</span>></span></span>
 <span class="lineno"> 2 </span>      
@@ -1146,6 +1180,8 @@ Dismiss</button>            </div>
 <span class="lineno">  5 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"purple_700"</span>>#FF3700B3<span class="tag">&lt;/color></span>
 <span class="lineno">  6 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"teal_200"</span>>#FF03DAC5<span class="tag">&lt;/color></span></pre>
 
+<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 22 More Occurrences...</button>
+<div id="UnusedResourcesDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:4</span>: <span class="message">The resource <code>R.color.purple_500</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
 <span class="lineno">  2 </span><span class="tag">&lt;resources></span>
@@ -1155,8 +1191,6 @@ Dismiss</button>            </div>
 <span class="lineno">  6 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"teal_200"</span>>#FF03DAC5<span class="tag">&lt;/color></span>
 <span class="lineno">  7 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"teal_700"</span>>#FF018786<span class="tag">&lt;/color></span></pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 20 More Occurrences...</button>
-<div id="UnusedResourcesDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:5</span>: <span class="message">The resource <code>R.color.purple_700</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  2 </span><span class="tag">&lt;resources></span>
 <span class="lineno">  3 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"purple_200"</span>>#FFBB86FC<span class="tag">&lt;/color></span>
@@ -1222,6 +1256,13 @@ Dismiss</button>            </div>
 <span class="lineno">   2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"800dp"</span>
 <span class="lineno">   3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
 <span class="lineno">   4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"12.7"</span></pre>
+
+<span class="location"><a href="../../src/main/res/drawable/person.xml">../../src/main/res/drawable/person.xml</a>:1</span>: <span class="message">The resource <code>R.drawable.person</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="caretline"><span class="lineno"> 1 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span> <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"24dp"</span> <span class="prefix">android:</span><span class="attribute">tint</span>=<span class="value">"#535252"</span> <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"24"</span> <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"24"</span> <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"24dp"</span>></span></span>
+<span class="lineno"> 2 </span>      
+<span class="lineno"> 3 </span>    <span class="tag">&lt;path</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">fillColor</span>=<span class="value">"@android:color/white"</span> <span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"M12,12c2.21,0 4,-1.79 4,-4s-1.79,-4 -4,-4 -4,1.79 -4,4 1.79,4 4,4zM12,14c-2.67,0 -8,1.34 -8,4v2h16v-2c0,-2.66 -5.33,-4 -8,-4z"</span>/>
+<span class="lineno"> 4 </span>    
+</pre>
 
 <span class="location"><a href="../../src/main/res/drawable/sec.jpg">../../src/main/res/drawable/sec.jpg</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/sec.jpg" /><span class="message">The resource <code>R.drawable.sec</code> appears to be unused</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/values-v31/splashScreen.xml">../../src/main/res/values-v31/splashScreen.xml</a>:4</span>: <span class="message">The resource <code>R.style.App_Starting_Theme</code> appears to be unused</span><br /><pre class="errorlines">
