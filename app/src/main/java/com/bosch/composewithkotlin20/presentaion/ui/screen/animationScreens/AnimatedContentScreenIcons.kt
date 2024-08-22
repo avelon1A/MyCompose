@@ -7,13 +7,14 @@ import androidx.compose.animation.core.keyframes
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
-import androidx.compose.animation.with
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -39,26 +40,29 @@ fun AnimatedContentScreenIcons() {
         var expanded by remember { mutableStateOf(false) }
 
         Surface(
-            color = MaterialTheme.colorScheme.primary, modifier = Modifier.clickable {
-                expanded = !expanded
-            }
+            color = MaterialTheme.colorScheme.primary, modifier = Modifier
+                .padding(30.dp)
+                .clickable {
+                    expanded = !expanded
+                }
         ) {
 
             AnimatedContent(
+                modifier = Modifier.background(MaterialTheme.colorScheme.onPrimaryContainer),
                 targetState = expanded,
                 transitionSpec = {
-                    fadeIn(animationSpec = tween(150, 150)) with
+                    fadeIn(animationSpec = tween(150, 150)) togetherWith
                             fadeOut(animationSpec = tween(150)) using
                             SizeTransform { initialSize, targetSize ->
                                 if (targetState) {
                                     keyframes {
                                         IntSize(targetSize.width, initialSize.height) at 150
-                                        durationMillis = 300
+                                        durationMillis = 200
                                     }
                                 } else {
                                     keyframes {
                                         IntSize(initialSize.width, targetSize.height) at 150
-                                        durationMillis = 300
+                                        durationMillis = 200
                                     }
                                 }
                             }

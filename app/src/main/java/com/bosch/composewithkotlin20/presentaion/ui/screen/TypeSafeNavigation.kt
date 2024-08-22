@@ -1,5 +1,6 @@
 package com.bosch.composewithkotlin20.presentaion.ui.screen
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -31,14 +32,16 @@ fun TypeSafeNavigation(navController: NavController) {
 object TypeSafeNavigation
 
 @Composable
-fun TypeSafeNavigationSecond(args: TypeSafeNavigationSecond) {
+fun TypeSafeNavigationSecond(navController: NavController, args: TypeSafeNavigationSecond) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        Text(text = args.name)
+        Text(text = args.name, modifier = Modifier.clickable {
+            navController.navigate(NewHome)
+        })
 
     }
 

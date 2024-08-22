@@ -37,6 +37,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.TypeSafeNavigationSec
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.AnimatedChildren
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.AnimatedContentScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.AnimatedContentScreenIcons
+import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.BouncingBallScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.LottieAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.NavigationHome
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.VectorAnimationScreen
@@ -57,7 +58,8 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
             .background(MaterialTheme.colorScheme.background)
     ) {
         composable<HomeScreen> {
-            HomeScreen(navController = navController)
+            val name = it.toRoute<HomeScreen>()
+            HomeScreen(navController = navController, name)
         }
         composable<ScreenB> {
             ScreenB(navController = navController)
@@ -145,10 +147,13 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
         }
         composable<TypeSafeNavigationSecond> {
             val name = it.toRoute<TypeSafeNavigationSecond>()
-            TypeSafeNavigationSecond(name)
+            TypeSafeNavigationSecond(navController, name)
         }
         composable<AnimatedContentScreenIcons> {
             AnimatedContentScreenIcons()
+        }
+        composable<BouncingBallScreen> {
+            BouncingBallScreen()
         }
         
     }
