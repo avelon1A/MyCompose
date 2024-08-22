@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 95 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 99 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Wed Aug 21 13:38:48 UTC 2024 by AGP (8.4.2)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Thu Aug 22 05:52:33 UTC 2024 by AGP (8.4.2)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -189,8 +189,8 @@ document.getElementById(id).style.display = 'none';
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
       <a class="mdl-navigation__link" href="#VectorRaster"><i class="material-icons warning-icon">warning</i>Vector Image Generation (9)</a>
       <a class="mdl-navigation__link" href="#AndroidGradlePluginVersion"><i class="material-icons warning-icon">warning</i>Obsolete Android Gradle Plugin Version (3)</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (3)</a>
-      <a class="mdl-navigation__link" href="#Typos"><i class="material-icons warning-icon">warning</i>Spelling error (35)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (6)</a>
+      <a class="mdl-navigation__link" href="#Typos"><i class="material-icons warning-icon">warning</i>Spelling error (36)</a>
       <a class="mdl-navigation__link" href="#ExportedService"><i class="material-icons warning-icon">warning</i>Exported service does not require permission (1)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
       <a class="mdl-navigation__link" href="#VectorPath"><i class="material-icons warning-icon">warning</i>Long vector paths (2)</a>
@@ -221,12 +221,12 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#AndroidGradlePluginVersion">AndroidGradlePluginVersion</a>: Obsolete Android Gradle Plugin Version</td></tr>
 <tr>
-<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">6</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness:Messages">Correctness:Messages</a>
 </td></tr>
 <tr>
-<td class="countColumn">35</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">36</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#Typos">Typos</a>: Spelling error</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
 </td></tr>
@@ -501,7 +501,37 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:31</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-beta07</span><br /><pre class="errorlines">
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:30</span>: <span class="message">A newer version of androidx.compose:compose-bom than 2024.06.00 is available: 2024.08.00</span><br /><pre class="errorlines">
+<span class="lineno">  27 </span>kotlinxCoroutinesTest = "1.8.1"
+<span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
+<span class="lineno">  29 </span>activityCompose = "1.9.1"
+<span class="caretline"><span class="lineno">  30 </span>composeBom = <span class="warning">"2024.06.00"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-beta06"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:30</span>: <span class="message">A newer version of androidx.compose:compose-bom than 2024.06.00 is available: 2024.08.00</span><br /><pre class="errorlines">
+<span class="lineno">  27 </span>kotlinxCoroutinesTest = "1.8.1"
+<span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
+<span class="lineno">  29 </span>activityCompose = "1.9.1"
+<span class="caretline"><span class="lineno">  30 </span>composeBom = <span class="warning">"2024.06.00"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-beta06"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:30</span>: <span class="message">A newer version of androidx.compose:compose-bom than 2024.06.00 is available: 2024.08.00</span><br /><pre class="errorlines">
+<span class="lineno">  27 </span>kotlinxCoroutinesTest = "1.8.1"
+<span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
+<span class="lineno">  29 </span>activityCompose = "1.9.1"
+<span class="caretline"><span class="lineno">  30 </span>composeBom = <span class="warning">"2024.06.00"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-beta06"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:31</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-rc01</span><br /><pre class="errorlines">
 <span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
 <span class="lineno">  29 </span>activityCompose = "1.9.1"
 <span class="lineno">  30 </span>composeBom = "2024.06.00"
@@ -511,7 +541,7 @@ Dismiss</button>            </div>
 <span class="lineno">  34 </span>media3Exoplayer = "1.4.0"
 </pre>
 
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:31</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-beta07</span><br /><pre class="errorlines">
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:31</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-rc01</span><br /><pre class="errorlines">
 <span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
 <span class="lineno">  29 </span>activityCompose = "1.9.1"
 <span class="lineno">  30 </span>composeBom = "2024.06.00"
@@ -521,7 +551,7 @@ Dismiss</button>            </div>
 <span class="lineno">  34 </span>media3Exoplayer = "1.4.0"
 </pre>
 
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:31</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-beta07</span><br /><pre class="errorlines">
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:31</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-rc01</span><br /><pre class="errorlines">
 <span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
 <span class="lineno">  29 </span>activityCompose = "1.9.1"
 <span class="lineno">  30 </span>composeBom = "2024.06.00"
@@ -619,7 +649,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 27 </span>  <span class="tag">&lt;string-array</span><span class="attribute"> name</span>=<span class="value">"com_google_android_gms_fonts_certs_prod"</span>>
 </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="TyposDivLink" onclick="reveal('TyposDiv');" />+ 30 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="TyposDivLink" onclick="reveal('TyposDiv');" />+ 31 More Occurrences...</button>
 <div id="TyposDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/values-v23/font_certs.xml">../../src/main/res/values-v23/font_certs.xml</a>:24</span>: <span class="message">Did you mean "GA!" instead of "GA1"?</span><br /><pre class="errorlines">
 <span class="lineno"> 21 </span>  <span class="tag">&lt;/array></span>
@@ -905,6 +935,13 @@ Dismiss</button>            </div>
 <span class="lineno"> 30 </span>        <span class="tag">&lt;/item></span>
 <span class="lineno"> 31 </span>    <span class="tag">&lt;/string-array></span>
 <span class="lineno"> 32 </span><span class="tag">&lt;/resources></span></pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:9</span>: <span class="message">Repeated word "malesuada" in message: possible typo</span><br /><pre class="errorlines">
+<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"login"</span>>Login\n<span class="tag">&lt;/string></span>
+<span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"notification_channel"</span>>notificationChannel<span class="tag">&lt;/string></span>
+<span class="lineno">  8 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"notification_channel_description"</span>>notificationChannelDescription<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno">  9 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"AnimatedTextContent"</span>>Lorem ipsum odor amet, consectetuer adipiscing elit. Natoque ad sociosqu magnis curabitur nec est diam. Dictum lectus suscipit hac lacus eu. Nibh enim libero <span class="warning">malesuada malesuada</span> torquent mollis natoque pulvinar augue? Vivamus bibendum quam montes sodales ad donec efficitur. Nam leo efficitur quis, turpis nulla at. Torquent porttitor pellentesque tortor vulputate semper enim tortor nascetur. Conubia curae ante litora venenatis vivamus habitant vivamus per. Cubilia maecenas molestie proin curabitur nulla dapibus ex felis pretium<span class="tag">&lt;/string></span></span>
+<span class="lineno"> 10 </span><span class="tag">&lt;/resources></span></pre>
 
 </div>
 </div>
@@ -1275,19 +1312,21 @@ Dismiss</button>            </div>
 <span class="lineno">  7 </span>        <span class="tag">&lt;/item></span></pre>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:7</span>: <span class="message">The resource <code>R.string.notification_channel</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"login_title"</span>>The Tolet<span class="tag">&lt;/string></span>
-<span class="lineno"> 5 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"login_subtitle"</span>>Find Your House<span class="tag">&lt;/string></span>
-<span class="lineno"> 6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"login"</span>>Login\n<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 7 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"notification_channel"</span></span>>notificationChannel<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 8 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"notification_channel_description"</span>>notificationChannelDescription<span class="tag">&lt;/string></span>
-<span class="lineno"> 9 </span><span class="tag">&lt;/resources></span></pre>
+<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"login_title"</span>>The Tolet<span class="tag">&lt;/string></span>
+<span class="lineno">  5 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"login_subtitle"</span>>Find Your House<span class="tag">&lt;/string></span>
+<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"login"</span>>Login\n<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"notification_channel"</span></span>>notificationChannel<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  8 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"notification_channel_description"</span>>notificationChannelDescription<span class="tag">&lt;/string></span>
+<span class="lineno">  9 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"AnimatedTextContent"</span>>Lorem ipsum odor amet, consectetuer adipiscing elit. Natoque ad sociosqu magnis curabitur nec est diam. Dictum lectus suscipit hac lacus eu. Nibh enim libero malesuada malesuada torquent mollis natoque pulvinar augue? Vivamus bibendum quam montes sodales ad donec efficitur. Nam leo efficitur quis, turpis nulla at. Torquent porttitor pellentesque tortor vulputate semper enim tortor nascetur. Conubia curae ante litora venenatis vivamus habitant vivamus per. Cubilia maecenas molestie proin curabitur nulla dapibus ex felis pretium<span class="tag">&lt;/string></span>
+<span class="lineno"> 10 </span><span class="tag">&lt;/resources></span></pre>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:8</span>: <span class="message">The resource <code>R.string.notification_channel_description</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 5 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"login_subtitle"</span>>Find Your House<span class="tag">&lt;/string></span>
-<span class="lineno"> 6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"login"</span>>Login\n<span class="tag">&lt;/string></span>
-<span class="lineno"> 7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"notification_channel"</span>>notificationChannel<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 8 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"notification_channel_description"</span></span>>notificationChannelDescription<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 9 </span><span class="tag">&lt;/resources></span></pre>
+<span class="lineno">  5 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"login_subtitle"</span>>Find Your House<span class="tag">&lt;/string></span>
+<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"login"</span>>Login\n<span class="tag">&lt;/string></span>
+<span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"notification_channel"</span>>notificationChannel<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno">  8 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"notification_channel_description"</span></span>>notificationChannelDescription<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  9 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"AnimatedTextContent"</span>>Lorem ipsum odor amet, consectetuer adipiscing elit. Natoque ad sociosqu magnis curabitur nec est diam. Dictum lectus suscipit hac lacus eu. Nibh enim libero malesuada malesuada torquent mollis natoque pulvinar augue? Vivamus bibendum quam montes sodales ad donec efficitur. Nam leo efficitur quis, turpis nulla at. Torquent porttitor pellentesque tortor vulputate semper enim tortor nascetur. Conubia curae ante litora venenatis vivamus habitant vivamus per. Cubilia maecenas molestie proin curabitur nulla dapibus ex felis pretium<span class="tag">&lt;/string></span>
+<span class="lineno"> 10 </span><span class="tag">&lt;/resources></span></pre>
 
 <span class="location"><a href="../../src/main/res/drawable/sun.png">../../src/main/res/drawable/sun.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/sun.png" /><span class="message">The resource <code>R.drawable.sun</code> appears to be unused</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/thirdjt.jpg">../../src/main/res/drawable/thirdjt.jpg</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/thirdjt.jpg" /><span class="message">The resource <code>R.drawable.thirdjt</code> appears to be unused</span><br clear="right"/>
