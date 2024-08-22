@@ -23,7 +23,8 @@ fun NavigationHome(navController: NavController) {
         ButtonInfo("Animated Visibility", AnimatedVisibilityExample),
         ButtonInfo("Animate enter and exit for children", AnimatedChildren),
         ButtonInfo("Animated ContentScreen", AnimatedContentScreen),
-        ButtonInfo("vector animation", VectorAnimationScreen)
+        ButtonInfo("vector animation", VectorAnimationScreen),
+        ButtonInfo("Animated ContentScreen Icons", AnimatedContentScreenIcons),
     )
     Scaffold(
         topBar = {
