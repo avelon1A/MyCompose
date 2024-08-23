@@ -39,7 +39,6 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.Anim
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.AnimatedContentScreenIcons
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.BouncingBallScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.LottieAnimationScreen
-import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.NavigationHome
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.VectorAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoViewModel
@@ -124,9 +123,7 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
         composable<NewHome> {
             NewHome(navController,Modifier)
         }
-        composable<NavigationHome> {
-            NavigationHome(navController)
-        }
+
         composable<LottieAnimationScreen> {
             LottieAnimationScreen()
         }
