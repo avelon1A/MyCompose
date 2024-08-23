@@ -18,13 +18,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.bosch.composewithkotlin20.R
 import com.bosch.composewithkotlin20.data.model.data.ButtonInfo
 import com.bosch.composewithkotlin20.data.model.data.getItemList
 import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
+import com.bosch.composewithkotlin20.util.Const.CANVAS_SCREEN
 import kotlinx.serialization.Serializable
 
 @Composable
@@ -88,17 +91,17 @@ fun CustomButton(
 }
 
 
-//@Preview
-//@Composable
-//fun HomeScreenPreview() {
-//    val fakeNavController = fakeNavController()
-//    HomeScreen(navController = fakeNavController)
-//}
-//
-//@Composable
-//fun fakeNavController(): NavController {
-//    return rememberNavController()
-//}
+@Preview
+@Composable
+fun HomeScreenPreview() {
+    val fakeNavController = fakeNavController()
+    HomeScreen(navController = fakeNavController, HomeScreen(CANVAS_SCREEN))
+}
+
+@Composable
+fun fakeNavController(): NavController {
+    return rememberNavController()
+}
 
 
 @Serializable
