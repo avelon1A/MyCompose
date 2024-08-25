@@ -34,5 +34,3 @@ Clone the repository:
 ```bash
 git clone https://github.com/avelon1A/compose2.0.git
 
-### Page
-test
