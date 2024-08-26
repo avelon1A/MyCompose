@@ -40,6 +40,9 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.Anim
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.BouncingBallScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.LottieAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.VectorAnimationScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasA
+import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasLine
+import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOval
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
@@ -152,7 +155,15 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
         composable<BouncingBallScreen> {
             BouncingBallScreen()
         }
-        
+        composable<CanvasA> {
+            CanvasA()
+        }
+        composable<CanvasLine> {
+            CanvasLine()
+        }
+        composable<CanvasOval> {
+            CanvasOval()
+        }
     }
     
    

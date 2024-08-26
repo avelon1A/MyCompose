@@ -26,7 +26,9 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.Anim
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.BouncingBallScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.LottieAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.VectorAnimationScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasA
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasLine
+import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOval
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.util.Const.ANIMATION_SCREEN
 import com.bosch.composewithkotlin20.util.Const.CANVAS_SCREEN
@@ -69,6 +71,8 @@ val animationList = listOf(
 )
 val canvasList = listOf(
     ButtonInfo("line canvas ", CanvasLine),
+    ButtonInfo("A canvas ", CanvasA),
+    ButtonInfo("Oval canvas ", CanvasOval),
 )
 
 
