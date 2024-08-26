@@ -29,12 +29,13 @@ fun TypeSafeNavigation(navController: NavController) {
 
         TextField(value = text,
             onValueChange = { newText -> text = newText })
-    }
-
-    OutlinedButton(onClick = { navController.navigate(TypeSafeNavigationSecond(text)) }) {
+        OutlinedButton(onClick = { navController.navigate(TypeSafeNavigationSecond(text)) }) {
             Text(text = "click")
 
         }
+    }
+
+
     }
 
 
