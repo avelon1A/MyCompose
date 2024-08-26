@@ -44,6 +44,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasA
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasLine
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasMovement
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOval
+import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOverlap
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
@@ -167,6 +168,9 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
         }
         composable<CanvasMovement> {
             CanvasMovement()
+        }
+        composable<CanvasOverlap> {
+            CanvasOverlap()
         }
 
     }

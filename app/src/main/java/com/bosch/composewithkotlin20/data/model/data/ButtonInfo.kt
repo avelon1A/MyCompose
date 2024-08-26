@@ -29,6 +29,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasA
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasLine
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasMovement
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOval
+import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOverlap
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.util.Const.ANIMATION_SCREEN
 import com.bosch.composewithkotlin20.util.Const.APPS_SCREEN
@@ -70,6 +71,7 @@ val canvasList = listOf(
     ButtonInfo("A canvas ", CanvasA),
     ButtonInfo("Oval canvas ", CanvasOval),
     ButtonInfo("Movement in canvas ", CanvasMovement),
+    ButtonInfo("Overlap in Canvas ", CanvasOverlap),
 )
 val appList = listOf(
     ButtonInfo("Music Player ", MusicScreenContent),
