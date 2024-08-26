@@ -1,7 +1,6 @@
 package com.bosch.composewithkotlin20.presentaion.ui.screen.canvas
 
 
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -33,19 +32,18 @@ fun CanvasA() {
                     path.lineTo(size.width, size.height)
                     onDrawBehind {
                         drawPath(path, Color.Magenta, style = Stroke(width = 10f))
+                        drawLine(
+                            start = Offset(100f, size.height / 1.5f),
+                            end = Offset(size.width - 100f, size.height / 1.5f),
+                            color = Color.Red,
+                            strokeWidth = 10f,
+                            cap = StrokeCap.Round
+                        )
                     }
                 }
                 .fillMaxSize()
         )
-        Canvas(modifier = Modifier.fillMaxSize()) {
-            drawLine(
-                color = Color.Red,
-                start = Offset(100f, size.height / 1.5f),
-                end = Offset(size.width - 100f, size.height / 1.5f),
-                strokeWidth = 10f,
-                cap = StrokeCap.Round
-            )
-        }
+
 
     }
 

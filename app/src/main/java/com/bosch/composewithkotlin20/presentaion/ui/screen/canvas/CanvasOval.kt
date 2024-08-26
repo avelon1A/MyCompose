@@ -1,17 +1,20 @@
 package com.bosch.composewithkotlin20.presentaion.ui.screen.canvas
 
 
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kotlinx.serialization.Serializable
@@ -19,34 +22,56 @@ import kotlinx.serialization.Serializable
 
 @Composable
 fun CanvasOval() {
-    Box {
-        Spacer(
+    Box(modifier = Modifier.fillMaxSize()) {
+        Canvas(
             modifier = Modifier
-                .padding(20.dp)
-                .drawWithCache {
-                    val path = Path()
-                    path.moveTo(0f, size.height)
-                    path.lineTo(size.width / 2f, size.height / 3f)
-                    path.lineTo(size.width, size.height)
-                    onDrawBehind {
-                        drawPath(path, Color.Magenta, style = Stroke(width = 10f))
-//                        drawLine(start = Offset(x = ))
-                    }
-                }
                 .fillMaxSize()
-        )
+                .padding(10.dp)
+        ) {
+            scale(scaleX = 10f, scaleY = 10f) {
+                drawCircle(Color.Blue, radius = 17.dp.toPx())
+            }
+        }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(400.dp),
+            verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.SpaceAround
+        ) {
+            Canvas(
+                modifier = Modifier
+                    .padding(10.dp)
+            ) {
+                scale(scaleX = 10f, scaleY = 10f) {
+                    drawCircle(Color.Red, radius = 5.dp.toPx())
+                }
+            }
+
+            Canvas(
+                modifier = Modifier
+                    .padding(10.dp)
+            ) {
+                scale(scaleX = 10f, scaleY = 10f) {
+                    drawCircle(Color.Red, radius = 5.dp.toPx())
+                }
+            }
+
+
+        }
 
 
     }
 
 
-}
+
+    }
+
 
 @Preview(showBackground = true)
 @Composable
 fun PreviewDrawOval() {
     MaterialTheme {
-        CanvasA()
+        CanvasOval()
     }
 }
 
