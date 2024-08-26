@@ -1,6 +1,5 @@
 package com.bosch.composewithkotlin20.presentaion.ui.screen
 
-import android.graphics.drawable.Icon
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -32,7 +31,7 @@ fun ScreenC(navController: NavController) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally) {
 
-        ExandCards("my name is aman","i am a android developer")
+        ExandCards("Tap to expand", "This is Expanded Card")
     }
 }
 

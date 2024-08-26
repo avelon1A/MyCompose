@@ -42,6 +42,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.Lott
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.VectorAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasA
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasLine
+import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasMovement
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOval
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoViewModel
@@ -164,6 +165,10 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
         composable<CanvasOval> {
             CanvasOval()
         }
+        composable<CanvasMovement> {
+            CanvasMovement()
+        }
+
     }
     
    

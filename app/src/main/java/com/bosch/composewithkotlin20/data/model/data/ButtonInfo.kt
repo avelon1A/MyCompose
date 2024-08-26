@@ -11,7 +11,6 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.GradientScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.LoginScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.MusicScreenContent
 import com.bosch.composewithkotlin20.presentaion.ui.screen.OnBoardingScreen
-import com.bosch.composewithkotlin20.presentaion.ui.screen.ScreenB
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ScreenC
 import com.bosch.composewithkotlin20.presentaion.ui.screen.Seekbar
 import com.bosch.composewithkotlin20.presentaion.ui.screen.Snackbar
@@ -28,9 +27,11 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.Lott
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.VectorAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasA
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasLine
+import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasMovement
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOval
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.util.Const.ANIMATION_SCREEN
+import com.bosch.composewithkotlin20.util.Const.APPS_SCREEN
 import com.bosch.composewithkotlin20.util.Const.CANVAS_SCREEN
 import com.bosch.composewithkotlin20.util.Const.UI_SCREEN
 
@@ -39,7 +40,6 @@ data class ButtonInfo(val title: String, val route: Any)
 
 
 val ButtonList = listOf(
-    ButtonInfo("First Example", ScreenB),
     ButtonInfo("Expandable Text", ScreenC),
     ButtonInfo("Box Layout Example", ThirdScreen),
     ButtonInfo("Text Display", TextScreen),
@@ -49,14 +49,10 @@ val ButtonList = listOf(
     ButtonInfo("Image Loading with Coil", CoilScreen),
     ButtonInfo("Gradient Background", GradientScreen),
     ButtonInfo("Camera Integration", CameraScreen),
-    ButtonInfo("Login Screen", LoginScreen),
     ButtonInfo("Circular Progress Indicator", CircularIndicatorScreen),
-    ButtonInfo("Onboarding Tutorial", OnBoardingScreen),
     ButtonInfo("Bottom Navigation Bar", BottomNavigationBar),
-    ButtonInfo("Music Player UI", MusicScreenContent),
     ButtonInfo("Custom SeekBar", Seekbar),
     ButtonInfo("Snack bar Notification", Snackbar),
-    ButtonInfo("Todo List", TodoScreen),
     ButtonInfo("Dropdown Menu", DropDown),
     ButtonInfo("Type-Safe Navigation", TypeSafeNavigation),
 )
@@ -73,6 +69,13 @@ val canvasList = listOf(
     ButtonInfo("line canvas ", CanvasLine),
     ButtonInfo("A canvas ", CanvasA),
     ButtonInfo("Oval canvas ", CanvasOval),
+    ButtonInfo("Movement in canvas ", CanvasMovement),
+)
+val appList = listOf(
+    ButtonInfo("Music Player ", MusicScreenContent),
+    ButtonInfo("Todo App", TodoScreen),
+    ButtonInfo("Onboarding Tutorial", OnBoardingScreen),
+    ButtonInfo("Login Screen", LoginScreen),
 )
 
 
@@ -81,6 +84,7 @@ fun getItemList(itemList: String?): List<ButtonInfo> {
         UI_SCREEN -> ButtonList
         ANIMATION_SCREEN -> animationList
         CANVAS_SCREEN -> canvasList
+        APPS_SCREEN -> appList
         else -> emptyList()
 
     }
