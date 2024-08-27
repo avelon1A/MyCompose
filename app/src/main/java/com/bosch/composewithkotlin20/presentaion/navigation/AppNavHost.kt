@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.SavedStateHandle
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -45,6 +46,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasLine
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasMovement
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOval
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOverlap
+import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.WaterBottleScreen
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
@@ -172,6 +174,11 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
         composable<CanvasOverlap> {
             CanvasOverlap()
         }
+        composable<WaterBottleScreen> {
+            WaterBottleScreen(LocalContext.current)
+        }
+
+
 
     }
     
