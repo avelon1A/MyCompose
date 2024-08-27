@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 101 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 110 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Mon Aug 26 12:19:41 UTC 2024 by AGP (8.4.2)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Aug 27 12:10:13 UTC 2024 by AGP (8.4.2)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -189,12 +189,12 @@ document.getElementById(id).style.display = 'none';
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
       <a class="mdl-navigation__link" href="#VectorRaster"><i class="material-icons warning-icon">warning</i>Vector Image Generation (10)</a>
       <a class="mdl-navigation__link" href="#AndroidGradlePluginVersion"><i class="material-icons warning-icon">warning</i>Obsolete Android Gradle Plugin Version (3)</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (6)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (15)</a>
       <a class="mdl-navigation__link" href="#Typos"><i class="material-icons warning-icon">warning</i>Spelling error (36)</a>
       <a class="mdl-navigation__link" href="#ExportedService"><i class="material-icons warning-icon">warning</i>Exported service does not require permission (1)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
       <a class="mdl-navigation__link" href="#VectorPath"><i class="material-icons warning-icon">warning</i>Long vector paths (2)</a>
-      <a class="mdl-navigation__link" href="#AutoboxingStateCreation"><i class="material-icons warning-icon">warning</i><code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead. (2)</a>
+      <a class="mdl-navigation__link" href="#AutoboxingStateCreation"><i class="material-icons warning-icon">warning</i><code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead. (3)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (28)</a>
       <a class="mdl-navigation__link" href="#IconLocation"><i class="material-icons warning-icon">warning</i>Image defined in density-independent drawable folder (13)</a>
     </nav>
@@ -221,7 +221,7 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#AndroidGradlePluginVersion">AndroidGradlePluginVersion</a>: Obsolete Android Gradle Plugin Version</td></tr>
 <tr>
-<td class="countColumn">6</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">15</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness:Messages">Correctness:Messages</a>
 </td></tr>
@@ -242,7 +242,7 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#VectorPath">VectorPath</a>: Long vector paths</td></tr>
 <tr>
-<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#AutoboxingStateCreation">AutoboxingStateCreation</a>: <code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead.</td></tr>
 <tr>
 <td class="countColumn">28</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -559,6 +559,8 @@ Dismiss</button>            </div>
 <span class="lineno">  34 </span>media3Exoplayer = "1.4.0"
 </pre>
 
+<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 10 More Occurrences...</button>
+<div id="GradleDependencyDiv" style="display: none">
 <span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:31</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-beta06 is available: 2.8.0-rc01</span><br /><pre class="errorlines">
 <span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
 <span class="lineno">  29 </span>activityCompose = "1.9.1"
@@ -569,6 +571,97 @@ Dismiss</button>            </div>
 <span class="lineno">  34 </span>media3Exoplayer = "1.4.0"
 </pre>
 
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:34</span>: <span class="message">A newer version of androidx.media3:media3-exoplayer than 1.4.0 is available: 1.4.1</span><br /><pre class="errorlines">
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-beta06"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="caretline"><span class="lineno">  34 </span>media3Exoplayer = <span class="warning">"1.4.0"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  35 </span>mockitoCore = "4.4.0"
+<span class="lineno">  36 </span>mockitoInline = "4.4.0"
+<span class="lineno">  37 </span>mockitoKotlin = "4.0.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:34</span>: <span class="message">A newer version of androidx.media3:media3-exoplayer than 1.4.0 is available: 1.4.1</span><br /><pre class="errorlines">
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-beta06"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="caretline"><span class="lineno">  34 </span>media3Exoplayer = <span class="warning">"1.4.0"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  35 </span>mockitoCore = "4.4.0"
+<span class="lineno">  36 </span>mockitoInline = "4.4.0"
+<span class="lineno">  37 </span>mockitoKotlin = "4.0.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:34</span>: <span class="message">A newer version of androidx.media3:media3-exoplayer than 1.4.0 is available: 1.4.1</span><br /><pre class="errorlines">
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-beta06"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="caretline"><span class="lineno">  34 </span>media3Exoplayer = <span class="warning">"1.4.0"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  35 </span>mockitoCore = "4.4.0"
+<span class="lineno">  36 </span>mockitoInline = "4.4.0"
+<span class="lineno">  37 </span>mockitoKotlin = "4.0.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:34</span>: <span class="message">A newer version of androidx.media3:media3-session than 1.4.0 is available: 1.4.1</span><br /><pre class="errorlines">
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-beta06"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="caretline"><span class="lineno">  34 </span>media3Exoplayer = <span class="warning">"1.4.0"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  35 </span>mockitoCore = "4.4.0"
+<span class="lineno">  36 </span>mockitoInline = "4.4.0"
+<span class="lineno">  37 </span>mockitoKotlin = "4.0.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:34</span>: <span class="message">A newer version of androidx.media3:media3-session than 1.4.0 is available: 1.4.1</span><br /><pre class="errorlines">
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-beta06"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="caretline"><span class="lineno">  34 </span>media3Exoplayer = <span class="warning">"1.4.0"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  35 </span>mockitoCore = "4.4.0"
+<span class="lineno">  36 </span>mockitoInline = "4.4.0"
+<span class="lineno">  37 </span>mockitoKotlin = "4.0.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:34</span>: <span class="message">A newer version of androidx.media3:media3-session than 1.4.0 is available: 1.4.1</span><br /><pre class="errorlines">
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-beta06"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="caretline"><span class="lineno">  34 </span>media3Exoplayer = <span class="warning">"1.4.0"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  35 </span>mockitoCore = "4.4.0"
+<span class="lineno">  36 </span>mockitoInline = "4.4.0"
+<span class="lineno">  37 </span>mockitoKotlin = "4.0.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:45</span>: <span class="message">A newer version of androidx.media3:media3-ui than 1.4.0 is available: 1.4.1</span><br /><pre class="errorlines">
+<span class="lineno">  42 </span>uiToolingPreview = "1.6.8"
+<span class="lineno">  43 </span>ksp = "2.0.0-1.0.21"
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+<span class="caretline"><span class="lineno">  45 </span>media3Ui = <span class="warning">"1.4.0"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  46 </span>androidbrowserhelper = "2.5.0"
+<span class="lineno">  47 </span>runtimeLivedata = "1.6.8"
+<span class="lineno">  48 </span>roomKtx = "2.6.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:45</span>: <span class="message">A newer version of androidx.media3:media3-ui than 1.4.0 is available: 1.4.1</span><br /><pre class="errorlines">
+<span class="lineno">  42 </span>uiToolingPreview = "1.6.8"
+<span class="lineno">  43 </span>ksp = "2.0.0-1.0.21"
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+<span class="caretline"><span class="lineno">  45 </span>media3Ui = <span class="warning">"1.4.0"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  46 </span>androidbrowserhelper = "2.5.0"
+<span class="lineno">  47 </span>runtimeLivedata = "1.6.8"
+<span class="lineno">  48 </span>roomKtx = "2.6.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:45</span>: <span class="message">A newer version of androidx.media3:media3-ui than 1.4.0 is available: 1.4.1</span><br /><pre class="errorlines">
+<span class="lineno">  42 </span>uiToolingPreview = "1.6.8"
+<span class="lineno">  43 </span>ksp = "2.0.0-1.0.21"
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+<span class="caretline"><span class="lineno">  45 </span>media3Ui = <span class="warning">"1.4.0"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  46 </span>androidbrowserhelper = "2.5.0"
+<span class="lineno">  47 </span>runtimeLivedata = "1.6.8"
+<span class="lineno">  48 </span>roomKtx = "2.6.1"
+</pre>
+
+</div>
 </div>
 <div class="metadata"><div class="explanation" id="explanationGradleDependency" style="display: none;">
 This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
@@ -1155,6 +1248,16 @@ Dismiss</button>            </div>
 <span class="lineno"> 39 </span>
 <span class="lineno"> 40 </span>    Column(
 <span class="lineno"> 41 </span>        modifier = Modifier.fillMaxSize(),
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/canvas/CanvasWaterBottel.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/canvas/CanvasWaterBottel.kt</a>:35</span>: <span class="message">Prefer <code>mutableFloatStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  32 </span>
+<span class="lineno">  33 </span><span class="annotation">@Composable</span>
+<span class="lineno">  34 </span><span class="keyword">fun</span> rememberGyroscopeSensor(context: Context): Float {
+<span class="caretline"><span class="lineno">  35 </span>    <span class="keyword">var</span> rotation by remember { <span class="warning">mutableStateOf</span>(<span class="number">0f</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  36 </span>
+<span class="lineno">  37 </span>    DisposableEffect(context) {
+<span class="lineno">  38 </span>        <span class="keyword">val</span> sensorManager = context.getSystemService(Context.SENSOR_SERVICE) <span class="keyword">as</span> SensorManager
 </pre>
 
 </div>
