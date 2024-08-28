@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">compose2</string>
+    <string name="app_name">MyCompose</string>
     <string name="description">coil image</string>
     <string name="login_title">The Tolet</string>
     <string name="login_subtitle">Find Your House</string>

@@ -1,4 +1,4 @@
-# Compose2.0 Android App
+# MyCompose.0 Android App
 
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.0.0-blue.svg)
 [![codecov](https://codecov.io/gh/avelon1A/compose2.0/graph/badge.svg?token=GMHDKGGFHC)](https://app.codecov.io/gh/avelon1A/MyCompose)
@@ -7,7 +7,7 @@
 
 ## Overview
 
-Compose2.0 is an Android application developed using Jetpack Compose. The app is designed to showcase the power and flexibility of modern Android UI development using Compose. The project includes examples of how to implement various Compose components, handle state management, and integrate with modern Android libraries such as Dagger Hilt, Retrofit, and more.
+MyCompose is an Android application developed using Jetpack Compose. The app is designed to showcase the power and flexibility of modern Android UI development using Compose. The project includes examples of how to implement various Compose components, handle state management, and integrate with modern Android libraries such as Dagger Hilt, Retrofit, and more.
 
 ## Features
 
