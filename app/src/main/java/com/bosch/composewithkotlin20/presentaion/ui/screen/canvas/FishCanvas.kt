@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,15 +22,18 @@ import com.bosch.composewithkotlin20.R
 import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 import kotlin.math.roundToInt
+import kotlin.math.sin
 
 @Composable
 fun FishCanvas() {
     var animationStarted by remember { mutableStateOf(false) }
 
-  
-    val screenWidth = 1000
-    val fishWidth = 200.dp.toPx() 
-    val targetPosition = (screenWidth - fishWidth) / 2 
+    val screenWidth = 1000f
+    val fishWidth = 200.dp.toPx()
+    val targetPosition = (screenWidth - fishWidth) / 2
+    val amplitude = 200f
+    val frequency = 1f
+    val rotationMax = 10f
 
     val transition = updateTransition(targetState = animationStarted, label = "Fish Transition")
 
@@ -45,6 +49,25 @@ fun FishCanvas() {
     ) { started ->
         if (started) targetPosition else 0f
     }
+
+    val infiniteTransition = rememberInfiniteTransition()
+    val fishOffsetY by infiniteTransition.animateFloat(
+        initialValue = 0f,
+        targetValue = amplitude,
+        animationSpec = infiniteRepeatable(
+            animation = tween(durationMillis = 1000, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse
+        ), label = ""
+    )
+
+    val fishRotation by infiniteTransition.animateFloat(
+        initialValue = -rotationMax,
+        targetValue = rotationMax,
+        animationSpec = infiniteRepeatable(
+            animation = tween(durationMillis = 800, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse
+        ), label = ""
+    )
 
     LaunchedEffect(Unit) {
         delay(1000)
@@ -66,7 +89,8 @@ fun FishCanvas() {
         Fish(
             modifier = Modifier
                 .size(200.dp)
-                .offset { IntOffset(fishOffsetX.roundToInt(), 0) } 
+                .offset { IntOffset(fishOffsetX.roundToInt(), (fishOffsetY * sin(2 * Math.PI * frequency * (fishOffsetX / screenWidth))).roundToInt()) }
+                .graphicsLayer(rotationZ = fishRotation)
         )
     }
 }
