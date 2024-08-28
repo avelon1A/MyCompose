@@ -1,0 +1,17 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/vector">
+
+    <target
+        android:name="path1"
+        android:animation="@animator/path_morph1" />
+
+    <target
+        android:name="path2"
+        android:animation="@animator/path2_animator" />
+    <target
+        android:name="path3"
+        android:animation="@animator/path3_animator" />
+
+
+
+</animated-vector>
