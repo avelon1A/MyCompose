@@ -2,6 +2,7 @@ package com.bosch.composewithkotlin20.presentaion.navigation
 
 
 import AnimatedVisibilityExample
+import FishCanvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -176,6 +177,9 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
         }
         composable<WaterBottleScreen> {
             WaterBottleScreen(LocalContext.current)
+        }
+        composable<FishCanvas> {
+            FishCanvas()
         }
 
 

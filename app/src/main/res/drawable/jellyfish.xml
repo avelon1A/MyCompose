@@ -1,0 +1,44 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="530.46dp"
+    android:height="563.1dp"
+    android:viewportWidth="530.46"
+    android:viewportHeight="563.1">
+
+    <!-- Bell of the Jellyfish -->
+    <path
+        android:pathData="M265,100 C165,100 165,300 265,300 C365,300 365,100 265,100z"
+        android:fillColor="#ffcc99"
+        android:strokeColor="#ff9966"
+        android:strokeWidth="4"/>
+
+    <!-- Tentacles -->
+    <path
+        android:pathData="M265,300 C245,400 285,450 265,550"
+        android:fillColor="#00000000"
+        android:strokeColor="#ff9966"
+        android:strokeWidth="6"/>
+
+    <path
+        android:pathData="M250,300 C230,400 270,450 250,550"
+        android:fillColor="#00000000"
+        android:strokeColor="#ff9966"
+        android:strokeWidth="4"/>
+
+    <path
+        android:pathData="M280,300 C260,400 300,450 280,550"
+        android:fillColor="#00000000"
+        android:strokeColor="#ff9966"
+        android:strokeWidth="4"/>
+
+    <path
+        android:pathData="M240,300 C220,400 260,450 240,550"
+        android:fillColor="#00000000"
+        android:strokeColor="#ff9966"
+        android:strokeWidth="3"/>
+
+    <path
+        android:pathData="M290,300 C270,400 310,450 290,550"
+        android:fillColor="#00000000"
+        android:strokeColor="#ff9966"
+        android:strokeWidth="3"/>
+</vector>

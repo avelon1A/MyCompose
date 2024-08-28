@@ -1,6 +1,7 @@
 package com.bosch.composewithkotlin20.data.model.data
 
 import AnimatedVisibilityExample
+import FishCanvas
 import com.bosch.composewithkotlin20.presentaion.ui.screen.BottomNavigationBar
 import com.bosch.composewithkotlin20.presentaion.ui.screen.CameraScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.CircularIndicatorScreen
@@ -74,6 +75,7 @@ val canvasList = listOf(
     ButtonInfo("Movement in canvas ", CanvasMovement),
     ButtonInfo("Overlap in Canvas ", CanvasOverlap),
     ButtonInfo("Water bottel ", WaterBottleScreen),
+    ButtonInfo("fish  ", FishCanvas),
 )
 val appList = listOf(
     ButtonInfo("Music Player ", MusicScreenContent),
