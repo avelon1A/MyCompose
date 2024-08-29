@@ -42,6 +42,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.Anim
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.BouncingBallScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.LottieAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.VectorAnimationScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.WaterBottelCanvas
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasA
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasLine
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasMovement
@@ -181,6 +182,10 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
         composable<FishCanvas> {
             FishCanvas()
         }
+        composable<WaterBottelCanvas> {
+            WaterBottelCanvas()
+        }
+
 
 
 

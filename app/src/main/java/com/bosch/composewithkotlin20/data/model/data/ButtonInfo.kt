@@ -26,6 +26,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.Anim
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.BouncingBallScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.LottieAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.VectorAnimationScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.WaterBottelCanvas
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasA
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasLine
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasMovement
@@ -76,6 +77,7 @@ val canvasList = listOf(
     ButtonInfo("Overlap in Canvas ", CanvasOverlap),
     ButtonInfo("Water bottel ", WaterBottleScreen),
     ButtonInfo("fish  ", FishCanvas),
+    ButtonInfo("water bottel  ", WaterBottelCanvas),
 )
 val appList = listOf(
     ButtonInfo("Music Player ", MusicScreenContent),

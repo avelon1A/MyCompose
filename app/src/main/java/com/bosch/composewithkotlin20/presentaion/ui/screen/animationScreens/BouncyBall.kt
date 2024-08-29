@@ -53,7 +53,7 @@ fun BouncingBallScreen() {
             val rectPath = androidx.compose.ui.graphics.Path().apply {
                 moveTo(0f, size.height - rectHeight)
                 lineTo(size.width * 0.1f, size.height - rectHeight)
-                quadraticBezierTo(
+                quadraticTo(
                     size.width * 0.5f, size.height - rectHeight + rectDeflection,
                     size.width * 0.9f, size.height - rectHeight
                 )
@@ -65,7 +65,7 @@ fun BouncingBallScreen() {
 
             drawPath(
                 path = rectPath,
-                brush = Brush.linearGradient(listOf(Color(0XFF160C28), Color(0xffEFCB68)))
+                brush = Brush.linearGradient(listOf(Color(0XFF160C28), Color(0xFFA80C0C)))
             )
 
             drawCircle(
