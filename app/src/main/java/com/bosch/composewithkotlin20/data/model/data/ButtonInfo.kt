@@ -25,6 +25,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.Anim
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.AnimatedContentScreenIcons
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.BouncingBallScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.LottieAnimationScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.SharedElementScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.VectorAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.WaterBottelCanvas
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasA
@@ -68,6 +69,7 @@ val animationList = listOf(
     ButtonInfo("vector animation", VectorAnimationScreen),
     ButtonInfo("Animated ContentScreen Icons", AnimatedContentScreenIcons),
     ButtonInfo("Bouncy Ball", BouncingBallScreen),
+    ButtonInfo("SharedElementScreen", SharedElementScreen),
 )
 val canvasList = listOf(
     ButtonInfo("line canvas ", CanvasLine),
