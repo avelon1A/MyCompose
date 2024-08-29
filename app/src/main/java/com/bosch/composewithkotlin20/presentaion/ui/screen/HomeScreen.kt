@@ -15,12 +15,18 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.bosch.composewithkotlin20.R
@@ -33,7 +39,6 @@ import kotlinx.serialization.Serializable
 @Composable
 fun HomeScreen(navController: NavController, args: HomeScreen) {
     val buttonList = getItemList(args.items)
-
     Scaffold(
         topBar = {
             AppBar(R.drawable.arrow_back, navController)
@@ -46,6 +51,8 @@ fun HomeScreen(navController: NavController, args: HomeScreen) {
 
 @Composable
 fun ButtonGrid(list: List<ButtonInfo>, navController: NavController, innerPadding: PaddingValues) {
+    var buttonsEnabled by remember { mutableStateOf(true) }
+
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -56,7 +63,23 @@ fun ButtonGrid(list: List<ButtonInfo>, navController: NavController, innerPaddin
         items(list) { buttonItem ->
             CustomButton(
                 text = buttonItem.title,
-                onClick = { navController.navigate(buttonItem.route) }
+                onClick = {
+                    if (buttonsEnabled) {
+                        buttonsEnabled = false
+                        navController.navigate(buttonItem.route) {
+                            launchSingleTop = true
+                        }
+                        navController.currentBackStackEntry?.lifecycle?.addObserver(
+                            object : DefaultLifecycleObserver {
+                                override fun onResume(owner: LifecycleOwner) {
+                                    buttonsEnabled = true
+                                    owner.lifecycle.removeObserver(this)
+                                }
+                            }
+                        )
+                    }
+                },
+
             )
         }
     }
@@ -65,7 +88,8 @@ fun ButtonGrid(list: List<ButtonInfo>, navController: NavController, innerPaddin
 @Composable
 fun CustomButton(
     text: String,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+
 ) {
     Box(
         modifier = Modifier

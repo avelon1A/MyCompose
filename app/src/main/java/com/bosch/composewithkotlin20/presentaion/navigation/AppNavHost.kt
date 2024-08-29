@@ -5,7 +5,6 @@ import AnimatedVisibilityExample
 import FishCanvas
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.SharedTransitionLayout
-import androidx.compose.animation.SharedTransitionScope
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -63,7 +62,11 @@ import org.koin.core.parameter.parametersOf
 
 @OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
-fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,startDestination: Any) {
+fun AppNavHost(
+    navController: NavHostController,
+    modifier: Modifier = Modifier,
+    startDestination: Any
+) {
     SharedTransitionLayout {
         NavHost(
             navController = navController,
@@ -194,16 +197,21 @@ fun AppNavHost(navController: NavHostController,modifier: Modifier = Modifier,st
                 WaterBottelCanvas()
             }
             composable<SharedElementScreen> {
-                SharedElementScreen(navController,  this@SharedTransitionLayout,  this@composable)
+                SharedElementScreen(navController, this@SharedTransitionLayout, this@composable)
             }
 
             composable<DetailsScreen> {
                 val item = it.toRoute<DetailsScreen>()
-                DetailsScreen(navController, item.id, item.image,item.name,item.description, this@SharedTransitionLayout,  this@composable)
+                DetailsScreen(
+                    navController = navController, id = item.id, image = item.image, name = item.name, description = item.description,
+                    this@SharedTransitionLayout,
+                    this@composable
+                )
             }
-
         }
 
     }
+
 }
+
 

@@ -61,7 +61,7 @@ fun OnBoardingScreen(
 			}
 		}
 		HorizontalPager(state = pagerState) { index ->
-			OnBoarding(page = pages[index])
+			OnBoarding(page = pages[index], modifier = Modifier)
 		}
 		Spacer(modifier = Modifier.weight(1f))
 		Row(
@@ -98,7 +98,7 @@ fun OnBoardingScreen(
 					onClick = {
 						scope.launch {
 							if (pagerState.currentPage == 2){
-                              event(OnBoardingEvent.SaveAtEntryPoint)
+								event(OnBoardingEvent.SaveAtEntryPoint)
 							}else{
 								pagerState.animateScrollToPage(
 									page = pagerState.currentPage + 1
@@ -117,7 +117,7 @@ fun OnBoarding(
 	modifier: Modifier = Modifier,
 	page: Page
 ) {
-	Column(modifier = Modifier.background(MaterialTheme.colorScheme.background)) {
+	Column(modifier = modifier.background(MaterialTheme.colorScheme.background)) {
 		Image(
 			modifier = Modifier
 				.fillMaxWidth()
@@ -156,7 +156,7 @@ fun PageIndicator(
 	) {
 		repeat(pageSize) {
 			Box(
-				modifier = Modifier
+				modifier = modifier
 					.width(15.dp)
 					.height(15.dp)
 					.clip(CircleShape)
