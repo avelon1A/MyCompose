@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 99 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 104 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Aug 30 05:53:11 UTC 2024 by AGP (8.4.2)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Aug 30 13:37:34 UTC 2024 by AGP (8.4.2)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -197,6 +197,7 @@ document.getElementById(id).style.display = 'none';
       <a class="mdl-navigation__link" href="#AutoboxingStateCreation"><i class="material-icons warning-icon">warning</i><code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead. (3)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (29)</a>
       <a class="mdl-navigation__link" href="#IconLocation"><i class="material-icons warning-icon">warning</i>Image defined in density-independent drawable folder (13)</a>
+      <a class="mdl-navigation__link" href="#UseTomlInstead"><i class="material-icons warning-icon">warning</i>Use TOML Version Catalog Instead (5)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -252,6 +253,11 @@ document.getElementById(id).style.display = 'none';
 <tr>
 <td class="countColumn">13</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#IconLocation">IconLocation</a>: Image defined in density-independent drawable folder</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Productivity">Productivity</a>
+</td></tr>
+<tr>
+<td class="countColumn">5</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#UseTomlInstead">UseTomlInstead</a>: Use TOML Version Catalog Instead</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (92)</a>
 </td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (41)</a>
@@ -1108,24 +1114,24 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt</a>:37</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno"> 34 </span><span class="annotation">@Composable</span>
-<span class="lineno"> 35 </span>
-<span class="lineno"> 36 </span><span class="keyword">fun</span> AnimatedContentScreen() {
-<span class="caretline"><span class="lineno"> 37 </span>    <span class="keyword">var</span> count by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 38 </span>    <span class="keyword">var</span> count1 by remember { mutableStateOf(<span class="number">0</span>) }
-<span class="lineno"> 39 </span>
-<span class="lineno"> 40 </span>    Column(
+<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt</a>:38</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  35 </span><span class="annotation">@Composable</span>
+<span class="lineno">  36 </span>
+<span class="lineno">  37 </span><span class="keyword">fun</span> AnimatedContentScreen() {
+<span class="caretline"><span class="lineno">  38 </span>    <span class="keyword">var</span> count by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  39 </span>    <span class="keyword">var</span> count1 by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="lineno">  40 </span>
+<span class="lineno">  41 </span>    Column(
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt</a>:38</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno"> 35 </span>
-<span class="lineno"> 36 </span><span class="keyword">fun</span> AnimatedContentScreen() {
-<span class="lineno"> 37 </span>    <span class="keyword">var</span> count by remember { mutableStateOf(<span class="number">0</span>) }
-<span class="caretline"><span class="lineno"> 38 </span>    <span class="keyword">var</span> count1 by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 39 </span>
-<span class="lineno"> 40 </span>    Column(
-<span class="lineno"> 41 </span>        modifier = Modifier.fillMaxSize(),
+<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt</a>:39</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  36 </span>
+<span class="lineno">  37 </span><span class="keyword">fun</span> AnimatedContentScreen() {
+<span class="lineno">  38 </span>    <span class="keyword">var</span> count by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="caretline"><span class="lineno">  39 </span>    <span class="keyword">var</span> count1 by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  40 </span>
+<span class="lineno">  41 </span>    Column(
+<span class="lineno">  42 </span>        modifier = Modifier.fillMaxSize(),
 </pre>
 
 <span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/canvas/CanvasWaterBottel.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/canvas/CanvasWaterBottel.kt</a>:35</span>: <span class="message">Prefer <code>mutableFloatStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
@@ -1421,6 +1427,90 @@ The res/drawable folder is intended for density-independent graphics such as sha
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationIconLocationLink" onclick="reveal('explanationIconLocation');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="IconLocationCardLink" onclick="hideid('IconLocationCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Productivity"></a>
+<a name="UseTomlInstead"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="UseTomlInsteadCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Use TOML Version Catalog Instead</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:142</span>: <span class="message">Use version catalog instead</span><br /><pre class="errorlines">
+<span class="lineno"> 139 </span>    debugImplementation(libs.androidx.ui.tooling)
+<span class="lineno"> 140 </span>    debugImplementation(libs.androidx.ui.test.manifest)
+<span class="lineno"> 141 </span>
+<span class="caretline"><span class="lineno"> 142 </span>    implementation(<span class="warning">platform("io.github.jan-tennert.supabase:bom:2.6.0")</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 143 </span>    implementation("io.github.jan-tennert.supabase:postgrest-kt:2.6.0")
+<span class="lineno"> 144 </span>    implementation("io.github.jan-tennert.supabase:gotrue-kt:2.6.0")
+<span class="lineno"> 145 </span>    implementation("io.github.jan-tennert.supabase:realtime-kt:2.6.0")
+</pre>
+
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:143</span>: <span class="message">Use version catalog instead</span><br /><pre class="errorlines">
+<span class="lineno"> 140 </span>    debugImplementation(libs.androidx.ui.test.manifest)
+<span class="lineno"> 141 </span>
+<span class="lineno"> 142 </span>    implementation(platform("io.github.jan-tennert.supabase:bom:2.6.0"))
+<span class="caretline"><span class="lineno"> 143 </span>    implementation("<span class="warning">io.github.jan-tennert.supabase:postgrest-kt:2.6.0</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 144 </span>    implementation("io.github.jan-tennert.supabase:gotrue-kt:2.6.0")
+<span class="lineno"> 145 </span>    implementation("io.github.jan-tennert.supabase:realtime-kt:2.6.0")
+</pre>
+
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:144</span>: <span class="message">Use version catalog instead</span><br /><pre class="errorlines">
+<span class="lineno"> 141 </span>
+<span class="lineno"> 142 </span>    implementation(platform("io.github.jan-tennert.supabase:bom:2.6.0"))
+<span class="lineno"> 143 </span>    implementation("io.github.jan-tennert.supabase:postgrest-kt:2.6.0")
+<span class="caretline"><span class="lineno"> 144 </span>    implementation("<span class="warning">io.github.jan-tennert.supabase:gotrue-kt:2.6.0</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 145 </span>    implementation("io.github.jan-tennert.supabase:realtime-kt:2.6.0")
+<span class="lineno"> 146 </span>
+<span class="lineno"> 147 </span>    implementation("io.ktor:ktor-client-cio:2.3.5")
+</pre>
+
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:145</span>: <span class="message">Use version catalog instead</span><br /><pre class="errorlines">
+<span class="lineno"> 142 </span>    implementation(platform("io.github.jan-tennert.supabase:bom:2.6.0"))
+<span class="lineno"> 143 </span>    implementation("io.github.jan-tennert.supabase:postgrest-kt:2.6.0")
+<span class="lineno"> 144 </span>    implementation("io.github.jan-tennert.supabase:gotrue-kt:2.6.0")
+<span class="caretline"><span class="lineno"> 145 </span>    implementation("<span class="warning">io.github.jan-tennert.supabase:realtime-kt:2.6.0</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 146 </span>
+<span class="lineno"> 147 </span>    implementation("io.ktor:ktor-client-cio:2.3.5")
+</pre>
+
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:147</span>: <span class="message">Use version catalog instead</span><br /><pre class="errorlines">
+<span class="lineno"> 144 </span>    implementation("io.github.jan-tennert.supabase:gotrue-kt:2.6.0")
+<span class="lineno"> 145 </span>    implementation("io.github.jan-tennert.supabase:realtime-kt:2.6.0")
+<span class="lineno"> 146 </span>
+<span class="caretline"><span class="lineno"> 147 </span>    implementation("<span class="warning">io.ktor:ktor-client-cio:2.3.5</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 148 </span>
+<span class="lineno"> 149 </span>
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationUseTomlInstead" style="display: none;">
+If your project is using a <code>libs.versions.toml</code> file, you should place all Gradle dependencies in the TOML file. This lint check looks for version declarations outside of the TOML file and suggests moving them (and in the IDE, provides a quickfix to performing the operation automatically).<br/>To suppress this error, use the issue id "UseTomlInstead" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">UseTomlInstead</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Productivity</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 4/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationUseTomlInsteadLink" onclick="reveal('explanationUseTomlInstead');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="UseTomlInsteadCardLink" onclick="hideid('UseTomlInsteadCard');">
 Dismiss</button>            </div>
             </div>
           </section>
