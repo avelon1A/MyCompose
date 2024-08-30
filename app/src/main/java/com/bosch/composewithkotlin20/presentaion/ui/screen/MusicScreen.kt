@@ -28,6 +28,11 @@ import androidx.compose.material3.Slider
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -165,6 +170,11 @@ fun BottomBarPlayer(
 	onStart: () -> Unit,
 	onNext: () -> Unit,
 ) {
+	var internalSlider by remember { mutableFloatStateOf(progress) }
+	var isUserInteracting by remember { mutableStateOf(false) }
+	if (!isUserInteracting) {
+		internalSlider = progress
+	}
 
 	BottomAppBar(
 		content = {
@@ -188,17 +198,24 @@ fun BottomBarPlayer(
 						onNext = onNext
 					)
 					Slider(
-						value = progress,
-						onValueChange = { onProgress(it)},
-						valueRange = 0f..100f
-						, modifier = Modifier.weight(2f)
+						value = internalSlider,
+						onValueChange = {
+							isUserInteracting = true
+							internalSlider = it
+						},
+						valueRange = 0f..100f,
+						modifier = Modifier.weight(2f),
+						onValueChangeFinished = {
+							isUserInteracting = false
+							onProgress(internalSlider)
+						}
 					)
-					
 				}
 			}
 		}
 	)
 }
+
 
 @Composable
 fun MediaPlayerController(
