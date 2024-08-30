@@ -21,10 +21,17 @@ import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.LoginViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.MainViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.OnBoardingViewModel
+import com.bosch.composewithkotlin20.presentation.ui.screen.supabase.SupaBaseViewModel
+import com.bosch.composewithkotlin20.util.Const
 import com.bosch.composewithkotlin20.util.ServiceStarter
 import com.bosch.composewithkotlin20.util.service.mediaPlayer.ContentResolverHelper
 import com.bosch.composewithkotlin20.util.service.mediaPlayer.JetAudioNotificationManager
 import com.bosch.composewithkotlin20.util.service.mediaPlayer.JetAudioServiceHandler
+import io.github.jan.supabase.SupabaseClient
+import io.github.jan.supabase.annotations.SupabaseInternal
+import io.github.jan.supabase.createSupabaseClient
+import io.github.jan.supabase.postgrest.Postgrest
+import io.github.jan.supabase.realtime.Realtime
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -33,8 +40,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 val appModule = module {
-	
+
 	single { provideRetrofit() }
+	single { provideSupaBaseClient() }
 	single { provideApiService(get()) }
 	single<LocalUserManager> { LocalUserMangerImp(androidApplication()) }
 	single { provideAudioAttributes() }
@@ -48,11 +56,11 @@ val appModule = module {
 	single { LoginRepository(get()) }
 	single { provideExoPlayer(androidContext(), get())}
 	single { provideMediaSession(get(), get()) }
-	
-	
+
+
 	single { AppEntryUseCase(get(), get()) }
 	viewModel { MainViewModel(get()) }
-	
+
 	viewModel { LoginViewModel(get()) }
 	viewModel { (savedStateHandle: SavedStateHandle) ->
 		AudioViewModel(
@@ -63,6 +71,7 @@ val appModule = module {
 		)
 	}
 	viewModel { OnBoardingViewModel(get()) }
+	viewModel { SupaBaseViewModel(get()) }
 }
 
 fun provideRetrofit(): Retrofit {
@@ -95,3 +104,21 @@ fun provideExoPlayer(context: Context, audioAttributes: AudioAttributes): ExoPla
 fun provideMediaSession(context: Context, player: ExoPlayer): MediaSession {
 	return MediaSession.Builder(context, player).build()
 }
+fun provideSupaBaseClient(): SupabaseClient {
+	val supabaseUrl = Const.SUPABASE_APP_URL
+	val supabaseKey = Const.SUPABASE_API_KEY
+
+	return createSupabaseClient(
+		supabaseKey = supabaseKey,
+		supabaseUrl = supabaseUrl
+
+	) {
+		install(Realtime)
+		install(Postgrest)
+
+
+
+	}
+}
+
+

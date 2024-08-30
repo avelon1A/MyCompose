@@ -139,14 +139,14 @@ fun Item(
                     }
                 ), painter = painterResource(id = image),
                 contentDescription = description)
-            Text(modifier = Modifier.padding(end = 10.dp)
-                .sharedElement(state = rememberSharedContentState(key = "text$index"),
-                    animatedVisibilityScope = animatedVisibilityScope,
-                    boundsTransform = { _, _ ->
-                        tween(durationMillis = 500, easing = LinearEasing)
-
-                    }
-                ),
+            Text(modifier = Modifier.padding(end = 10.dp),
+//                .sharedElement(state = rememberSharedContentState(key = "text$index"),
+//                    animatedVisibilityScope = animatedVisibilityScope,
+//                    boundsTransform = { _, _ ->
+//                        tween(durationMillis = 500, easing = LinearEasing)
+//
+//                    }
+//                ),
                 text = name, fontSize = 20.sp)
         }
     }
@@ -191,14 +191,14 @@ fun DetailsScreen(
             )
             Text(
                 text = name, fontSize = 44.sp,
-                modifier =
-                Modifier.sharedElement(
-                        sharedTransitionScope.rememberSharedContentState(key = "text$id"),
-                        animatedVisibilityScope = animatedContentScope,
-                    boundsTransform = { _, _ ->
-                        tween(durationMillis = 500, easing = LinearOutSlowInEasing)
-                    }
-                )
+//                modifier =
+//                Modifier.sharedElement(
+//                        sharedTransitionScope.rememberSharedContentState(key = "text$id"),
+//                        animatedVisibilityScope = animatedContentScope,
+//                    boundsTransform = { _, _ ->
+//                        tween(durationMillis = 500, easing = LinearOutSlowInEasing)
+//                    }
+//                )
             )
         }
     }
