@@ -34,6 +34,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasMovement
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOval
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOverlap
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.WaterBottleScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupaBaseMainScreen
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.util.Const.ANIMATION_SCREEN
 import com.bosch.composewithkotlin20.util.Const.APPS_SCREEN
@@ -86,6 +87,7 @@ val appList = listOf(
     ButtonInfo("Todo App", TodoScreen),
     ButtonInfo("Onboarding Tutorial", OnBoardingScreen),
     ButtonInfo("Login Screen", LoginScreen),
+    ButtonInfo("Supabase Screen", SupaBaseMainScreen),
 )
 
 

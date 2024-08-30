@@ -7,6 +7,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
+import androidx.compose.animation.togetherWith
 import androidx.compose.animation.with
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -66,10 +67,12 @@ fun AnimatedContentScreen() {
                     targetState = count, transitionSpec = {
                         if (targetState > initialState) {
 
-                            slideInVertically { height -> height } + fadeIn() with slideOutVertically { height -> -height } + fadeOut()
+                            (slideInVertically { height -> height } + fadeIn()).togetherWith(
+                                slideOutVertically { height -> -height } + fadeOut())
                         } else {
 
-                            slideInVertically { height -> -height } + fadeIn() with slideOutVertically { height -> height } + fadeOut()
+                            (slideInVertically { height -> -height } + fadeIn()).togetherWith(
+                                slideOutVertically { height -> height } + fadeOut())
                         }.using(
                             SizeTransform(clip = false)
                         )

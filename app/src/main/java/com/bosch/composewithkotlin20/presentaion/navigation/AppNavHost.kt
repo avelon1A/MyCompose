@@ -53,10 +53,12 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasMovement
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOval
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOverlap
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.WaterBottleScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupaBaseMainScreen
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.OnBoardingViewModel
+import com.bosch.composewithkotlin20.presentation.ui.screen.supabase.SupaBaseViewModel
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 
@@ -207,6 +209,10 @@ fun AppNavHost(
                     this@SharedTransitionLayout,
                     this@composable
                 )
+            }
+            composable<SupaBaseMainScreen> {
+                val viewModel: SupaBaseViewModel = koinViewModel()
+                SupaBaseMainScreen(viewModel)
             }
         }
 

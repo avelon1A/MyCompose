@@ -10,6 +10,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImagePainter
@@ -24,19 +25,23 @@ fun CoilScreen(){
 	Column(modifier = Modifier.fillMaxSize(),
 		horizontalAlignment = Alignment.CenterHorizontally,
 		verticalArrangement = Arrangement.Center) {
-		CoilImage()
+		CoilImage(modifier = Modifier)
 		
 	}
 
 }
 @Composable
-fun CoilImage(){
-	Box(modifier = Modifier.height(200.dp)
+fun CoilImage(image:String = "https://miro.medium.com/v2/resize:fit:1400/format:webp/0*QtZA5PZkzL2XUpYl.jpg",
+			  modifier: Modifier,
+			  contentScale: ContentScale = ContentScale.Fit,
+){
+	Box(modifier = modifier.height(200.dp)
 		.width(200.dp),
 		contentAlignment = Alignment.Center
 		) {
 		SubcomposeAsyncImage(
-			model = "https://miro.medium.com/v2/resize:fit:1400/format:webp/0*QtZA5PZkzL2XUpYl.jpg",
+			model = image,
+			contentScale = contentScale,
 			contentDescription = stringResource(R.string.description)
 		) {
 			val state = painter.state
