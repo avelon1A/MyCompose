@@ -1,5 +1,10 @@
 package com.bosch.composewithkotlin20.domain.navigation
 
+/**
+ * This is the interface for navigation between screens.
+ *
+ */
+
 interface AppNavigator {
     fun navigateToHome()
     fun navigateToScreenB()
