@@ -16,6 +16,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
+import com.bosch.composewithkotlin20.domain.navigation.AppNavigator
 import com.bosch.composewithkotlin20.presentaion.ui.screen.BottomNavigationBar
 import com.bosch.composewithkotlin20.presentaion.ui.screen.CameraScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.CircularIndicatorScreen
@@ -64,6 +65,7 @@ import org.koin.core.parameter.parametersOf
 @Composable
 fun AppNavHost(
     navController: NavHostController,
+    appNavigator: AppNavigator,
     modifier: Modifier = Modifier,
     startDestination: Any
 ) {
@@ -160,7 +162,7 @@ fun AppNavHost(
                 VectorAnimationScreen()
             }
             composable<TypeSafeNavigation> {
-                TypeSafeNavigation(navController)
+                TypeSafeNavigation(appNavigator)
             }
             composable<TypeSafeNavigationSecond> {
                 val name = it.toRoute<TypeSafeNavigationSecond>()
