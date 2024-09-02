@@ -18,11 +18,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.bosch.composewithkotlin20.domain.navigation.AppNavigator
+import androidx.navigation.NavHostController
 import kotlinx.serialization.Serializable
 
 @Composable
-fun TypeSafeNavigation(navController: AppNavigator) {
+fun TypeSafeNavigation(navController: NavHostController) {
     var text by remember { mutableStateOf("type here") }
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -34,7 +34,7 @@ fun TypeSafeNavigation(navController: AppNavigator) {
         TextField(value = text,
             onValueChange = { newText -> text = newText })
         Spacer(modifier = Modifier.height(10.dp))
-        OutlinedButton(onClick = { navController.navigateToTypeSafeNavigationSecondScreen(text) }) {
+        OutlinedButton(onClick = { navController.navigate(TypeSafeNavigationSecond("aman")) }) {
             Text(text = "click")
 
         }

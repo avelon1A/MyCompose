@@ -18,7 +18,6 @@ import androidx.navigation.compose.rememberNavController
 import com.bosch.composewithkotlin20.domain.navigation.AppNavigator
 import com.bosch.composewithkotlin20.domain.usecases.AppEntryUseCase
 import com.bosch.composewithkotlin20.presentaion.navigation.AppNavHost
-import com.bosch.composewithkotlin20.presentaion.navigation.AppNavigationImp
 import com.bosch.composewithkotlin20.presentaion.navigation.navigation
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.MainViewModel
 import com.example.compose.AppTheme
@@ -62,7 +61,6 @@ class MainActivity : ComponentActivity() {
 					AppNavHost(
 						navController = navController,
 						modifier = Modifier.padding(innerPadding),
-						appNavigator = AppNavigationImp(navController),
 						startDestination = navigation(viewModel._startDestination)
 					)
 					
