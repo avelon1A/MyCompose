@@ -2,6 +2,7 @@ package com.bosch.composewithkotlin20.presentaion.ui.screen.supabase
 
 import android.util.Log
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
@@ -23,6 +24,10 @@ class SupabaseVideoPlayerViewModel(private val supabaseClient: SupabaseClient): 
 
     var selectedVideoUrl: String? by mutableStateOf(null)
         private set
+
+    var currentPlaybackPosition: Long  by mutableLongStateOf( 0L)
+        private set
+
     init {
         fetchVideos()
         observeRealtimeVideoUpdates()
@@ -60,5 +65,9 @@ class SupabaseVideoPlayerViewModel(private val supabaseClient: SupabaseClient): 
 
     fun onVideoSelected(url: String) {
         selectedVideoUrl = url
+    }
+
+    fun updatePlaybackPosition(position: Long) {
+        currentPlaybackPosition = position
     }
 }

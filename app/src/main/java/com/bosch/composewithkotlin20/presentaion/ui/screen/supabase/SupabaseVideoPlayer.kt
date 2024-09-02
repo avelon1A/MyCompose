@@ -1,8 +1,18 @@
 package com.bosch.composewithkotlin20.presentaion.ui.screen.supabase
 
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Context
+import android.graphics.SurfaceTexture
+import android.view.Surface
+import android.view.TextureView
+import android.view.ViewGroup
+import android.view.WindowInsets
+import android.view.WindowInsetsController
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -18,15 +28,18 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -40,7 +53,6 @@ import com.bosch.composewithkotlin20.R
 import com.bosch.composewithkotlin20.data.model.data.Video
 import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ExandCards
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.serialization.Serializable
 
 
@@ -51,71 +63,93 @@ fun SupabaseVideoPlayer(
     val videos by supabaseVideoPlayerViewModel.videos.collectAsState()
     val smallSize by remember { mutableStateOf(false) }
     var isPlaying by remember { mutableStateOf(false) }
+   val configuration = LocalConfiguration.current
 
-    Scaffold(modifier = Modifier.background(MaterialTheme.colorScheme.surface), topBar = {
-        AppBar(R.drawable.arrow_back, navController)
-    }, content = { innerPadding ->
-        Column(
-            modifier = Modifier
-                .padding(innerPadding)
-                .background(MaterialTheme.colorScheme.surface)
-                .fillMaxSize()
-        ) {
-            if (supabaseVideoPlayerViewModel.selectedVideoUrl == null) {
-                VideoList(videos = videos, onVideoSelected = { url ->
-                    supabaseVideoPlayerViewModel.onVideoSelected(url)
-                }, modifier = Modifier.height(250.dp), smallSize = smallSize)
-            } else {
-                VideoPlayer(supabaseVideoPlayerViewModel.selectedVideoUrl!!,
-                    onPlayingStateChanged = { playing ->
-                        isPlaying = playing
-                    })
-                VideoList(
-                    videos = videos, onVideoSelected = { url ->
-                        supabaseVideoPlayerViewModel.onVideoSelected(url)
-                    }, modifier = Modifier.height(100.dp), smallSize = true
-                )
+    when (configuration.orientation  ) {
+        android.content.res.Configuration.ORIENTATION_LANDSCAPE -> {
+            if(supabaseVideoPlayerViewModel.selectedVideoUrl != null){
+
+                Column(
+                    modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    VideoPlayer(supabaseVideoPlayerViewModel.selectedVideoUrl!!,
+                        onPlayingStateChanged = { playing ->
+                            isPlaying = playing }, viewModel = supabaseVideoPlayerViewModel,modifier = Modifier.fillMaxSize())
+                }
             }
+
         }
-    })
+        android.content.res.Configuration.ORIENTATION_PORTRAIT -> {
+            Scaffold(modifier = Modifier.background(MaterialTheme.colorScheme.surface), topBar = {
+                AppBar(R.drawable.arrow_back, navController)
+            }, content = { innerPadding ->
+                Column(
+                    modifier = Modifier
+                        .background(MaterialTheme.colorScheme.surface)
+                        .fillMaxSize()
+                        .padding(innerPadding)
+                ) {
+                    if (supabaseVideoPlayerViewModel.selectedVideoUrl == null) {
+                        VideoList(videos = videos, onVideoSelected = { url ->
+                            supabaseVideoPlayerViewModel.onVideoSelected(url)
+                        }, modifier = Modifier.height(250.dp), smallSize = smallSize)
+                    } else {
+                        VideoPlayer(
+                            supabaseVideoPlayerViewModel.selectedVideoUrl!!,
+                            onPlayingStateChanged = { playing ->
+                                isPlaying = playing
+                            },
+                            viewModel = supabaseVideoPlayerViewModel,
+                            Modifier.height(250.dp)
+                        )
+                        VideoList(
+                            videos = videos, onVideoSelected = { url ->
+                                supabaseVideoPlayerViewModel.onVideoSelected(url)
+                            }, modifier = Modifier.height(100.dp), smallSize = true
+                        )
+                    }
+                }
+            })
+
+        }
+        else -> {
+
+        }
+    }
+
+
+
 
 
 }
-
 @Composable
-fun VideoPlayer(url: String, onPlayingStateChanged: (Boolean) -> Unit) {
+fun VideoPlayer(
+    url: String,
+    onPlayingStateChanged: (Boolean) -> Unit,
+    viewModel: SupabaseVideoPlayerViewModel,
+    modifier: Modifier = Modifier.fillMaxSize()
+) {
     val context = LocalContext.current
-    val configuration = LocalConfiguration.current
-    val modifier by remember { mutableStateOf(Modifier) }
+    val view = LocalView.current
+
     val exoPlayer = remember {
         ExoPlayer.Builder(context).build().apply {
             setMediaItem(MediaItem.fromUri(url))
             prepare()
+            seekTo(viewModel.currentPlaybackPosition)
             playWhenReady = true
-        }
-    }
-    when (configuration.orientation) {
-        android.content.res.Configuration.ORIENTATION_LANDSCAPE -> {
-            modifier.fillMaxSize()
-        }
-
-        else -> {
-            modifier.height(250.dp)
         }
     }
 
     DisposableEffect(exoPlayer) {
-
         val listener = object : Player.Listener {
             override fun onPlaybackStateChanged(state: Int) {
                 when (state) {
                     Player.STATE_READY -> {
-
                         onPlayingStateChanged(exoPlayer.isPlaying)
                     }
-
                     Player.STATE_ENDED -> {
-
                         onPlayingStateChanged(false)
                     }
                 }
@@ -129,18 +163,84 @@ fun VideoPlayer(url: String, onPlayingStateChanged: (Boolean) -> Unit) {
         exoPlayer.addListener(listener)
 
         onDispose {
+            viewModel.updatePlaybackPosition(exoPlayer.currentPosition) // Save the current position
             exoPlayer.removeListener(listener)
             exoPlayer.release()
         }
     }
 
+    // Hide system UI
+    LaunchedEffect(view) {
+        val window = (context as Activity).window
+        window.insetsController?.let { controller ->
+            controller.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
+            controller.systemBarsBehavior = WindowInsetsController.BEHAVIOR_DEFAULT
+        }
+    }
+
+    // Restore system UI visibility when composable leaves the composition
+    DisposableEffect(Unit) {
+        onDispose {
+            val window = (context as Activity).window
+            window.insetsController?.show(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
+        }
+    }
+
     AndroidView(
-        factory = { PlayerView(context).apply { player = exoPlayer } },
+        factory = { context ->
+            CroppedTextureView(context).apply {
+                setPlayer(exoPlayer)
+            }
+        },
         modifier = modifier
-            .fillMaxWidth()
-            .height(250.dp)
     )
 }
+
+
+
+class CroppedTextureView(context: Context) : TextureView(context) {
+
+    private var exoPlayer: ExoPlayer? = null
+
+    init {
+        surfaceTextureListener = object : SurfaceTextureListener {
+            override fun onSurfaceTextureAvailable(surface: SurfaceTexture, width: Int, height: Int) {
+                exoPlayer?.let {
+                    it.setVideoSurface(Surface(surface))
+                }
+                requestLayout()
+            }
+
+            override fun onSurfaceTextureSizeChanged(surface: SurfaceTexture, width: Int, height: Int) {
+                // Handle size changes if needed
+            }
+
+            override fun onSurfaceTextureDestroyed(surface: SurfaceTexture): Boolean {
+                exoPlayer?.clearVideoSurface()
+                return true
+            }
+
+            override fun onSurfaceTextureUpdated(surface: SurfaceTexture) {
+                // Handle updates if needed
+            }
+        }
+    }
+
+    fun setPlayer(player: ExoPlayer?) {
+        exoPlayer = player
+        surfaceTexture?.let {
+            player?.setVideoSurface(Surface(it))
+        }
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        val width = MeasureSpec.getSize(widthMeasureSpec)
+        val height = MeasureSpec.getSize(heightMeasureSpec)
+        setMeasuredDimension(width, height)
+    }
+}
+
 
 
 @Composable
