@@ -15,7 +15,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.navigation.compose.rememberNavController
-import com.bosch.composewithkotlin20.domain.navigation.AppNavigator
 import com.bosch.composewithkotlin20.domain.usecases.AppEntryUseCase
 import com.bosch.composewithkotlin20.presentaion.navigation.AppNavHost
 import com.bosch.composewithkotlin20.presentaion.navigation.navigation
