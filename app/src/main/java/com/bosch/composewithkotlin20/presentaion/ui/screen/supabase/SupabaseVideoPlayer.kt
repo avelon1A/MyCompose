@@ -22,7 +22,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -45,64 +44,43 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.serialization.Serializable
 
 
-
 @Composable
 fun SupabaseVideoPlayer(
-    navController: NavHostController,
-    supabaseVideoPlayerViewModel: SupabaseVideoPlayerViewModel
+    navController: NavHostController, supabaseVideoPlayerViewModel: SupabaseVideoPlayerViewModel
 ) {
     val videos by supabaseVideoPlayerViewModel.videos.collectAsState()
-    val configuration = LocalConfiguration.current
+    val smallSize by remember { mutableStateOf(false) }
+    var isPlaying by remember { mutableStateOf(false) }
 
-    var selectedVideoUrl by rememberSaveable { mutableStateOf<String?>(null) }
-    var isPlaying by rememberSaveable { mutableStateOf(false) }
-
-    val isLandscape = configuration.orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE
-    val appBar: @Composable () -> Unit = if (isLandscape) {
-        {}
-    } else {
-        { AppBar(R.drawable.arrow_back, navController) }
-    }
-
-    Scaffold(
-        modifier = Modifier.background(MaterialTheme.colorScheme.surface),
-        topBar = { appBar() },
-        content = { innerPadding ->
-            Column(
-                modifier = Modifier
-                    // Remove innerPadding in landscape mode
-                    .padding(if (isLandscape) 0.dp else innerPadding.calculateTopPadding())
-                    .background(MaterialTheme.colorScheme.surface)
-                    .fillMaxSize()
-            ) {
-                if (selectedVideoUrl == null) {
-                    VideoList(
-                        videos = videos,
-                        onVideoSelected = { url ->
-                            selectedVideoUrl = url
-                        },
-                        modifier = Modifier.height(if (isLandscape) 100.dp else 250.dp),
-                        smallSize = false
-                    )
-                } else {
-                    VideoPlayer(
-                        url = selectedVideoUrl!!,
-                        onPlayingStateChanged = { playing -> isPlaying = playing }
-                    )
-                    VideoList(
-                        videos = videos,
-                        onVideoSelected = { url ->
-                            selectedVideoUrl = url
-                        },
-                        modifier = Modifier.height(if (isLandscape) 100.dp else 100.dp),
-                        smallSize = true
-                    )
-                }
+    Scaffold(modifier = Modifier.background(MaterialTheme.colorScheme.surface), topBar = {
+        AppBar(R.drawable.arrow_back, navController)
+    }, content = { innerPadding ->
+        Column(
+            modifier = Modifier
+                .padding(innerPadding)
+                .background(MaterialTheme.colorScheme.surface)
+                .fillMaxSize()
+        ) {
+            if (supabaseVideoPlayerViewModel.selectedVideoUrl == null) {
+                VideoList(videos = videos, onVideoSelected = { url ->
+                    supabaseVideoPlayerViewModel.onVideoSelected(url)
+                }, modifier = Modifier.height(250.dp), smallSize = smallSize)
+            } else {
+                VideoPlayer(supabaseVideoPlayerViewModel.selectedVideoUrl!!,
+                    onPlayingStateChanged = { playing ->
+                        isPlaying = playing
+                    })
+                VideoList(
+                    videos = videos, onVideoSelected = { url ->
+                        supabaseVideoPlayerViewModel.onVideoSelected(url)
+                    }, modifier = Modifier.height(100.dp), smallSize = true
+                )
             }
         }
-    )
-}
+    })
 
+
+}
 
 @Composable
 fun VideoPlayer(url: String, onPlayingStateChanged: (Boolean) -> Unit) {
@@ -120,6 +98,7 @@ fun VideoPlayer(url: String, onPlayingStateChanged: (Boolean) -> Unit) {
         android.content.res.Configuration.ORIENTATION_LANDSCAPE -> {
             modifier.fillMaxSize()
         }
+
         else -> {
             modifier.height(250.dp)
         }
@@ -134,8 +113,9 @@ fun VideoPlayer(url: String, onPlayingStateChanged: (Boolean) -> Unit) {
 
                         onPlayingStateChanged(exoPlayer.isPlaying)
                     }
+
                     Player.STATE_ENDED -> {
-                        // Playback has ended
+
                         onPlayingStateChanged(false)
                     }
                 }
@@ -158,28 +138,20 @@ fun VideoPlayer(url: String, onPlayingStateChanged: (Boolean) -> Unit) {
         factory = { PlayerView(context).apply { player = exoPlayer } },
         modifier = modifier
             .fillMaxWidth()
-
+            .height(250.dp)
     )
 }
 
 
-
-
-
 @Composable
 fun VideoItem(
-    video: Video,
-    onVideoSelected: (String) -> Unit,
-    modifier: Modifier,
-    smallSize: Boolean
+    video: Video, onVideoSelected: (String) -> Unit, modifier: Modifier, smallSize: Boolean
 ) {
     if (smallSize) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable { onVideoSelected(video.videoUrl) }
-                .padding(8.dp)
-        ) {
+        Row(modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onVideoSelected(video.videoUrl) }
+            .padding(8.dp)) {
             Image(
                 painter = rememberAsyncImagePainter(video.thumbnailUrl),
                 contentDescription = null,
@@ -198,25 +170,22 @@ fun VideoItem(
                     modifier = Modifier.padding(bottom = 4.dp)
                 )
                 Text(
-                    text = video.description,
-                    style = MaterialTheme.typography.bodySmall
+                    text = video.description, style = MaterialTheme.typography.bodySmall
                 )
             }
         }
     } else {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable { onVideoSelected(video.videoUrl) }
-                .padding(8.dp)
+        Column(modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onVideoSelected(video.videoUrl) }
+            .padding(8.dp)
 
         ) {
             Image(
                 painter = rememberAsyncImagePainter(video.thumbnailUrl),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
-                modifier = modifier
-                    .fillMaxWidth()
+                modifier = modifier.fillMaxWidth()
 
             )
             Text(
@@ -240,21 +209,18 @@ fun trimTextToWords(text: String, maxWords: Int): String {
 }
 
 
-
 @Composable
 fun VideoList(
-    videos: List<Video>,
-    onVideoSelected: (String) -> Unit,
-    modifier: Modifier,
-    smallSize: Boolean
+    videos: List<Video>, onVideoSelected: (String) -> Unit, modifier: Modifier, smallSize: Boolean
 ) {
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(videos.size) { index ->
             val video = videos[index]
-            VideoItem(video, onVideoSelected,modifier,smallSize)
+            VideoItem(video, onVideoSelected, modifier, smallSize)
         }
     }
 }
+
 @Preview(showBackground = true)
 @Composable
 fun PreviewVideoItem() {
