@@ -17,6 +17,7 @@ import com.bosch.composewithkotlin20.domain.manger.LocalUserManager
 import com.bosch.composewithkotlin20.domain.usecases.AppEntryUseCase
 import com.bosch.composewithkotlin20.domain.usecases.GetAppEntry
 import com.bosch.composewithkotlin20.domain.usecases.SaveAppEntry
+import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupabaseVideoPlayerViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.LoginViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.MainViewModel
@@ -72,6 +73,7 @@ val appModule = module {
 	}
 	viewModel { OnBoardingViewModel(get()) }
 	viewModel { SupaBaseViewModel(get()) }
+	viewModel { SupabaseVideoPlayerViewModel(get()) }
 }
 
 fun provideRetrofit(): Retrofit {

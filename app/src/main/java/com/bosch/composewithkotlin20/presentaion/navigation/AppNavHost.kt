@@ -54,6 +54,8 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOval
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOverlap
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.WaterBottleScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupaBaseMainScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupabaseVideoPlayer
+import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupabaseVideoPlayerViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
@@ -213,6 +215,10 @@ fun AppNavHost(
             composable<SupaBaseMainScreen> {
                 val viewModel: SupaBaseViewModel = koinViewModel()
                 SupaBaseMainScreen(viewModel)
+            }
+            composable<SupabaseVideoPlayer> {
+                val viewModel: SupabaseVideoPlayerViewModel = koinViewModel()
+                SupabaseVideoPlayer(navController,viewModel)
             }
         }
 
