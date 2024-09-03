@@ -1,13 +1,11 @@
 package com.bosch.composewithkotlin20.presentaion.ui.screen.supabase
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
-import android.content.pm.ActivityInfo
 import android.graphics.SurfaceTexture
+import android.util.Log
 import android.view.Surface
 import android.view.TextureView
-import android.view.ViewGroup
 import android.view.WindowInsets
 import android.view.WindowInsetsController
 import androidx.annotation.OptIn
@@ -33,6 +31,7 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -57,7 +56,6 @@ import com.bosch.composewithkotlin20.R
 import com.bosch.composewithkotlin20.data.model.data.Video
 import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ExandCards
-import com.google.android.exoplayer2.ui.StyledPlayerView
 import kotlinx.serialization.Serializable
 
 
@@ -68,7 +66,10 @@ fun SupabaseVideoPlayer(
     val videos by supabaseVideoPlayerViewModel.videos.collectAsState()
     val smallSize by remember { mutableStateOf(false) }
     var isPlaying by remember { mutableStateOf(false) }
-   val configuration = LocalConfiguration.current
+    val selectedVideoUrl by supabaseVideoPlayerViewModel.selectedVideoUrl.observeAsState()
+
+
+    val configuration = LocalConfiguration.current
 
     when (configuration.orientation  ) {
         android.content.res.Configuration.ORIENTATION_LANDSCAPE -> {
@@ -78,7 +79,7 @@ fun SupabaseVideoPlayer(
                     modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    VideoPlayer(supabaseVideoPlayerViewModel.selectedVideoUrl!!,
+                    VideoPlayer(selectedVideoUrl!!,
                         onPlayingStateChanged = { playing ->
                             isPlaying = playing }, viewModel = supabaseVideoPlayerViewModel,modifier = Modifier.fillMaxSize())
                 }
@@ -95,13 +96,13 @@ fun SupabaseVideoPlayer(
                         .fillMaxSize()
                         .padding(innerPadding)
                 ) {
-                    if (supabaseVideoPlayerViewModel.selectedVideoUrl == null) {
+                    if (selectedVideoUrl == null) {
                         VideoList(videos = videos, onVideoSelected = { url ->
                             supabaseVideoPlayerViewModel.onVideoSelected(url)
                         }, modifier = Modifier.height(250.dp), smallSize = smallSize)
                     } else {
                         VideoPlayer(
-                            supabaseVideoPlayerViewModel.selectedVideoUrl!!,
+                            selectedVideoUrl!!,
                             onPlayingStateChanged = { playing ->
                                 isPlaying = playing
                             },
@@ -134,6 +135,7 @@ fun VideoPlayer(
     viewModel: SupabaseVideoPlayerViewModel,
     modifier: Modifier = Modifier.fillMaxSize()
 ) {
+
     val context = LocalContext.current
     val view = LocalView.current
 
@@ -155,6 +157,15 @@ fun VideoPlayer(
                     }
                     Player.STATE_ENDED -> {
                         onPlayingStateChanged(false)
+                    }
+
+                    Player.STATE_BUFFERING -> {
+                        onPlayingStateChanged(exoPlayer.isLoading
+                        )
+                    }
+
+                    Player.STATE_IDLE -> {
+                        TODO()
                     }
                 }
             }
@@ -192,12 +203,19 @@ fun VideoPlayer(
             PlayerView(context).apply {
                 setPlayer(exoPlayer)
                 useController = true
-                resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FIXED_WIDTH
+                resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FIT
 
             }
         },
-        modifier = modifier
+        modifier = modifier,
+        update = { view ->
+            val player = view.player
+            player?.setMediaItem(MediaItem.fromUri(url))
+            player?.prepare()
+            player?.playWhenReady = true
+        }
     )
+
 }
 
 
@@ -209,9 +227,7 @@ class CroppedTextureView(context: Context) : TextureView(context) {
     init {
         surfaceTextureListener = object : SurfaceTextureListener {
             override fun onSurfaceTextureAvailable(surface: SurfaceTexture, width: Int, height: Int) {
-                exoPlayer?.let {
-                    it.setVideoSurface(Surface(surface))
-                }
+                exoPlayer?.setVideoSurface(Surface(surface))
                 requestLayout()
             }
 
@@ -227,13 +243,6 @@ class CroppedTextureView(context: Context) : TextureView(context) {
             override fun onSurfaceTextureUpdated(surface: SurfaceTexture) {
                 // Handle updates if needed
             }
-        }
-    }
-
-    fun setPlayer(player: ExoPlayer?) {
-        exoPlayer = player
-        surfaceTexture?.let {
-            player?.setVideoSurface(Surface(it))
         }
     }
 

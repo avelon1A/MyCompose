@@ -13,6 +13,8 @@ import com.bosch.composewithkotlin20.data.api.ApiService
 import com.bosch.composewithkotlin20.data.manager.LocalUserMangerImp
 import com.bosch.composewithkotlin20.data.repo.AudioRepository
 import com.bosch.composewithkotlin20.data.repo.LoginRepository
+import com.bosch.composewithkotlin20.data.repo.SupabaseRepoImp
+import com.bosch.composewithkotlin20.domain.Repo.SupabaseRepository
 import com.bosch.composewithkotlin20.domain.manger.LocalUserManager
 import com.bosch.composewithkotlin20.domain.usecases.AppEntryUseCase
 import com.bosch.composewithkotlin20.domain.usecases.GetAppEntry
@@ -29,7 +31,6 @@ import com.bosch.composewithkotlin20.util.service.mediaPlayer.ContentResolverHel
 import com.bosch.composewithkotlin20.util.service.mediaPlayer.JetAudioNotificationManager
 import com.bosch.composewithkotlin20.util.service.mediaPlayer.JetAudioServiceHandler
 import io.github.jan.supabase.SupabaseClient
-import io.github.jan.supabase.annotations.SupabaseInternal
 import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.postgrest.Postgrest
 import io.github.jan.supabase.realtime.Realtime
@@ -57,6 +58,7 @@ val appModule = module {
 	single { LoginRepository(get()) }
 	single { provideExoPlayer(androidContext(), get())}
 	single { provideMediaSession(get(), get()) }
+	single { provideSupabaseRepo(get()) }
 
 
 	single { AppEntryUseCase(get(), get()) }
@@ -121,6 +123,11 @@ fun provideSupaBaseClient(): SupabaseClient {
 
 
 	}
-}
+   }
+
+	fun provideSupabaseRepo(supabaseClient: SupabaseClient): SupabaseRepository {
+		return SupabaseRepoImp(supabaseClient)
+	}
+
 
 
