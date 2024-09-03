@@ -3,12 +3,14 @@ package com.bosch.composewithkotlin20.presentaion.ui.screen.supabase
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
+import android.content.pm.ActivityInfo
 import android.graphics.SurfaceTexture
 import android.view.Surface
 import android.view.TextureView
 import android.view.ViewGroup
 import android.view.WindowInsets
 import android.view.WindowInsetsController
+import androidx.annotation.OptIn
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -45,7 +47,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
+import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
+import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
 import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
@@ -53,6 +57,7 @@ import com.bosch.composewithkotlin20.R
 import com.bosch.composewithkotlin20.data.model.data.Video
 import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ExandCards
+import com.google.android.exoplayer2.ui.StyledPlayerView
 import kotlinx.serialization.Serializable
 
 
@@ -119,10 +124,9 @@ fun SupabaseVideoPlayer(
     }
 
 
-
-
-
 }
+
+@OptIn(UnstableApi::class)
 @Composable
 fun VideoPlayer(
     url: String,
@@ -168,8 +172,6 @@ fun VideoPlayer(
             exoPlayer.release()
         }
     }
-
-    // Hide system UI
     LaunchedEffect(view) {
         val window = (context as Activity).window
         window.insetsController?.let { controller ->
@@ -178,7 +180,6 @@ fun VideoPlayer(
         }
     }
 
-    // Restore system UI visibility when composable leaves the composition
     DisposableEffect(Unit) {
         onDispose {
             val window = (context as Activity).window
@@ -188,8 +189,11 @@ fun VideoPlayer(
 
     AndroidView(
         factory = { context ->
-            CroppedTextureView(context).apply {
+            PlayerView(context).apply {
                 setPlayer(exoPlayer)
+                useController = true
+                resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FIXED_WIDTH
+
             }
         },
         modifier = modifier
