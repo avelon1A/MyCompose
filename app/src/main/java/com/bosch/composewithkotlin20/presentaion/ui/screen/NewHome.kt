@@ -55,7 +55,7 @@ fun NewHome(navController: NavController, modifier: Modifier) {
         ),
         MainScreenButtons(
             "Apps",
-            HomeScreen(APPS_SCREEN),
+            AppsHomeScreen,
             Color.Blue,
             R.drawable.app_store_svgrepo_com
         ),
@@ -76,7 +76,7 @@ fun NewHome(navController: NavController, modifier: Modifier) {
     Scaffold(topBar = {
         AppBar(R.drawable.__icon__hamburger_button_, navController)
     }, content = { innerPadding ->
-        HomeButton(buttonList, navController, innerPadding, Modifier)
+        HomeButton(buttonList, navController, innerPadding, modifier)
     })
 }
 
