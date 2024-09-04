@@ -177,27 +177,30 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 104 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 121 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Mon Sep 02 05:06:41 UTC 2024 by AGP (8.4.2)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Wed Sep 04 07:00:40 UTC 2024 by AGP (8.4.2)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Issue Types</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
+      <a class="mdl-navigation__link" href="#InlinedApi"><i class="material-icons warning-icon">warning</i>Using inlined constants on older versions (2)</a>
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
       <a class="mdl-navigation__link" href="#UnusedAttribute"><i class="material-icons warning-icon">warning</i>Attribute unused on older versions (1)</a>
-      <a class="mdl-navigation__link" href="#VectorRaster"><i class="material-icons warning-icon">warning</i>Vector Image Generation (11)</a>
+      <a class="mdl-navigation__link" href="#VectorRaster"><i class="material-icons warning-icon">warning</i>Vector Image Generation (18)</a>
       <a class="mdl-navigation__link" href="#AndroidGradlePluginVersion"><i class="material-icons warning-icon">warning</i>Obsolete Android Gradle Plugin Version (3)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (1)</a>
+      <a class="mdl-navigation__link" href="#ModifierParameter"><i class="material-icons warning-icon">warning</i>Guidelines for Modifier parameters in a Composable function (1)</a>
       <a class="mdl-navigation__link" href="#Typos"><i class="material-icons warning-icon">warning</i>Spelling error (36)</a>
       <a class="mdl-navigation__link" href="#ExportedService"><i class="material-icons warning-icon">warning</i>Exported service does not require permission (1)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
-      <a class="mdl-navigation__link" href="#VectorPath"><i class="material-icons warning-icon">warning</i>Long vector paths (3)</a>
+      <a class="mdl-navigation__link" href="#VectorPath"><i class="material-icons warning-icon">warning</i>Long vector paths (6)</a>
       <a class="mdl-navigation__link" href="#AutoboxingStateCreation"><i class="material-icons warning-icon">warning</i><code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead. (3)</a>
-      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (29)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (30)</a>
       <a class="mdl-navigation__link" href="#IconLocation"><i class="material-icons warning-icon">warning</i>Image defined in density-independent drawable folder (13)</a>
-      <a class="mdl-navigation__link" href="#UseTomlInstead"><i class="material-icons warning-icon">warning</i>Use TOML Version Catalog Instead (5)</a>
+      <a class="mdl-navigation__link" href="#UseTomlInstead"><i class="material-icons warning-icon">warning</i>Use TOML Version Catalog Instead (7)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -213,17 +216,26 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
 </td></tr>
 <tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#InlinedApi">InlinedApi</a>: Using inlined constants on older versions</td></tr>
+<tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#OldTargetApi">OldTargetApi</a>: Target SDK attribute is not targeting latest version</td></tr>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedAttribute">UnusedAttribute</a>: Attribute unused on older versions</td></tr>
 <tr>
-<td class="countColumn">11</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">18</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#VectorRaster">VectorRaster</a>: Vector Image Generation</td></tr>
 <tr>
 <td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#AndroidGradlePluginVersion">AndroidGradlePluginVersion</a>: Obsolete Android Gradle Plugin Version</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#ModifierParameter">ModifierParameter</a>: Guidelines for Modifier parameters in a Composable function</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness:Messages">Correctness:Messages</a>
 </td></tr>
 <tr>
@@ -240,13 +252,13 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#ObsoleteSdkInt">ObsoleteSdkInt</a>: Obsolete SDK_INT Version Check</td></tr>
 <tr>
-<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">6</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#VectorPath">VectorPath</a>: Long vector paths</td></tr>
 <tr>
 <td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#AutoboxingStateCreation">AutoboxingStateCreation</a>: <code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead.</td></tr>
 <tr>
-<td class="countColumn">29</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">30</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability:Icons">Usability:Icons</a>
 </td></tr>
@@ -256,7 +268,7 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Productivity">Productivity</a>
 </td></tr>
 <tr>
-<td class="countColumn">5</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">7</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UseTomlInstead">UseTomlInstead</a>: Use TOML Version Catalog Instead</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (92)</a>
 </td></tr>
@@ -270,7 +282,65 @@ Dismiss</button>            </div>
             </div>
           </section>
 <a name="Correctness"></a>
-<a name="OldTargetApi"></a>
+<a name="InlinedApi"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="InlinedApiCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Using inlined constants on older versions</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/supabase/SupabaseVideoPlayer.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/supabase/SupabaseVideoPlayer.kt</a>:190</span>: <span class="message">Field requires API level 31 (current min is 30): <code>android.view.WindowInsetsController#BEHAVIOR_DEFAULT</code></span><br /><pre class="errorlines">
+<span class="lineno"> 187 </span>      <span class="keyword">val</span> window = (context <span class="keyword">as</span> Activity).window
+<span class="lineno"> 188 </span>      window.insetsController?.let { controller ->
+<span class="lineno"> 189 </span>          controller.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
+<span class="caretline"><span class="lineno"> 190 </span>          controller.systemBarsBehavior = <span class="warning">WindowInsetsController.BEHAVIOR_DEFAULT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 191 </span>      }
+<span class="lineno"> 192 </span>  }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/supabase/SupabaseVideoPlayer.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/supabase/SupabaseVideoPlayer.kt</a>:190</span>: <span class="message">Field requires API level 31 (current min is 30): <code>android.view.WindowInsetsController#BEHAVIOR_DEFAULT</code></span><br /><pre class="errorlines">
+<span class="lineno"> 187 </span>      <span class="keyword">val</span> window = (context <span class="keyword">as</span> Activity).window
+<span class="lineno"> 188 </span>      window.insetsController?.let { controller ->
+<span class="lineno"> 189 </span>          controller.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
+<span class="caretline"><span class="lineno"> 190 </span>          controller.systemBarsBehavior = <span class="warning">WindowInsetsController.BEHAVIOR_DEFAULT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 191 </span>      }
+<span class="lineno"> 192 </span>  }
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationInlinedApi" style="display: none;">
+This check scans through all the Android API field references in the application and flags certain constants, such as static final integers and Strings, which were introduced in later versions. These will actually be copied into the class files rather than being referenced, which means that the value is available even when running on older devices. In some cases that's fine, and in other cases it can result in a runtime crash or incorrect behavior. It depends on the context, so consider the code carefully and decide whether it's safe and can be suppressed or whether the code needs to be guarded.<br/>
+<br/>
+If you really want to use this API and don't need to support older devices just set the <code>minSdkVersion</code> in your <code>build.gradle</code> or <code>AndroidManifest.xml</code> files.<br/>
+<br/>
+If your code is <b>deliberately</b> accessing newer APIs, and you have ensured (e.g. with conditional execution) that this code will only ever be called on a supported platform, then you can annotate your class or method with the <code>@TargetApi</code> annotation specifying the local minimum SDK to apply, such as <code>@TargetApi(11)</code>, such that this check considers 11 rather than your manifest file's minimum SDK as the required API level.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "InlinedApi" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">InlinedApi</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationInlinedApiLink" onclick="reveal('explanationInlinedApi');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="InlinedApiCardLink" onclick="hideid('InlinedApiCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="OldTargetApi"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="OldTargetApiCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
@@ -386,6 +456,14 @@ Dismiss</button>            </div>
 <span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"64"</span>>
 </pre>
 
+<span class="location"><a href="../../src/main/res/drawable/app_ghtk_svgrepo_com.xml">../../src/main/res/drawable/app_ghtk_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
+<span class="lineno">   1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
+<span class="caretline"><span class="lineno">   2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">   3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
+<span class="lineno">   4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"48"</span>
+<span class="lineno">   5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"48"</span>>
+</pre>
+
 <span class="location"><a href="../../src/main/res/drawable/app_store_svgrepo_com.xml">../../src/main/res/drawable/app_store_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
 <span class="caretline"><span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -410,6 +488,8 @@ Dismiss</button>            </div>
 <span class="lineno">  5 </span>        <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"512"</span>>
 </pre>
 
+<button class="mdl-button mdl-js-button mdl-button--primary" id="VectorRasterDivLink" onclick="reveal('VectorRasterDiv');" />+ 13 More Occurrences...</button>
+<div id="VectorRasterDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/drawable/fish_svgrepo_com.xml">../../src/main/res/drawable/fish_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
 <span class="caretline"><span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -418,8 +498,38 @@ Dismiss</button>            </div>
 <span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"1024"</span>>
 </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="VectorRasterDivLink" onclick="reveal('VectorRasterDiv');" />+ 6 More Occurrences...</button>
-<div id="VectorRasterDiv" style="display: none">
+<span class="location"><a href="../../src/main/res/drawable/list_list_svgrepo_com.xml">../../src/main/res/drawable/list_list_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
+<span class="caretline"><span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"1024"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"1024"</span>>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/login_svgrepo_com.xml">../../src/main/res/drawable/login_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
+<span class="caretline"><span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"512"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"512"</span>>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/login_svgrepo_com__2_.xml">../../src/main/res/drawable/login_svgrepo_com__2_.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
+<span class="caretline"><span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">512dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"512dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"512"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"512"</span>>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/music_svgrepo_com.xml">../../src/main/res/drawable/music_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
+<span class="lineno">   1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
+<span class="caretline"><span class="lineno">   2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">   3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
+<span class="lineno">   4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"1024"</span>
+<span class="lineno">   5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"1024"</span>>
+</pre>
+
 <span class="location"><a href="../../src/main/res/drawable/night_software_star_svgrepo_com.xml">../../src/main/res/drawable/night_software_star_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
 <span class="lineno">   1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
 <span class="caretline"><span class="lineno">   2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -461,6 +571,22 @@ Dismiss</button>            </div>
 </pre>
 
 <span class="location"><a href="../../src/main/res/drawable/text_view_svgrepo_com.xml">../../src/main/res/drawable/text_view_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
+<span class="caretline"><span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"1024"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"1024"</span>>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/todo_svgrepo_com__1_.xml">../../src/main/res/drawable/todo_svgrepo_com__1_.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
+<span class="caretline"><span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"24"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"24"</span>>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/video_svgrepo_com.xml">../../src/main/res/drawable/video_svgrepo_com.xml</a>:2</span>: <span class="message">Limit vector icons sizes to 200×200 to keep icon drawing fast; see <a href="https://developer.android.com/studio/write/vector-asset-studio#when">https://developer.android.com/studio/write/vector-asset-studio#when</a> for more</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
 <span class="caretline"><span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"</span><span class="warning"><span class="value">800dp</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
@@ -561,6 +687,105 @@ To suppress this error, use the issue id "AndroidGradlePluginVersion" as explain
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationAndroidGradlePluginVersionLink" onclick="reveal('explanationAndroidGradlePluginVersion');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="AndroidGradlePluginVersionCardLink" onclick="hideid('AndroidGradlePluginVersionCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="GradleDependency"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="GradleDependencyCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Obsolete Gradle Dependency</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:149</span>: <span class="message">A newer version of androidx.compose.runtime:runtime-livedata than 1.4.3 is available: 1.6.8</span><br /><pre class="errorlines">
+<span class="lineno"> 146 </span>
+<span class="lineno"> 147 </span>    implementation("io.ktor:ktor-client-cio:2.3.5")
+<span class="lineno"> 148 </span>    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
+<span class="caretline"><span class="lineno"> 149 </span>    implementation ("<span class="warning">androidx.compose.runtime:runtime-livedata:1.4.3</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 150 </span>
+<span class="lineno"> 151 </span>
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationGradleDependency" style="display: none;">
+This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "GradleDependency" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">GradleDependency</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 4/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationGradleDependencyLink" onclick="reveal('explanationGradleDependency');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="GradleDependencyCardLink" onclick="hideid('GradleDependencyCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="ModifierParameter"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ModifierParameterCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Guidelines for Modifier parameters in a Composable function</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/supabase/SupabaseVideoPlayer.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/supabase/SupabaseVideoPlayer.kt</a>:136</span>: <span class="message">Optional Modifier parameter should have a default value of <code>Modifier</code></span><br /><pre class="errorlines">
+<span class="lineno"> 133 </span>    url: String,
+<span class="lineno"> 134 </span>    onPlayingStateChanged: (Boolean) -> Unit,
+<span class="lineno"> 135 </span>    viewModel: SupabaseVideoPlayerViewModel,
+<span class="caretline"><span class="lineno"> 136 </span>    <span class="warning">modifier</span>: Modifier = Modifier.fillMaxSize()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 137 </span>) {
+<span class="lineno"> 138 </span>
+<span class="lineno"> 139 </span>    <span class="keyword">val</span> context = LocalContext.current
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationModifierParameter" style="display: none;">
+The first (or only) Modifier parameter in a Composable function should follow the following rules:<br/>
+- Be named <code>modifier</code><br/>
+- Have a type of <code>Modifier</code><br/>
+- Either have no default value, or have a default value of <code>Modifier</code><br/>
+- If optional, be the first optional parameter in the parameter list<br/>To suppress this error, use the issue id "ModifierParameter" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="vendor">
+Vendor: Jetpack Compose<br/>
+Identifier: androidx.compose.ui<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">https://issuetracker.google.com/issues/new?component=612128</a><br/>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">ModifierParameter</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 3/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationModifierParameterLink" onclick="reveal('explanationModifierParameter');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ModifierParameterCardLink" onclick="hideid('ModifierParameterCard');">
 Dismiss</button>            </div>
             </div>
           </section>
@@ -1066,6 +1291,24 @@ Dismiss</button>            </div>
 <span class="lineno"> 38 </span>      <span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"M743.2,785.3c-29,-34.6 -51.9,-75.3 -67.8,-120.9a458.3,458.3 0,0 1,0 -297.3c16,-45.6 38.8,-86.3 67.8,-120.9l31.4,26.3c-25.9,30.8 -46.2,67.1 -60.5,108.1a417.4,417.4 0,0 0,0 270.2c14.3,40.9 34.7,77.3 60.5,108.1zM501.8,678q-8.3,0 -17.1,-0.7l-1.7,-0.1 -1.7,-0.4c-52,-13.2 -76,-28.1 -80.4,-49.8 -2,-10.1 -0.3,-25.2 19.2,-40 9.3,-7.1 18,-14.9 26.4,-22.5 20.1,-18.2 39.1,-35.3 62,-35.3 27,0 75.2,4.5 95.2,34.8 7.1,10.8 13.3,29.1 2.3,54.9a92.1,92.1 0,0 1,-44 46.7C545.2,673.8 525,678 501.8,678zM489.7,636.6c41.2,3 67.7,-8.4 78.6,-34 4.7,-10.9 2.1,-14.9 1.2,-16.2 -5.2,-7.9 -26.5,-16.4 -61,-16.4 -7.1,0 -22.3,13.7 -34.5,24.8 -8.6,7.8 -18.4,16.6 -29.1,24.8l-0.5,0.4c5.6,3.5 18.1,9.6 45.4,16.7z"</span>/>
 </pre>
 
+<span class="location"><a href="../../src/main/res/drawable/list_list_svgrepo_com.xml">../../src/main/res/drawable/list_list_svgrepo_com.xml</a>:25</span>: <span class="message">Very long vector path (863 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector.</span><br /><pre class="errorlines">
+<span class="lineno"> 22 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"M414.4,603.2H271.2c-10.4,0 -19.2,-8.8 -19.2,-19.2V440c0,-10.4 8.8,-19.2 19.2,-19.2h143.2c10.4,0 19.2,8.8 19.2,19.2v144c0,10.4 -8.8,19.2 -19.2,19.2z"</span>
+<span class="lineno"> 23 </span>      <span class="prefix">android:</span><span class="attribute">fillColor</span>=<span class="value">"#82CFCD"</span>/>
+<span class="lineno"> 24 </span>  <span class="tag">&lt;path</span><span class="attribute">
+</span><span class="caretline"><span class="lineno"> 25 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"</span><span class="warning"><span class="value">M414.4,611.2H271.2c-15.2,0 -27.2,-12 -27.2,-27.2V440c0,-15.2 12,-27.2 27.2,-27.2h143.2c15.2,0 27.2,12 27.2,27.2v144c0,14.4 -12,27.2 -27.2,27.2zM271.2,428.8c-6.4,0 -11.2,4.8 -11.2,11.2v144c0,6.4 4.8,11.2 11.2,11.2h143.2c6.4,0 11.2,-4.8 11.2,-11.2V440c0,-6.4 -4.8,-11.2 -11.2,-11.2H271.2zM414.4,884H271.2c-15.2,0 -27.2,-12 -27.2,-27.2V713.6c0,-15.2 12,-27.2 27.2,-27.2h143.2c15.2,0 27.2,12 27.2,27.2v143.2c0,15.2 -12,27.2 -27.2,27.2zM271.2,701.6c-6.4,0 -11.2,4.8 -11.2,11.2V856c0,6.4 4.8,11.2 11.2,11.2h143.2c6.4,0 11.2,-4.8 11.2,-11.2V713.6c0,-6.4 -4.8,-11.2 -11.2,-11.2H271.2zM414.4,338.4H271.2c-15.2,0 -27.2,-12 -27.2,-27.2v-144c0,-15.2 12,-27.2 27.2,-27.2h143.2c15.2,0 27.2,12 27.2,27.2v143.2c0,15.2 -12,28 -27.2,28zM271.2,156c-6.4,0 -11.2,4.8 -11.2,11.2v143.2c0,6.4 4.8,11.2 11.2,11.2h143.2c6.4,0 11.2,-4.8 11.2,-11.2V167.2c0,-6.4 -4.8,-11.2 -11.2,-11.2H271.2z</span></span><span class="value">"</span></span>
+<span class="lineno"> 26 </span>      <span class="prefix">android:</span><span class="attribute">fillColor</span>=<span class="value">"#6A576D"</span>/>
+<span class="lineno"> 27 </span>  <span class="tag">&lt;path</span><span class="attribute">
+</span><span class="lineno"> 28 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"M414.4,611.2H271.2c-15.2,0 -27.2,-12 -27.2,-27.2V440c0,-15.2 12,-27.2 27.2,-27.2h143.2c15.2,0 27.2,12 27.2,27.2v144c0,14.4 -12,27.2 -27.2,27.2zM271.2,428.8c-6.4,0 -11.2,4.8 -11.2,11.2v144c0,6.4 4.8,11.2 11.2,11.2h143.2c6.4,0 11.2,-4.8 11.2,-11.2V440c0,-6.4 -4.8,-11.2 -11.2,-11.2H271.2zM414.4,884H271.2c-15.2,0 -27.2,-12 -27.2,-27.2V713.6c0,-15.2 12,-27.2 27.2,-27.2h143.2c15.2,0 27.2,12 27.2,27.2v143.2c0,15.2 -12,27.2 -27.2,27.2zM271.2,701.6c-6.4,0 -11.2,4.8 -11.2,11.2V856c0,6.4 4.8,11.2 11.2,11.2h143.2c6.4,0 11.2,-4.8 11.2,-11.2V713.6c0,-6.4 -4.8,-11.2 -11.2,-11.2H271.2zM768,247.2H548c-4.8,0 -8,-3.2 -8,-8s3.2,-8 8,-8H768c4.8,0 8,3.2 8,8s-3.2,8 -8,8z"</span></pre>
+
+<span class="location"><a href="../../src/main/res/drawable/music_svgrepo_com.xml">../../src/main/res/drawable/music_svgrepo_com.xml</a>:142</span>: <span class="message">Very long vector path (1782 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector.</span><br /><pre class="errorlines">
+<span class="lineno"> 139 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"M351.5,595.6c5,0 10.1,0.5 15.1,1.3 11.2,1.8 21.3,5.9 28.9,13.6 4.7,4.8 7,10 6.9,15.1 -0,6.1 -3.4,12.1 -10,17.1 -11.4,8.6 -24.9,11.7 -39.7,12.1 -14.4,-0.4 -27.9,-3.4 -39.2,-11.8 -7,-5.1 -10.5,-11.6 -10.5,-18 0,-6.2 3.4,-12.5 10.2,-17.4a72.8,72.8 0,0 1,1.8 -1.3c10.9,-7.4 22.9,-10.5 35.8,-10.6 0.2,-0 0.4,-0 0.6,-0z"</span>
+<span class="lineno"> 140 </span>      <span class="prefix">android:</span><span class="attribute">fillColor</span>=<span class="value">"#F09A9A"</span>/>
+<span class="lineno"> 141 </span>  <span class="tag">&lt;path</span><span class="attribute">
+</span><span class="caretline"><span class="lineno"> 142 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"</span><span class="warning"><span class="value">M691,294.8c-0.2,83.8 -0.5,167.6 0.1,251.4 0.2,25.6 -13.5,42.4 -39.5,51.9 -12.6,4.6 -25.2,7 -37.6,7 -17.1,0 -33.9,-4.6 -49.8,-14 -16.4,-9.7 -25.8,-23.3 -24.7,-41.1 1,-15.6 10.1,-27.7 24.7,-36 16.5,-9.3 33.3,-13.9 50.3,-13.9 15.6,0 31.3,3.8 47.1,11.2 0.8,0.4 1.6,0.8 2.3,1.1 0.7,-43.1 0.7,-86.1 0.7,-129.5 -1.8,0.5 -3.4,0.8 -5.1,1.3 -75.6,20.8 -151.1,41.6 -226.8,62.4 -3.5,1 -4.5,2.3 -4.5,5.4 0.1,55.6 -0.4,111.2 0.3,166.8 0.3,25.4 -13.3,41.9 -38.8,51.5 -12.8,4.8 -25.5,7.2 -38,7.2 -17.1,0 -33.8,-4.5 -49.8,-13.8 -22,-12.8 -30.5,-34.7 -21.6,-54.2 7.1,-15.5 21,-25.3 38.5,-31 11.6,-3.8 23.1,-5.7 34.5,-5.7 15.8,0 31.3,3.7 46.4,11.4 0.5,0.3 1,0.5 1.6,0.7 1,-1.5 1,-3 1,-4.5 0,-71.1 -0,-142.3 0,-213.4 0,-9.8 2.5,-12.7 13.3,-15.7 85.7,-23.6 171.3,-47.1 257,-70.7 0.7,-0.2 1.3,-0.5 2,-0.8h6.3c7.6,2.8 9.9,7.8 9.9,14.8zM661.6,360.3c2.6,-0.7 3.4,-1.7 3.4,-4a3922,3922 0,0 1,-0.1 -26.3c0,-4.8 0,-9.7 0,-14.6 0,-1.9 0,-3.9 -0,-5.8 0,-0.9 -0.1,-1.7 -0.2,-2.8 -1.1,0.2 -2,0.3 -2.8,0.5 -76.7,21.1 -153.4,42.2 -230.1,63.3 -2.6,0.7 -3.3,1.8 -3.3,4 0.1,8.8 0.1,17.6 0.1,26.3l-0,11.6c0,2.9 0,5.8 0,8.7 0,0.9 0.1,1.7 0.2,2.8 1.2,-0.3 2.2,-0.4 3.2,-0.7 76.6,-21.1 153.1,-42.2 229.7,-63.2M392.4,642.7c6.6,-5 10,-11 10,-17.1 0,-5.1 -2.3,-10.3 -6.9,-15.1 -7.6,-7.7 -17.7,-11.8 -28.9,-13.6 -5.1,-0.8 -10.1,-1.3 -15,-1.3 -0.4,0 -0.6,0 -0.8,0 -12.9,0.1 -24.9,3.3 -35.8,10.6a71.7,71.7 0,0 0,-1.8 1.3c-6.8,5 -10.2,11.2 -10.2,17.4 -0,6.4 3.5,12.9 10.5,18 11.4,8.3 24.8,11.3 39.2,11.8 14.8,-0.4 28.3,-3.5 39.7,-12.1m256.4,-68.6c10.5,-5.9 16.2,-13.7 16.2,-21.6 -0.1,-6.6 -4,-13.2 -12.5,-19 -10.5,-7.2 -22.8,-10.1 -35.8,-10.3a86.3,86.3 0,0 0,-1.4 -0h-0.4c-14.8,0.1 -28.5,3.5 -39.9,12.4 -6.3,4.9 -9.6,10.8 -9.6,16.8 -0,5 2.1,10 6.7,14.5 11.8,11.9 27.6,15.2 44.6,15.3 0.4,0 0.8,0 1.2,0h0.4c11,-0.4 21.3,-2.8 30.5,-8</span></span><span class="value">"</span></span>
+<span class="lineno"> 143 </span>      <span class="prefix">android:</span><span class="attribute">fillColor</span>=<span class="value">"#E66676"</span>/>
+<span class="lineno"> 144 </span>  <span class="tag">&lt;path</span><span class="attribute">
+</span><span class="lineno"> 145 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"M428.7,619.8v16.8c0,24.8 -13.6,41.1 -38.8,50.6 -12.8,4.8 -25.5,7.2 -38,7.2 -17.1,0 -33.8,-4.5 -49.8,-13.8 -16.2,-9.4 -25.1,-23.7 -25.1,-38.4v-16.8c0,14.7 8.9,29 25.1,38.4 16,9.3 32.7,13.8 49.8,13.8 12.5,0 25.2,-2.4 38,-7.2 25.2,-9.4 38.8,-25.7 38.8,-50.6z"</span></pre>
+
 <span class="location"><a href="../../src/main/res/drawable/task_svgrepo_com.xml">../../src/main/res/drawable/task_svgrepo_com.xml</a>:7</span>: <span class="message">Very long vector path (944 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector.</span><br /><pre class="errorlines">
 <span class="lineno">  4 </span>      <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"1024"</span>
 <span class="lineno">  5 </span>      <span class="prefix">android:</span><span class="attribute">viewportHeight</span>=<span class="value">"1024"</span>>
@@ -1074,6 +1317,15 @@ Dismiss</button>            </div>
 <span class="lineno">  8 </span>          <span class="prefix">android:</span><span class="attribute">fillColor</span>=<span class="value">"#22C67F"</span> />
 <span class="lineno">  9 </span>  <span class="tag">&lt;path</span><span class="attribute">
 </span><span class="lineno"> 10 </span><span class="attribute">          </span><span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"M706.7,478.3l-48,-44.7 -182.3,195.6 -111.5,-122.6 -48.6,44.1 159.5,172.7z"</span></pre>
+
+<span class="location"><a href="../../src/main/res/drawable/todo_svgrepo_com__1_.xml">../../src/main/res/drawable/todo_svgrepo_com__1_.xml</a>:18</span>: <span class="message">Very long vector path (1316 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector.</span><br /><pre class="errorlines">
+<span class="lineno"> 15 </span>      <span class="prefix">android:</span><span class="attribute">strokeColor</span>=<span class="value">"#363853"</span>
+<span class="lineno"> 16 </span>      <span class="prefix">android:</span><span class="attribute">strokeLineCap</span>=<span class="value">"round"</span>/>
+<span class="lineno"> 17 </span>  <span class="tag">&lt;path</span><span class="attribute">
+</span><span class="caretline"><span class="lineno"> 18 </span><span class="attribute">      </span><span class="prefix">android:</span><span class="attribute">pathData</span>=<span class="value">"</span><span class="warning"><span class="value">M7.849,8.869C7.556,8.576 7.081,8.576 6.788,8.869C6.496,9.162 6.496,9.637 6.788,9.93L7.849,8.869ZM8.359,10.44L7.829,10.97C7.969,11.111 8.16,11.19 8.359,11.19C8.558,11.19 8.749,11.111 8.889,10.97L8.359,10.44ZM10.97,8.889C11.263,8.597 11.263,8.122 10.97,7.829C10.677,7.536 10.202,7.536 9.909,7.829L10.97,8.889ZM13.04,9.17C12.626,9.17 12.29,9.505 12.29,9.92C12.29,10.334 12.626,10.67 13.04,10.67V9.17ZM16.681,10.67C17.096,10.67 17.431,10.334 17.431,9.92C17.431,9.505 17.096,9.17 16.681,9.17V10.67ZM7.849,14.07C7.556,13.778 7.081,13.778 6.788,14.07C6.496,14.363 6.496,14.838 6.788,15.131L7.849,14.07ZM8.359,15.641L7.829,16.171C8.122,16.464 8.597,16.464 8.889,16.171L8.359,15.641ZM10.97,14.091C11.263,13.798 11.263,13.323 10.97,13.03C10.677,12.737 10.202,12.737 9.909,13.03L10.97,14.091ZM13.04,14.371C12.626,14.371 12.29,14.707 12.29,15.121C12.29,15.535 12.626,15.871 13.04,15.871V14.371ZM16.681,15.871C17.096,15.871 17.431,15.535 17.431,15.121C17.431,14.707 17.096,14.371 16.681,14.371V15.871ZM6.788,9.93L7.829,10.97L8.889,9.909L7.849,8.869L6.788,9.93ZM8.889,10.97L10.97,8.889L9.909,7.829L7.829,9.909L8.889,10.97ZM13.04,10.67H16.681V9.17H13.04V10.67ZM6.788,15.131L7.829,16.171L8.889,15.111L7.849,14.07L6.788,15.131ZM8.889,16.171L10.97,14.091L9.909,13.03L7.829,15.111L8.889,16.171ZM13.04,15.871H16.681V14.371H13.04V15.871Z</span></span><span class="value">"</span></span>
+<span class="lineno"> 19 </span>      <span class="prefix">android:</span><span class="attribute">fillColor</span>=<span class="value">"#0095FF"</span>/>
+<span class="lineno"> 20 </span><span class="tag">&lt;/vector></span>
+</pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationVectorPath" style="display: none;">
@@ -1212,7 +1464,7 @@ Dismiss</button>            </div>
 <span class="lineno">  5 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"purple_700"</span>>#FF3700B3<span class="tag">&lt;/color></span>
 <span class="lineno">  6 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"teal_200"</span>>#FF03DAC5<span class="tag">&lt;/color></span></pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 24 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 25 More Occurrences...</button>
 <div id="UnusedResourcesDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:4</span>: <span class="message">The resource <code>R.color.purple_500</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
@@ -1287,6 +1539,12 @@ Dismiss</button>            </div>
 <span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"530.46dp"</span>
 <span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"563.1dp"</span>
 <span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"530.46"</span></pre>
+
+<span class="location"><a href="../../src/main/res/drawable/login_svgrepo_com.xml">../../src/main/res/drawable/login_svgrepo_com.xml</a>:1</span>: <span class="message">The resource <code>R.drawable.login_svgrepo_com</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="caretline"><span class="lineno">  1 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  2 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"800dp"</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"800dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"512"</span></pre>
 
 <span class="location"><a href="../../src/main/res/drawable/night.png">../../src/main/res/drawable/night.png</a></span>: <img class="embedimage" align="right" src="../../src/main/res/drawable/night.png" /><span class="message">The resource <code>R.drawable.night</code> appears to be unused</span><br clear="right"/>
 <span class="location"><a href="../../src/main/res/drawable/night_software_star_svgrepo_com.xml">../../src/main/res/drawable/night_software_star_svgrepo_com.xml</a>:1</span>: <span class="message">The resource <code>R.drawable.night_software_star_svgrepo_com</code> appears to be unused</span><br /><pre class="errorlines">
@@ -1476,6 +1734,7 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno"> 145 </span>    implementation("<span class="warning">io.github.jan-tennert.supabase:realtime-kt:2.6.0</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 146 </span>
 <span class="lineno"> 147 </span>    implementation("io.ktor:ktor-client-cio:2.3.5")
+<span class="lineno"> 148 </span>    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
 </pre>
 
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:147</span>: <span class="message">Use version catalog instead</span><br /><pre class="errorlines">
@@ -1483,8 +1742,26 @@ Dismiss</button>            </div>
 <span class="lineno"> 145 </span>    implementation("io.github.jan-tennert.supabase:realtime-kt:2.6.0")
 <span class="lineno"> 146 </span>
 <span class="caretline"><span class="lineno"> 147 </span>    implementation("<span class="warning">io.ktor:ktor-client-cio:2.3.5</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 148 </span>
-<span class="lineno"> 149 </span>
+<span class="lineno"> 148 </span>    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
+<span class="lineno"> 149 </span>    implementation ("androidx.compose.runtime:runtime-livedata:1.4.3")
+</pre>
+
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:148</span>: <span class="message">Use the existing version catalog reference (<code>libs.accompanist.systemuicontroller</code>) instead</span><br /><pre class="errorlines">
+<span class="lineno"> 145 </span>    implementation("io.github.jan-tennert.supabase:realtime-kt:2.6.0")
+<span class="lineno"> 146 </span>
+<span class="lineno"> 147 </span>    implementation("io.ktor:ktor-client-cio:2.3.5")
+<span class="caretline"><span class="lineno"> 148 </span>    implementation ("<span class="warning">com.google.accompanist:accompanist-systemuicontroller:0.34.0</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 149 </span>    implementation ("androidx.compose.runtime:runtime-livedata:1.4.3")
+<span class="lineno"> 150 </span>
+</pre>
+
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:149</span>: <span class="message">Use version catalog instead (androidx.compose.runtime:runtime-livedata is already available as <code>androidx-runtime-livedata</code>, but using version 1.6.8 instead)</span><br /><pre class="errorlines">
+<span class="lineno"> 146 </span>
+<span class="lineno"> 147 </span>    implementation("io.ktor:ktor-client-cio:2.3.5")
+<span class="lineno"> 148 </span>    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
+<span class="caretline"><span class="lineno"> 149 </span>    implementation ("<span class="warning">androidx.compose.runtime:runtime-livedata:1.4.3</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 150 </span>
+<span class="lineno"> 151 </span>
 </pre>
 
 </div>
