@@ -1,6 +1,7 @@
 package com.bosch.composewithkotlin20.presentaion.ui.screen
 
 import androidx.compose.animation.animateContentSize
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,6 +13,7 @@ import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -20,6 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import kotlinx.serialization.Serializable
@@ -36,6 +39,13 @@ fun ScreenC(navController: NavController) {
 }
 
 @Composable
+@Preview
+fun ScreenCPreview() {
+    ExandCards(title = "Tap to expand", content = "This is Expanded Card")
+}
+
+
+@Composable
 fun ExandCards(title:String, content:String){
     var expand by remember { mutableStateOf(false)}
     Card( modifier = Modifier
@@ -44,19 +54,18 @@ fun ExandCards(title:String, content:String){
         Column(  modifier = Modifier
             .fillMaxWidth()
             .animateContentSize()
-            .padding(16.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally) {
-            Text(text = title)
+            .background(MaterialTheme.colorScheme.surface)) {
+
 
             if (expand) {
                 Text(text = content,Modifier.padding(top = 10.dp))
-                IconButton(onClick = { expand = false }) {
-                    Icon(Icons.Default.KeyboardArrowDown, contentDescription = "Collapse")
+                IconButton(onClick = { expand = false },modifier = Modifier.fillMaxWidth()) {
+                    Icon(Icons.Default.KeyboardArrowDown, contentDescription = "Collapse",modifier = Modifier.fillMaxWidth())
                 }
             } else {
-                IconButton(onClick = { expand = true }) {
-                    Icon(Icons.Default.KeyboardArrowUp, contentDescription = "Expand")
+                Text(text = title)
+                IconButton(onClick = { expand = true },modifier = Modifier.fillMaxWidth()) {
+                    Icon(Icons.Default.KeyboardArrowUp, contentDescription = "Expand",modifier = Modifier.fillMaxWidth())
                 }
             }
         }

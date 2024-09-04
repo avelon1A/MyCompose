@@ -2,6 +2,9 @@ package com.bosch.composewithkotlin20.data.model.data
 
 import AnimatedVisibilityExample
 import FishCanvas
+import androidx.compose.ui.graphics.Color
+import com.bosch.composewithkotlin20.R
+import com.bosch.composewithkotlin20.presentaion.ui.screen.AppsHomeScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.BottomNavigationBar
 import com.bosch.composewithkotlin20.presentaion.ui.screen.CameraScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.CircularIndicatorScreen
@@ -9,7 +12,9 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.CoilScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.DropDown
 import com.bosch.composewithkotlin20.presentaion.ui.screen.GoogleButtonScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.GradientScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.HomeScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.LoginScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.MainScreenButtons
 import com.bosch.composewithkotlin20.presentaion.ui.screen.MusicScreenContent
 import com.bosch.composewithkotlin20.presentaion.ui.screen.OnBoardingScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ScreenC
@@ -35,6 +40,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOval
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOverlap
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.WaterBottleScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupaBaseMainScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupabaseVideoPlayer
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.util.Const.ANIMATION_SCREEN
 import com.bosch.composewithkotlin20.util.Const.APPS_SCREEN
@@ -88,6 +94,7 @@ val appList = listOf(
     ButtonInfo("Onboarding Tutorial", OnBoardingScreen),
     ButtonInfo("Login Screen", LoginScreen),
     ButtonInfo("Supabase Screen", SupaBaseMainScreen),
+    ButtonInfo("SupabaseVideo Screen", SupabaseVideoPlayer),
 )
 
 
@@ -101,3 +108,4 @@ fun getItemList(itemList: String?): List<ButtonInfo> {
 
     }
 }
+

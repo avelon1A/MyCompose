@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
 				viewModel._splashCondition
 			}
 		}
-//		enableEdgeToEdge()
+		enableEdgeToEdge()
 		setContent {
 			AppTheme {
 				val permissionState = rememberPermissionState(
@@ -55,15 +55,14 @@ class MainActivity : ComponentActivity() {
 						lifecycleOwner.lifecycle.removeObserver(observer)
 					}
 				}
-				Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 					val navController = rememberNavController()
 					AppNavHost(
 						navController = navController,
-						modifier = Modifier.padding(innerPadding),
+						modifier = Modifier.padding(),
 						startDestination = navigation(viewModel._startDestination)
 					)
 					
-				}
+
 			}
 		}
 	}

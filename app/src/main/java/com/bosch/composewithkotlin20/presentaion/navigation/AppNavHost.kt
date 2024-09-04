@@ -16,6 +16,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
+import com.bosch.composewithkotlin20.presentaion.ui.screen.AppsHomeScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.BottomNavigationBar
 import com.bosch.composewithkotlin20.presentaion.ui.screen.CameraScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.CircularIndicatorScreen
@@ -54,6 +55,8 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOval
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOverlap
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.WaterBottleScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupaBaseMainScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupabaseVideoPlayer
+import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupabaseVideoPlayerViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
@@ -145,6 +148,9 @@ fun AppNavHost(
             composable<NewHome> {
                 NewHome(navController, Modifier)
             }
+            composable<AppsHomeScreen> {
+                AppsHomeScreen(navController)
+            }
 
             composable<LottieAnimationScreen> {
                 LottieAnimationScreen()
@@ -213,6 +219,10 @@ fun AppNavHost(
             composable<SupaBaseMainScreen> {
                 val viewModel: SupaBaseViewModel = koinViewModel()
                 SupaBaseMainScreen(viewModel)
+            }
+            composable<SupabaseVideoPlayer> {
+                val viewModel: SupabaseVideoPlayerViewModel = koinViewModel()
+                SupabaseVideoPlayer(navController,viewModel)
             }
         }
 

@@ -145,6 +145,8 @@ dependencies {
     implementation("io.github.jan-tennert.supabase:realtime-kt:2.6.0")
 
     implementation("io.ktor:ktor-client-cio:2.3.5")
+    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
+    implementation ("androidx.compose.runtime:runtime-livedata:1.4.3")
 
 
 
