@@ -18,6 +18,7 @@ import com.bosch.composewithkotlin20.domain.Repo.SupabaseRepository
 import com.bosch.composewithkotlin20.domain.manger.LocalUserManager
 import com.bosch.composewithkotlin20.domain.usecases.AppEntryUseCase
 import com.bosch.composewithkotlin20.domain.usecases.GetAppEntry
+import com.bosch.composewithkotlin20.domain.usecases.LoginStatus
 import com.bosch.composewithkotlin20.domain.usecases.SaveAppEntry
 import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupabaseVideoPlayerViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
@@ -55,6 +56,7 @@ val appModule = module {
 	single { AudioRepository(get()) }
 	single { SaveAppEntry(get()) }
 	single { GetAppEntry(get()) }
+	single { LoginStatus(get()) }
 	single { LoginRepository(get()) }
 	single { provideExoPlayer(androidContext(), get())}
 	single { provideMediaSession(get(), get()) }

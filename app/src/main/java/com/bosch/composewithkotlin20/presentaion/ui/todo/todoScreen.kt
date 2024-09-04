@@ -18,6 +18,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
@@ -50,63 +51,68 @@ fun TodoScreen(viewModel: TodoViewModel) {
     val pagerState = rememberPagerState(pageCount = { TodoTabs.entries.size })
     val selectedTab = remember { derivedStateOf { pagerState.currentPage } }
 
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        TabRow(
-            selectedTabIndex = selectedTab.value, modifier = Modifier.fillMaxWidth()
-        ) {
-            TodoTabs.entries.forEachIndexed { index, tab ->
+    Scaffold(
+        content = { innerPadding ->
+            Column(
+                modifier = Modifier.fillMaxSize().padding(innerPadding),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                TabRow(
+                    selectedTabIndex = selectedTab.value, modifier = Modifier.fillMaxWidth()
+                ) {
+                    TodoTabs.entries.forEachIndexed { index, tab ->
 
-                Tab(modifier = Modifier
-                    .height(60.dp)
-                    .padding(bottom = 15.dp, top = 20.dp),
-                    selected = selectedTab.value == index,
-                    selectedContentColor = MaterialTheme.colorScheme.outline,
-                    unselectedContentColor = MaterialTheme.colorScheme.outline,
-                    onClick = {
-                        scope.launch {
-                            pagerState.animateScrollToPage(tab.ordinal)
-                        }
-                    },
-                    text = { Text(text = tab.title) },
-                    icon = {
-                        Image(
-                            painter = if (selectedTab.value == index) painterResource(id = tab.selectedIcon) else painterResource(
-                                id = tab.unselectedIcon
-                            ), contentDescription = "",
-                            colorFilter = if (selectedTab.value == index) null else ColorFilter.tint(
-                                Color.Gray
-                            )
-                        )
-                    })
+                        Tab(modifier = Modifier
+                            .height(60.dp)
+                            .padding(bottom = 15.dp, top = 20.dp),
+                            selected = selectedTab.value == index,
+                            selectedContentColor = MaterialTheme.colorScheme.outline,
+                            unselectedContentColor = MaterialTheme.colorScheme.outline,
+                            onClick = {
+                                scope.launch {
+                                    pagerState.animateScrollToPage(tab.ordinal)
+                                }
+                            },
+                            text = { Text(text = tab.title) },
+                            icon = {
+                                Image(
+                                    painter = if (selectedTab.value == index) painterResource(id = tab.selectedIcon) else painterResource(
+                                        id = tab.unselectedIcon
+                                    ), contentDescription = "",
+                                    colorFilter = if (selectedTab.value == index) null else ColorFilter.tint(
+                                        Color.Gray
+                                    )
+                                )
+                            })
+
+
+                    }
+                }
+                HorizontalPager(
+                    state = pagerState, modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f)
+                ) { pageIndex ->
+                    when (TodoTabs.entries[pageIndex]) {
+                        TodoTabs.List -> TaksList(uiState, viewModel)
+                        TodoTabs.Done -> Completedtask(uiState)
+                    }
+                }
+                FloatingActionButton(
+                    modifier = Modifier.padding(24.dp),
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    onClick = { viewModel.todoUiEvent(event = TodoUIEvent.ToggleDialog) },
+                    shape = CircleShape
+                ) {
+                    Icon(Icons.Filled.Add, "Floating action button.")
+                }
 
 
             }
-        }
-        HorizontalPager(
-            state = pagerState, modifier = Modifier
-                .fillMaxWidth()
-                .weight(1f)
-        ) { pageIndex ->
-            when (TodoTabs.entries[pageIndex]) {
-                TodoTabs.List -> TaksList(uiState, viewModel)
-                TodoTabs.Done -> Completedtask(uiState)
-            }
-        }
-        FloatingActionButton(
-            modifier = Modifier.padding(24.dp),
-            containerColor = MaterialTheme.colorScheme.primary,
-            onClick = { viewModel.todoUiEvent(event = TodoUIEvent.ToggleDialog) },
-            shape = CircleShape
-        ) {
-            Icon(Icons.Filled.Add, "Floating action button.")
-        }
-
-
     }
+    )
+
 
 
 
