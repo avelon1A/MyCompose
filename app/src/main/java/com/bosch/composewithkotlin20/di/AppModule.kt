@@ -14,7 +14,8 @@ import com.bosch.composewithkotlin20.data.manager.LocalUserMangerImp
 import com.bosch.composewithkotlin20.data.repo.AudioRepository
 import com.bosch.composewithkotlin20.data.repo.LoginRepository
 import com.bosch.composewithkotlin20.data.repo.SupabaseRepoImp
-import com.bosch.composewithkotlin20.domain.Repo.SupabaseRepository
+import com.bosch.composewithkotlin20.domain.repo.SupabaseRepository
+import com.bosch.composewithkotlin20.domain.manger.CafeDao
 import com.bosch.composewithkotlin20.domain.manger.LocalUserManager
 import com.bosch.composewithkotlin20.domain.usecases.AppEntryUseCase
 import com.bosch.composewithkotlin20.domain.usecases.GetAppEntry
@@ -27,6 +28,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.viewModel.MainViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.OnBoardingViewModel
 import com.bosch.composewithkotlin20.presentation.ui.screen.supabase.SupaBaseViewModel
 import com.bosch.composewithkotlin20.util.Const
+import com.bosch.composewithkotlin20.util.NetworkHelper
 import com.bosch.composewithkotlin20.util.ServiceStarter
 import com.bosch.composewithkotlin20.util.service.mediaPlayer.ContentResolverHelper
 import com.bosch.composewithkotlin20.util.service.mediaPlayer.JetAudioNotificationManager
@@ -60,7 +62,8 @@ val appModule = module {
 	single { LoginRepository(get()) }
 	single { provideExoPlayer(androidContext(), get())}
 	single { provideMediaSession(get(), get()) }
-	single { provideSupabaseRepo(get()) }
+	single { provideSupabaseRepo(get(),get(),get())}
+	single { NetworkHelper(androidApplication()) }
 
 
 	single { AppEntryUseCase(get(), get()) }
@@ -127,8 +130,8 @@ fun provideSupaBaseClient(): SupabaseClient {
 	}
    }
 
-	fun provideSupabaseRepo(supabaseClient: SupabaseClient): SupabaseRepository {
-		return SupabaseRepoImp(supabaseClient)
+	fun provideSupabaseRepo(supabaseClient: SupabaseClient,dao: CafeDao,networkHelper: NetworkHelper): SupabaseRepository {
+		return SupabaseRepoImp(supabaseClient,dao,networkHelper)
 	}
 
 
