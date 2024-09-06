@@ -68,8 +68,7 @@ class TodoViewModel(private val taskUseCases: TaskUseCases) : ViewModel() {
 			)
 		}
 	}
-
-
+	
 	private fun addTask(event: TodoUIEvent.AddTask) {
 		val task = event.task
 		viewModelScope.launch {

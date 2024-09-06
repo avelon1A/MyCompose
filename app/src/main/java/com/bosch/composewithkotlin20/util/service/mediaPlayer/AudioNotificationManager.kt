@@ -20,7 +20,7 @@ private const val NOTIFICATION_ID = 101
 private const val NOTIFICATION_CHANNEL_NAME = "notification channel 1"
 private const val NOTIFICATION_CHANNEL_ID = "notification channel id 1"
 
-class JetAudioNotificationManager(
+class AudioNotificationManager(
 	private val context: Context,
 	private val exoPlayer: ExoPlayer,
 ) {
@@ -68,7 +68,7 @@ class JetAudioNotificationManager(
 			NOTIFICATION_CHANNEL_ID
 		)
 			.setMediaDescriptionAdapter(
-				JetAudioNotificationAdapter(
+				AudioNotificationAdapter(
 					context = context,
 					pendingIntent = mediaSession.sessionActivity
 				)

@@ -30,7 +30,7 @@
         android:theme="@style/New.Starting.Theme"
         tools:targetApi="31">
         <service
-            android:name=".util.service.mediaPlayer.JetAudioService"
+            android:name=".util.service.mediaPlayer.AudioService"
             android:exported="true"
             android:foregroundServiceType="mediaPlayback"
                 tools:ignore="ForegroundServicePermission">

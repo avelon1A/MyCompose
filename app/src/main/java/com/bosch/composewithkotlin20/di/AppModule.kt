@@ -31,7 +31,7 @@ import com.bosch.composewithkotlin20.util.Const
 import com.bosch.composewithkotlin20.util.NetworkHelper
 import com.bosch.composewithkotlin20.util.ServiceStarter
 import com.bosch.composewithkotlin20.util.service.mediaPlayer.ContentResolverHelper
-import com.bosch.composewithkotlin20.util.service.mediaPlayer.JetAudioNotificationManager
+import com.bosch.composewithkotlin20.util.service.mediaPlayer.AudioNotificationManager
 import com.bosch.composewithkotlin20.util.service.mediaPlayer.JetAudioServiceHandler
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.createSupabaseClient
@@ -51,7 +51,7 @@ val appModule = module {
 	single { provideApiService(get()) }
 	single<LocalUserManager> { LocalUserMangerImp(androidApplication()) }
 	single { provideAudioAttributes() }
-	single { JetAudioNotificationManager(androidContext(), get()) }
+	single { AudioNotificationManager(androidContext(), get()) }
 	single { JetAudioServiceHandler(get()) }
 	single { ServiceStarter(androidContext()) }
 	single { ContentResolverHelper(androidContext()) }
