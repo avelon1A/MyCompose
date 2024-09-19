@@ -7,6 +7,8 @@
     <script>
         function showMessage() {
             const message = document.getElementById("messageInput").value;
+            // Show a JavaScript alert as a popup
+            alert(message);
             // Call the Android interface method
             Android.showToast(message);
         }
