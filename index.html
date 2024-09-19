@@ -3,22 +3,38 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Web App</title>
     <script>
-        function showMessage() {
-            const message = document.getElementById("messageInput").value;
-            // Show a JavaScript alert as a popup
-            alert(message);
-            // Call the Android interface method
-            Android.showToast(message);
+        function handleAndroidVerification(data) {
+            const parsedData = JSON.parse(data);
+            document.getElementById("mobileNumber").innerText = parsedData.phoneNo;
+            document.getElementById("otpStatus").innerText = "OTP Verified!";
+
+            // Here you can add additional logic, e.g., navigating to another URL
+            console.log("Verification completed with token:", parsedData.token);
+        }
+
+        // Function to simulate Android calling this JavaScript function
+        function simulateAndroidCall() {
+            const simulatedData = {
+                token: "sample_token_123",
+                phoneNo: "+1234567890",
+                url: "http://example.com"
+            };
+            handleAndroidVerification(JSON.stringify(simulatedData));
         }
     </script>
 </head>
 
 <body>
     <h1>Simple Web App</h1>
-    <input type="text" id="messageInput" placeholder="Type your message here">
-    <button onclick="showMessage()">Send to Android</button>
+    <div>
+        <p>Mobile Number: <span id="mobileNumber">Not Verified</span></p>
+        <p id="otpStatus">OTP Status: Not Verified</p>
+    </div>
+    <button onclick="simulateAndroidCall()">Simulate Android Call</button>
+    <p>This button simulates receiving verification data from Android.</p>
 </body>
 
 </html>
