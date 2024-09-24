@@ -148,8 +148,6 @@ dependencies {
     implementation ("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
     implementation ("androidx.compose.runtime:runtime-livedata:1.4.3")
 
-
-
 }
 
 
