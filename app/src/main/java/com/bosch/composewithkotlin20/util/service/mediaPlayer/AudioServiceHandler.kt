@@ -82,7 +82,7 @@ class JetAudioServiceHandler (
 				JetAudioState.Ready(exoPlayer.duration)
 			
 			Player.STATE_ENDED -> {
-				TODO()
+				JetAudioState.Initial
 			}
 			
 			Player.STATE_IDLE -> {

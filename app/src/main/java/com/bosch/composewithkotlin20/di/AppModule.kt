@@ -26,7 +26,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.LoginViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.MainViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.OnBoardingViewModel
-import com.bosch.composewithkotlin20.presentation.ui.screen.supabase.SupaBaseViewModel
+import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupaBaseViewModel
 import com.bosch.composewithkotlin20.util.Const
 import com.bosch.composewithkotlin20.util.NetworkHelper
 import com.bosch.composewithkotlin20.util.ServiceStarter

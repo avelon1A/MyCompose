@@ -1,4 +1,4 @@
-package com.bosch.composewithkotlin20.presentation.ui.screen.supabase
+package com.bosch.composewithkotlin20.presentaion.ui.screen.supabase
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
