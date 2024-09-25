@@ -1,40 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Web App</title>
-    <script>
-        function handleAndroidVerification(data) {
-            const parsedData = JSON.parse(data);
-            document.getElementById("mobileNumber").innerText = parsedData.phoneNo;
-            document.getElementById("otpStatus").innerText = "OTP Verified!";
-
-            // Here you can add additional logic, e.g., navigating to another URL
-            console.log("Verification completed with token:", parsedData.token);
+    <title>Build Artifacts</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #444;
         }
 
-        // Function to simulate Android calling this JavaScript function
-        function simulateAndroidCall() {
-            const simulatedData = {
-                token: "sample_token_123",
-                phoneNo: "+1234567890",
-                url: "http://example.com"
-            };
-            handleAndroidVerification(JSON.stringify(simulatedData));
+        .container {
+            background: #fff;
+            padding: 30px 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
         }
-    </script>
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        a {
+            display: block;
+            margin: 15px 0;
+            padding: 12px 20px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            font-size: 16px;
+        }
+
+        a:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        a:active {
+            background: #004494;
+            transform: translateY(0);
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 30px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            a {
+                font-size: 14px;
+            }
+
+            .footer {
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <h1>Simple Web App</h1>
-    <div>
-        <p>Mobile Number: <span id="mobileNumber">Not Verified</span></p>
-        <p id="otpStatus">OTP Status: Not Verified</p>
+    <div class="container">
+        <h1>Build Artifacts</h1>
+        <a href="lint-results-debug.html" target="_blank">View Lint Report</a>
+        <a href="app-debug.apk" download>Download APK</a>
+        <div class="footer">
+            <p>Generated on: <script>document.write(new Date().toLocaleDateString());</script></p>
+        </div>
     </div>
-    <button onclick="simulateAndroidCall()">Simulate Android Call</button>
-    <p>This button simulates receiving verification data from Android.</p>
 </body>
-
 </html>
