@@ -31,7 +31,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.serialization.Serializable
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 
 fun AnimatedContentScreen() {

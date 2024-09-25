@@ -8,7 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bosch.composewithkotlin20.data.model.data.Video
-import com.bosch.composewithkotlin20.domain.Repo.SupabaseRepository
+import com.bosch.composewithkotlin20.domain.repo.SupabaseRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.bosch.composewithkotlin20.domain.Repo
+package com.bosch.composewithkotlin20.domain.repo
 
 
 import com.bosch.composewithkotlin20.data.model.data.Cafe
@@ -9,6 +9,6 @@ interface SupabaseRepository {
     suspend fun fetchVideos(): List<Video>
     suspend fun observeRealtimeVideos(): Flow<List<Video>>
 
-    suspend fun fetchCafes(): List<Cafe>
+    suspend fun fetchCafes(): Flow<List<Cafe>>
     suspend fun observeRealtimeCafes(): Flow<List<Cafe>>
 }

@@ -73,7 +73,7 @@ fun OnBoardingScreen(
 			verticalAlignment = Alignment.CenterVertically
 		) {
 			PageIndicator(
-				modifier = Modifier.width(52.dp),
+				modifier = Modifier,
 				pageSize = pages.size,
 				selectedPage = pagerState.currentPage
 			)
@@ -157,7 +157,7 @@ fun PageIndicator(
 		repeat(pageSize) {
 			Box(
 				modifier = modifier
-					.width(15.dp)
+					.width(if (it == selectedPage) 35.dp else 15.dp)
 					.height(15.dp)
 					.clip(CircleShape)
 					.background(color = if (it == selectedPage) selectedColor else unselectedColor)

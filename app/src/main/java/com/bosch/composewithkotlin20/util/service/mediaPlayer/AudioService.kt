@@ -6,10 +6,10 @@ import androidx.media3.session.MediaSession
 import androidx.media3.session.MediaSessionService
 import org.koin.android.ext.android.inject
 
-class JetAudioService : MediaSessionService() {
+class AudioService : MediaSessionService() {
 	
 	private val mediaSession: MediaSession by inject()
-	private val notificationManager: JetAudioNotificationManager by inject()
+	private val notificationManager: AudioNotificationManager by inject()
 	
 	@UnstableApi
 	override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {

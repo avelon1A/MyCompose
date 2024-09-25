@@ -23,7 +23,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import com.bosch.composewithkotlin20.data.model.data.Cafe
 import com.bosch.composewithkotlin20.presentaion.ui.screen.CoilImage
-import com.bosch.composewithkotlin20.presentation.ui.screen.supabase.SupaBaseViewModel
 import kotlinx.serialization.Serializable
 
 @Composable

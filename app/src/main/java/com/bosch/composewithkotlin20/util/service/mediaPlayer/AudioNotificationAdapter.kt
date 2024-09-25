@@ -12,7 +12,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.target.CustomTarget
 
 @UnstableApi
-class JetAudioNotificationAdapter(
+class AudioNotificationAdapter(
 	private val context: Context,
 	private val pendingIntent: PendingIntent?,
 ) : PlayerNotificationManager.MediaDescriptionAdapter {

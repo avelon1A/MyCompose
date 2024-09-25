@@ -17,10 +17,10 @@ android {
 
     defaultConfig {
         applicationId = "com.bosch.composewithkotlin20"
-        minSdk = 30
-        targetSdk = 34
+        minSdk = 27
+        targetSdk = 35
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -147,8 +147,6 @@ dependencies {
     implementation("io.ktor:ktor-client-cio:2.3.5")
     implementation ("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
     implementation ("androidx.compose.runtime:runtime-livedata:1.4.3")
-
-
 
 }
 

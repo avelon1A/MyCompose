@@ -5,6 +5,7 @@ import androidx.compose.ui.unit.dp
 object Constants {
 	const val USER_SETTING = "user_setting"
 	const val APP_ENTRY = "app_entry"
+	const val LOGING_STATUS = "login_status"
 	
 	val MediumPadding1 = 24.dp
 	val MediumPadding2 = 30.dp
