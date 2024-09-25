@@ -58,47 +58,45 @@ fun SharedElementScreen(
     var buttonsEnabled by remember { mutableStateOf(true) }
 
 
-    with(sharedTransitionScope) {
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(8.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                itemsIndexed(itemlist) { index, item ->
+            itemsIndexed(itemlist) { index, item ->
 
-                    Item(image = item.image,
-                        name = item.name,
-                        description = item.description,
-                        index = index,
-                        onClick = {
+                Item(image = item.image,
+                    name = item.name,
+                    description = item.description,
+                    index = index,
+                    onClick = {
 
-                            if (buttonsEnabled) {
-                                buttonsEnabled = false
-                                navController.navigate(
-                                    DetailsScreen(
-                                        id = index,
-                                        name = item.name,
-                                        image = item.image,
-                                        description = item.description
-                                    )
-                                ) {
-                                    launchSingleTop = true
-                                }
-
+                        if (buttonsEnabled) {
+                            buttonsEnabled = false
+                            navController.navigate(
+                                DetailsScreen(
+                                    id = index,
+                                    name = item.name,
+                                    image = item.image,
+                                    description = item.description
+                                )
+                            ) {
+                                launchSingleTop = true
                             }
-                            buttonsEnabled = true
 
-                        },
-                        sharedTransitionScope = sharedTransitionScope,
-                        animatedVisibilityScope = animatedContentScope
-                    )
-                }
+                        }
+                        buttonsEnabled = true
+
+                    },
+                    sharedTransitionScope = sharedTransitionScope,
+                    animatedVisibilityScope = animatedContentScope
+                )
             }
         }
     }

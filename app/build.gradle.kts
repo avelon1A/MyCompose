@@ -17,7 +17,7 @@ android {
 
     defaultConfig {
         applicationId = "com.bosch.composewithkotlin20"
-        minSdk = 27
+        minSdk = 30
         targetSdk = 35
         versionCode = 1
         versionName = "1.0.1"
