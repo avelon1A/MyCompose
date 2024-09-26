@@ -128,23 +128,12 @@ jobs:
           name: compose2.apk
           path: app/build/outputs/apk/debug/app-debug.apk
 
-      - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ github.sha }}
-          release_name: "Release ${{ github.sha }}"
-          draft: false
-          prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Releasing using Hub
+        uses: kyze8439690/action-release-releaseapk@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          APP_FOLDER: app
 
-      - name: Upload APK to Release
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: app/build/outputs/apk/debug/app-debug.apk
-          asset_name: "compose2.apk"
-          asset_content_type: application/vnd.android.package-archive
 
       - name: Deploy APK and Lint Report to GitHub Pages
         if: always()
