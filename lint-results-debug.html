@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 121 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 156 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Wed Sep 04 07:03:34 UTC 2024 by AGP (8.4.2)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Thu Sep 26 05:02:11 UTC 2024 by AGP (8.4.2)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -187,11 +187,10 @@ document.getElementById(id).style.display = 'none';
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#InlinedApi"><i class="material-icons warning-icon">warning</i>Using inlined constants on older versions (2)</a>
-      <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
       <a class="mdl-navigation__link" href="#UnusedAttribute"><i class="material-icons warning-icon">warning</i>Attribute unused on older versions (1)</a>
       <a class="mdl-navigation__link" href="#VectorRaster"><i class="material-icons warning-icon">warning</i>Vector Image Generation (18)</a>
       <a class="mdl-navigation__link" href="#AndroidGradlePluginVersion"><i class="material-icons warning-icon">warning</i>Obsolete Android Gradle Plugin Version (3)</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (1)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (37)</a>
       <a class="mdl-navigation__link" href="#ModifierParameter"><i class="material-icons warning-icon">warning</i>Guidelines for Modifier parameters in a Composable function (1)</a>
       <a class="mdl-navigation__link" href="#Typos"><i class="material-icons warning-icon">warning</i>Spelling error (36)</a>
       <a class="mdl-navigation__link" href="#ExportedService"><i class="material-icons warning-icon">warning</i>Exported service does not require permission (1)</a>
@@ -220,9 +219,6 @@ document.getElementById(id).style.display = 'none';
 <a href="#InlinedApi">InlinedApi</a>: Using inlined constants on older versions</td></tr>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#OldTargetApi">OldTargetApi</a>: Target SDK attribute is not targeting latest version</td></tr>
-<tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedAttribute">UnusedAttribute</a>: Attribute unused on older versions</td></tr>
 <tr>
 <td class="countColumn">18</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -231,7 +227,7 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#AndroidGradlePluginVersion">AndroidGradlePluginVersion</a>: Obsolete Android Gradle Plugin Version</td></tr>
 <tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">37</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -338,56 +334,6 @@ To suppress this error, use the issue id "InlinedApi" as explained in the <a hre
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationInlinedApiLink" onclick="reveal('explanationInlinedApi');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="InlinedApiCardLink" onclick="hideid('InlinedApiCard');">
-Dismiss</button>            </div>
-            </div>
-          </section><a name="OldTargetApi"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="OldTargetApiCard" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Target SDK attribute is not targeting latest version</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:21</span>: <span class="message">Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the <code>android.os.Build.VERSION_CODES</code> javadoc for details.</span><br /><pre class="errorlines">
-<span class="lineno">  18 </span>    defaultConfig {
-<span class="lineno">  19 </span>        applicationId = "com.bosch.composewithkotlin20"
-<span class="lineno">  20 </span>        minSdk = 30
-<span class="caretline"><span class="lineno">  21 </span>        <span class="warning">targetSdk = 34</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  22 </span>        versionCode = 1
-<span class="lineno">  23 </span>        versionName = "1.0"
-</pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationOldTargetApi" style="display: none;">
-When your application runs on a version of Android that is more recent than your <code>targetSdkVersion</code> specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the <code>targetSdkVersion</code> is less than 14, your app may get an option button in the UI.<br/>
-<br/>
-To fix this issue, set the <code>targetSdkVersion</code> to the highest available value. Then test your app to make sure everything works correctly. You may want to consult the compatibility notes to see what changes apply to each version you are adding support for: <a href="https://developer.android.com/reference/android/os/Build.VERSION_CODES.html">https://developer.android.com/reference/android/os/Build.VERSION_CODES.html</a> as well as follow this guide:<br/>
-<a href="https://developer.android.com/distribute/best-practices/develop/target-sdk.html">https://developer.android.com/distribute/best-practices/develop/target-sdk.html</a><br/><div class="moreinfo">More info: <ul><li><a href="https://developer.android.com/distribute/best-practices/develop/target-sdk.html">https://developer.android.com/distribute/best-practices/develop/target-sdk.html</a>
-<li><a href="https://developer.android.com/reference/android/os/Build.VERSION_CODES.html">https://developer.android.com/reference/android/os/Build.VERSION_CODES.html</a>
-</ul></div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
-To suppress this error, use the issue id "OldTargetApi" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">OldTargetApi</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Correctness</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Warning</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 6/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationOldTargetApiLink" onclick="reveal('explanationOldTargetApi');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="OldTargetApiCardLink" onclick="hideid('OldTargetApiCard');">
 Dismiss</button>            </div>
             </div>
           </section><a name="UnusedAttribute"></a>
@@ -632,7 +578,7 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:4</span>: <span class="message">A newer version of com.android.application than 8.4.2 is available: 8.6.0</span><br /><pre class="errorlines">
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:4</span>: <span class="message">A newer version of com.android.application than 8.4.2 is available: 8.6.1</span><br /><pre class="errorlines">
 <span class="lineno">   1 </span>[versions]
 <span class="lineno">   2 </span>accompanistPermissions = "0.34.0"
 <span class="lineno">   3 </span>accompanistSystemuicontroller = "0.34.0"
@@ -642,7 +588,7 @@ Dismiss</button>            </div>
 <span class="lineno">   7 </span>coilCompose = "2.7.0"
 </pre>
 
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:4</span>: <span class="message">A newer version of com.android.application than 8.4.2 is available: 8.6.0</span><br /><pre class="errorlines">
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:4</span>: <span class="message">A newer version of com.android.application than 8.4.2 is available: 8.6.1</span><br /><pre class="errorlines">
 <span class="lineno">   1 </span>[versions]
 <span class="lineno">   2 </span>accompanistPermissions = "0.34.0"
 <span class="lineno">   3 </span>accompanistSystemuicontroller = "0.34.0"
@@ -652,7 +598,7 @@ Dismiss</button>            </div>
 <span class="lineno">   7 </span>coilCompose = "2.7.0"
 </pre>
 
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:4</span>: <span class="message">A newer version of com.android.application than 8.4.2 is available: 8.6.0</span><br /><pre class="errorlines">
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:4</span>: <span class="message">A newer version of com.android.application than 8.4.2 is available: 8.6.1</span><br /><pre class="errorlines">
 <span class="lineno">   1 </span>[versions]
 <span class="lineno">   2 </span>accompanistPermissions = "0.34.0"
 <span class="lineno">   3 </span>accompanistSystemuicontroller = "0.34.0"
@@ -698,15 +644,375 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:149</span>: <span class="message">A newer version of androidx.compose.runtime:runtime-livedata than 1.4.3 is available: 1.6.8</span><br /><pre class="errorlines">
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:149</span>: <span class="message">A newer version of androidx.compose.runtime:runtime-livedata than 1.4.3 is available: 1.7.2</span><br /><pre class="errorlines">
 <span class="lineno"> 146 </span>
 <span class="lineno"> 147 </span>    implementation("io.ktor:ktor-client-cio:2.3.5")
 <span class="lineno"> 148 </span>    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
 <span class="caretline"><span class="lineno"> 149 </span>    implementation ("<span class="warning">androidx.compose.runtime:runtime-livedata:1.4.3</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 150 </span>
-<span class="lineno"> 151 </span>
+<span class="lineno"> 151 </span>}
 </pre>
 
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:14</span>: <span class="message">Upgrade <code>androidx.compose.foundation</code> for keyboard and mouse support</span><br /><pre class="errorlines">
+<span class="lineno">  11 </span>coreTesting = "2.2.0"
+<span class="lineno">  12 </span>datastorePreferencesCore = "1.1.1"
+<span class="lineno">  13 </span>exoplayer = "2.19.1"
+<span class="caretline"><span class="lineno">  14 </span>foundation = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  15 </span>glide = "4.16.0"
+<span class="lineno">  16 </span>koinAndroid = "3.2.0"
+<span class="lineno">  17 </span>koinAndroidCompat = "3.1.6"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:14</span>: <span class="message">Upgrade <code>androidx.compose.foundation</code> for keyboard and mouse support</span><br /><pre class="errorlines">
+<span class="lineno">  11 </span>coreTesting = "2.2.0"
+<span class="lineno">  12 </span>datastorePreferencesCore = "1.1.1"
+<span class="lineno">  13 </span>exoplayer = "2.19.1"
+<span class="caretline"><span class="lineno">  14 </span>foundation = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  15 </span>glide = "4.16.0"
+<span class="lineno">  16 </span>koinAndroid = "3.2.0"
+<span class="lineno">  17 </span>koinAndroidCompat = "3.1.6"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:14</span>: <span class="message">Upgrade <code>androidx.compose.foundation</code> for keyboard and mouse support</span><br /><pre class="errorlines">
+<span class="lineno">  11 </span>coreTesting = "2.2.0"
+<span class="lineno">  12 </span>datastorePreferencesCore = "1.1.1"
+<span class="lineno">  13 </span>exoplayer = "2.19.1"
+<span class="caretline"><span class="lineno">  14 </span>foundation = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  15 </span>glide = "4.16.0"
+<span class="lineno">  16 </span>koinAndroid = "3.2.0"
+<span class="lineno">  17 </span>koinAndroidCompat = "3.1.6"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:28</span>: <span class="message">A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.4 is available: 2.8.6</span><br /><pre class="errorlines">
+<span class="lineno">  25 </span>junitVersion = "1.2.1"
+<span class="lineno">  26 </span>espressoCore = "3.6.1"
+<span class="lineno">  27 </span>kotlinxCoroutinesTest = "1.8.1"
+<span class="caretline"><span class="lineno">  28 </span>lifecycleRuntimeKtx = <span class="warning">"2.8.4"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  29 </span>activityCompose = "1.9.1"
+<span class="lineno">  30 </span>composeBom = "2024.08.00"
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+</pre>
+
+<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 32 More Occurrences...</button>
+<div id="GradleDependencyDiv" style="display: none">
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:28</span>: <span class="message">A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.4 is available: 2.8.6</span><br /><pre class="errorlines">
+<span class="lineno">  25 </span>junitVersion = "1.2.1"
+<span class="lineno">  26 </span>espressoCore = "3.6.1"
+<span class="lineno">  27 </span>kotlinxCoroutinesTest = "1.8.1"
+<span class="caretline"><span class="lineno">  28 </span>lifecycleRuntimeKtx = <span class="warning">"2.8.4"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  29 </span>activityCompose = "1.9.1"
+<span class="lineno">  30 </span>composeBom = "2024.08.00"
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:28</span>: <span class="message">A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.4 is available: 2.8.6</span><br /><pre class="errorlines">
+<span class="lineno">  25 </span>junitVersion = "1.2.1"
+<span class="lineno">  26 </span>espressoCore = "3.6.1"
+<span class="lineno">  27 </span>kotlinxCoroutinesTest = "1.8.1"
+<span class="caretline"><span class="lineno">  28 </span>lifecycleRuntimeKtx = <span class="warning">"2.8.4"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  29 </span>activityCompose = "1.9.1"
+<span class="lineno">  30 </span>composeBom = "2024.08.00"
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:29</span>: <span class="message">A newer version of androidx.activity:activity-compose than 1.9.1 is available: 1.9.2</span><br /><pre class="errorlines">
+<span class="lineno">  26 </span>espressoCore = "3.6.1"
+<span class="lineno">  27 </span>kotlinxCoroutinesTest = "1.8.1"
+<span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
+<span class="caretline"><span class="lineno">  29 </span>activityCompose = <span class="warning">"1.9.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  30 </span>composeBom = "2024.08.00"
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:29</span>: <span class="message">A newer version of androidx.activity:activity-compose than 1.9.1 is available: 1.9.2</span><br /><pre class="errorlines">
+<span class="lineno">  26 </span>espressoCore = "3.6.1"
+<span class="lineno">  27 </span>kotlinxCoroutinesTest = "1.8.1"
+<span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
+<span class="caretline"><span class="lineno">  29 </span>activityCompose = <span class="warning">"1.9.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  30 </span>composeBom = "2024.08.00"
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:29</span>: <span class="message">A newer version of androidx.activity:activity-compose than 1.9.1 is available: 1.9.2</span><br /><pre class="errorlines">
+<span class="lineno">  26 </span>espressoCore = "3.6.1"
+<span class="lineno">  27 </span>kotlinxCoroutinesTest = "1.8.1"
+<span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
+<span class="caretline"><span class="lineno">  29 </span>activityCompose = <span class="warning">"1.9.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  30 </span>composeBom = "2024.08.00"
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:30</span>: <span class="message">A newer version of androidx.compose:compose-bom than 2024.08.00 is available: 2024.09.02</span><br /><pre class="errorlines">
+<span class="lineno">  27 </span>kotlinxCoroutinesTest = "1.8.1"
+<span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
+<span class="lineno">  29 </span>activityCompose = "1.9.1"
+<span class="caretline"><span class="lineno">  30 </span>composeBom = <span class="warning">"2024.08.00"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:30</span>: <span class="message">A newer version of androidx.compose:compose-bom than 2024.08.00 is available: 2024.09.02</span><br /><pre class="errorlines">
+<span class="lineno">  27 </span>kotlinxCoroutinesTest = "1.8.1"
+<span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
+<span class="lineno">  29 </span>activityCompose = "1.9.1"
+<span class="caretline"><span class="lineno">  30 </span>composeBom = <span class="warning">"2024.08.00"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:30</span>: <span class="message">A newer version of androidx.compose:compose-bom than 2024.08.00 is available: 2024.09.02</span><br /><pre class="errorlines">
+<span class="lineno">  27 </span>kotlinxCoroutinesTest = "1.8.1"
+<span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
+<span class="lineno">  29 </span>activityCompose = "1.9.1"
+<span class="caretline"><span class="lineno">  30 </span>composeBom = <span class="warning">"2024.08.00"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:31</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-rc01 is available: 2.8.1</span><br /><pre class="errorlines">
+<span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
+<span class="lineno">  29 </span>activityCompose = "1.9.1"
+<span class="lineno">  30 </span>composeBom = "2024.08.00"
+<span class="caretline"><span class="lineno">  31 </span>composeNavigation = <span class="warning">"2.8.0-rc01"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="lineno">  34 </span>media3Exoplayer = "1.4.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:31</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-rc01 is available: 2.8.1</span><br /><pre class="errorlines">
+<span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
+<span class="lineno">  29 </span>activityCompose = "1.9.1"
+<span class="lineno">  30 </span>composeBom = "2024.08.00"
+<span class="caretline"><span class="lineno">  31 </span>composeNavigation = <span class="warning">"2.8.0-rc01"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="lineno">  34 </span>media3Exoplayer = "1.4.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:31</span>: <span class="message">A newer version of androidx.navigation:navigation-compose than 2.8.0-rc01 is available: 2.8.1</span><br /><pre class="errorlines">
+<span class="lineno">  28 </span>lifecycleRuntimeKtx = "2.8.4"
+<span class="lineno">  29 </span>activityCompose = "1.9.1"
+<span class="lineno">  30 </span>composeBom = "2024.08.00"
+<span class="caretline"><span class="lineno">  31 </span>composeNavigation = <span class="warning">"2.8.0-rc01"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="lineno">  34 </span>media3Exoplayer = "1.4.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:33</span>: <span class="message">A newer version of androidx.compose.material:material-icons-extended than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  30 </span>composeBom = "2024.08.00"
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="caretline"><span class="lineno">  33 </span>materialIconsExtended = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  34 </span>media3Exoplayer = "1.4.1"
+<span class="lineno">  35 </span>mockitoCore = "5.12.0"
+<span class="lineno">  36 </span>mockitoInline = "5.2.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:33</span>: <span class="message">A newer version of androidx.compose.material:material-icons-extended than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  30 </span>composeBom = "2024.08.00"
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="caretline"><span class="lineno">  33 </span>materialIconsExtended = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  34 </span>media3Exoplayer = "1.4.1"
+<span class="lineno">  35 </span>mockitoCore = "5.12.0"
+<span class="lineno">  36 </span>mockitoInline = "5.2.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:33</span>: <span class="message">A newer version of androidx.compose.material:material-icons-extended than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  30 </span>composeBom = "2024.08.00"
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="caretline"><span class="lineno">  33 </span>materialIconsExtended = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  34 </span>media3Exoplayer = "1.4.1"
+<span class="lineno">  35 </span>mockitoCore = "5.12.0"
+<span class="lineno">  36 </span>mockitoInline = "5.2.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:41</span>: <span class="message">A newer version of androidx.compose.ui:ui than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  38 </span>retrofit = "2.11.0"
+<span class="lineno">  39 </span>roomCompiler = "2.6.1"
+<span class="lineno">  40 </span>serialization = "1.7.1"
+<span class="caretline"><span class="lineno">  41 </span>ui = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  42 </span>uiToolingPreview = "1.6.8"
+<span class="lineno">  43 </span>ksp = "2.0.20-1.0.24"
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:41</span>: <span class="message">A newer version of androidx.compose.ui:ui than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  38 </span>retrofit = "2.11.0"
+<span class="lineno">  39 </span>roomCompiler = "2.6.1"
+<span class="lineno">  40 </span>serialization = "1.7.1"
+<span class="caretline"><span class="lineno">  41 </span>ui = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  42 </span>uiToolingPreview = "1.6.8"
+<span class="lineno">  43 </span>ksp = "2.0.20-1.0.24"
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:41</span>: <span class="message">A newer version of androidx.compose.ui:ui than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  38 </span>retrofit = "2.11.0"
+<span class="lineno">  39 </span>roomCompiler = "2.6.1"
+<span class="lineno">  40 </span>serialization = "1.7.1"
+<span class="caretline"><span class="lineno">  41 </span>ui = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  42 </span>uiToolingPreview = "1.6.8"
+<span class="lineno">  43 </span>ksp = "2.0.20-1.0.24"
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:42</span>: <span class="message">A newer version of androidx.compose.ui:ui-tooling-preview than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  39 </span>roomCompiler = "2.6.1"
+<span class="lineno">  40 </span>serialization = "1.7.1"
+<span class="lineno">  41 </span>ui = "1.6.8"
+<span class="caretline"><span class="lineno">  42 </span>uiToolingPreview = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  43 </span>ksp = "2.0.20-1.0.24"
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+<span class="lineno">  45 </span>media3Ui = "1.4.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:42</span>: <span class="message">A newer version of androidx.compose.ui:ui-tooling-preview than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  39 </span>roomCompiler = "2.6.1"
+<span class="lineno">  40 </span>serialization = "1.7.1"
+<span class="lineno">  41 </span>ui = "1.6.8"
+<span class="caretline"><span class="lineno">  42 </span>uiToolingPreview = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  43 </span>ksp = "2.0.20-1.0.24"
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+<span class="lineno">  45 </span>media3Ui = "1.4.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:42</span>: <span class="message">A newer version of androidx.compose.ui:ui-tooling-preview than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  39 </span>roomCompiler = "2.6.1"
+<span class="lineno">  40 </span>serialization = "1.7.1"
+<span class="lineno">  41 </span>ui = "1.6.8"
+<span class="caretline"><span class="lineno">  42 </span>uiToolingPreview = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  43 </span>ksp = "2.0.20-1.0.24"
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+<span class="lineno">  45 </span>media3Ui = "1.4.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:47</span>: <span class="message">A newer version of androidx.compose.runtime:runtime-livedata than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+<span class="lineno">  45 </span>media3Ui = "1.4.1"
+<span class="lineno">  46 </span>androidbrowserhelper = "2.5.0"
+<span class="caretline"><span class="lineno">  47 </span>runtimeLivedata = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  48 </span>roomKtx = "2.6.1"
+<span class="lineno">  49 </span>roomCommon = "2.6.1"
+<span class="lineno">  50 </span>firebaseCrashlytics = "19.0.3"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:47</span>: <span class="message">A newer version of androidx.compose.runtime:runtime-livedata than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+<span class="lineno">  45 </span>media3Ui = "1.4.1"
+<span class="lineno">  46 </span>androidbrowserhelper = "2.5.0"
+<span class="caretline"><span class="lineno">  47 </span>runtimeLivedata = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  48 </span>roomKtx = "2.6.1"
+<span class="lineno">  49 </span>roomCommon = "2.6.1"
+<span class="lineno">  50 </span>firebaseCrashlytics = "19.0.3"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:47</span>: <span class="message">A newer version of androidx.compose.runtime:runtime-livedata than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+<span class="lineno">  45 </span>media3Ui = "1.4.1"
+<span class="lineno">  46 </span>androidbrowserhelper = "2.5.0"
+<span class="caretline"><span class="lineno">  47 </span>runtimeLivedata = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  48 </span>roomKtx = "2.6.1"
+<span class="lineno">  49 </span>roomCommon = "2.6.1"
+<span class="lineno">  50 </span>firebaseCrashlytics = "19.0.3"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:50</span>: <span class="message">A newer version of com.google.firebase:firebase-crashlytics than 19.0.3 is available: 19.1.0</span><br /><pre class="errorlines">
+<span class="lineno">  47 </span>runtimeLivedata = "1.6.8"
+<span class="lineno">  48 </span>roomKtx = "2.6.1"
+<span class="lineno">  49 </span>roomCommon = "2.6.1"
+<span class="caretline"><span class="lineno">  50 </span>firebaseCrashlytics = <span class="warning">"19.0.3"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  51 </span>googleGmsGoogleServices = "4.4.2"
+<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
+<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:50</span>: <span class="message">A newer version of com.google.firebase:firebase-crashlytics than 19.0.3 is available: 19.1.0</span><br /><pre class="errorlines">
+<span class="lineno">  47 </span>runtimeLivedata = "1.6.8"
+<span class="lineno">  48 </span>roomKtx = "2.6.1"
+<span class="lineno">  49 </span>roomCommon = "2.6.1"
+<span class="caretline"><span class="lineno">  50 </span>firebaseCrashlytics = <span class="warning">"19.0.3"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  51 </span>googleGmsGoogleServices = "4.4.2"
+<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
+<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:50</span>: <span class="message">A newer version of com.google.firebase:firebase-crashlytics than 19.0.3 is available: 19.1.0</span><br /><pre class="errorlines">
+<span class="lineno">  47 </span>runtimeLivedata = "1.6.8"
+<span class="lineno">  48 </span>roomKtx = "2.6.1"
+<span class="lineno">  49 </span>roomCommon = "2.6.1"
+<span class="caretline"><span class="lineno">  50 </span>firebaseCrashlytics = <span class="warning">"19.0.3"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  51 </span>googleGmsGoogleServices = "4.4.2"
+<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
+<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:53</span>: <span class="message">A newer version of androidx.compose.ui:ui-text-google-fonts than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  50 </span>firebaseCrashlytics = "19.0.3"
+<span class="lineno">  51 </span>googleGmsGoogleServices = "4.4.2"
+<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
+<span class="caretline"><span class="lineno">  53 </span>uiTextGoogleFonts = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  54 </span>workRuntime = "2.9.1"
+<span class="lineno">  55 </span>animationGraphicsAndroid = "1.6.8"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:53</span>: <span class="message">A newer version of androidx.compose.ui:ui-text-google-fonts than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  50 </span>firebaseCrashlytics = "19.0.3"
+<span class="lineno">  51 </span>googleGmsGoogleServices = "4.4.2"
+<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
+<span class="caretline"><span class="lineno">  53 </span>uiTextGoogleFonts = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  54 </span>workRuntime = "2.9.1"
+<span class="lineno">  55 </span>animationGraphicsAndroid = "1.6.8"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:53</span>: <span class="message">A newer version of androidx.compose.ui:ui-text-google-fonts than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  50 </span>firebaseCrashlytics = "19.0.3"
+<span class="lineno">  51 </span>googleGmsGoogleServices = "4.4.2"
+<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
+<span class="caretline"><span class="lineno">  53 </span>uiTextGoogleFonts = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  54 </span>workRuntime = "2.9.1"
+<span class="lineno">  55 </span>animationGraphicsAndroid = "1.6.8"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:55</span>: <span class="message">A newer version of androidx.compose.animation:animation-graphics-android than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
+<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
+<span class="lineno">  54 </span>workRuntime = "2.9.1"
+<span class="caretline"><span class="lineno">  55 </span>animationGraphicsAndroid = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  56 </span>
+<span class="lineno">  57 </span>[libraries]
+<span class="lineno">  58 </span>accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:55</span>: <span class="message">A newer version of androidx.compose.animation:animation-graphics-android than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
+<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
+<span class="lineno">  54 </span>workRuntime = "2.9.1"
+<span class="caretline"><span class="lineno">  55 </span>animationGraphicsAndroid = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  56 </span>
+<span class="lineno">  57 </span>[libraries]
+<span class="lineno">  58 </span>accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:55</span>: <span class="message">A newer version of androidx.compose.animation:animation-graphics-android than 1.6.8 is available: 1.7.2</span><br /><pre class="errorlines">
+<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
+<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
+<span class="lineno">  54 </span>workRuntime = "2.9.1"
+<span class="caretline"><span class="lineno">  55 </span>animationGraphicsAndroid = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  56 </span>
+<span class="lineno">  57 </span>[libraries]
+<span class="lineno">  58 </span>accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
+</pre>
+
+</div>
 </div>
 <div class="metadata"><div class="explanation" id="explanationGradleDependency" style="display: none;">
 This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
@@ -1190,7 +1496,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 30 </span>        <span class="prefix">android:</span><span class="attribute">theme</span>=<span class="value">"@style/New.Starting.Theme"</span>
 <span class="lineno"> 31 </span>        <span class="prefix">tools:</span><span class="attribute">targetApi</span>=<span class="value">"31"</span>>
 <span class="caretline"><span class="lineno"> 32 </span>        <span class="tag">&lt;</span><span class="warning"><span class="tag">service</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 33 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">".util.service.mediaPlayer.JetAudioService"</span>
+</span><span class="lineno"> 33 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">".util.service.mediaPlayer.AudioService"</span>
 <span class="lineno"> 34 </span>            <span class="prefix">android:</span><span class="attribute">exported</span>=<span class="value">"true"</span>
 <span class="lineno"> 35 </span>            <span class="prefix">android:</span><span class="attribute">foregroundServiceType</span>=<span class="value">"mediaPlayback"</span></pre>
 
@@ -1366,24 +1672,24 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt</a>:38</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno">  35 </span><span class="annotation">@Composable</span>
-<span class="lineno">  36 </span>
-<span class="lineno">  37 </span><span class="keyword">fun</span> AnimatedContentScreen() {
-<span class="caretline"><span class="lineno">  38 </span>    <span class="keyword">var</span> count by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  39 </span>    <span class="keyword">var</span> count1 by remember { mutableStateOf(<span class="number">0</span>) }
-<span class="lineno">  40 </span>
-<span class="lineno">  41 </span>    Column(
+<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt</a>:37</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno"> 34 </span><span class="annotation">@Composable</span>
+<span class="lineno"> 35 </span>
+<span class="lineno"> 36 </span><span class="keyword">fun</span> AnimatedContentScreen() {
+<span class="caretline"><span class="lineno"> 37 </span>    <span class="keyword">var</span> count by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 38 </span>    <span class="keyword">var</span> count1 by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="lineno"> 39 </span>
+<span class="lineno"> 40 </span>    Column(
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt</a>:39</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno">  36 </span>
-<span class="lineno">  37 </span><span class="keyword">fun</span> AnimatedContentScreen() {
-<span class="lineno">  38 </span>    <span class="keyword">var</span> count by remember { mutableStateOf(<span class="number">0</span>) }
-<span class="caretline"><span class="lineno">  39 </span>    <span class="keyword">var</span> count1 by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  40 </span>
-<span class="lineno">  41 </span>    Column(
-<span class="lineno">  42 </span>        modifier = Modifier.fillMaxSize(),
+<span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/animationScreens/AnimatedContent.kt</a>:38</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno"> 35 </span>
+<span class="lineno"> 36 </span><span class="keyword">fun</span> AnimatedContentScreen() {
+<span class="lineno"> 37 </span>    <span class="keyword">var</span> count by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="caretline"><span class="lineno"> 38 </span>    <span class="keyword">var</span> count1 by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 39 </span>
+<span class="lineno"> 40 </span>    Column(
+<span class="lineno"> 41 </span>        modifier = Modifier.fillMaxSize(),
 </pre>
 
 <span class="location"><a href="../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/canvas/CanvasWaterBottel.kt">../../src/main/java/com/bosch/composewithkotlin20/presentaion/ui/screen/canvas/CanvasWaterBottel.kt</a>:35</span>: <span class="message">Prefer <code>mutableFloatStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
@@ -1753,6 +2059,7 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno"> 148 </span>    implementation ("<span class="warning">com.google.accompanist:accompanist-systemuicontroller:0.34.0</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 149 </span>    implementation ("androidx.compose.runtime:runtime-livedata:1.4.3")
 <span class="lineno"> 150 </span>
+<span class="lineno"> 151 </span>}
 </pre>
 
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:149</span>: <span class="message">Use version catalog instead (androidx.compose.runtime:runtime-livedata is already available as <code>androidx-runtime-livedata</code>, but using version 1.6.8 instead)</span><br /><pre class="errorlines">
@@ -1761,7 +2068,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 148 </span>    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
 <span class="caretline"><span class="lineno"> 149 </span>    implementation ("<span class="warning">androidx.compose.runtime:runtime-livedata:1.4.3</span>")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 150 </span>
-<span class="lineno"> 151 </span>
+<span class="lineno"> 151 </span>}
 </pre>
 
 </div>
