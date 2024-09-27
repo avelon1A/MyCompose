@@ -128,13 +128,13 @@ fun OnBoarding(
 		)
 		Spacer(modifier = Modifier.height(16.dp))
 		Text(
-			text = page.title,
+			text = page.title,color = MaterialTheme.colorScheme.scrim,
 			style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold),
 			modifier = Modifier.padding(horizontal = 16.dp)
 		)
 		Spacer(modifier = Modifier.height(21.dp))
 		Text(
-			text = page.content,
+			text = page.content,color = MaterialTheme.colorScheme.scrim,
 			style = MaterialTheme.typography.bodyMedium,
 			modifier = Modifier.padding(horizontal = 21.dp)
 		)
