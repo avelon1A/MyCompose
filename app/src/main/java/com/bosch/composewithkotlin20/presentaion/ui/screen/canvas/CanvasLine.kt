@@ -57,6 +57,13 @@ fun CanvasLine() {
             strokeWidth = 5f,
             cap = StrokeCap.Round
         )
+        drawLine(
+            color = Color.Magenta,
+            start = Offset(size.width /2, size.height /2 ),
+            end = Offset(size.width /2, size.height),
+            strokeWidth = 5f,
+            cap = StrokeCap.Round
+        )
     }
 }
 
