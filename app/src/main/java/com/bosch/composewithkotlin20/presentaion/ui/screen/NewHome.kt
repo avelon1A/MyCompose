@@ -39,7 +39,6 @@ import androidx.navigation.NavController
 import com.bosch.composewithkotlin20.R
 import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
 import com.bosch.composewithkotlin20.util.Const.ANIMATION_SCREEN
-import com.bosch.composewithkotlin20.util.Const.APPS_SCREEN
 import com.bosch.composewithkotlin20.util.Const.CANVAS_SCREEN
 import com.bosch.composewithkotlin20.util.Const.UI_SCREEN
 import kotlinx.serialization.Serializable
@@ -87,7 +86,8 @@ fun HomeButton(
     buttonList: List<MainScreenButtons>,
     navController: NavController,
     innerPadding: PaddingValues,
-    modifier: Modifier
+    modifier: Modifier,
+    chunks: Int = 2,
 ) {
 
     LazyColumn(
@@ -97,36 +97,75 @@ fun HomeButton(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        items(buttonList.chunked(2), key = { rowButtons ->
-            rowButtons.hashCode()
-        }) { rowButtons ->
+        if (chunks >= 2) {
+            items(buttonList.chunked(chunks), key = { rowButtons ->
+                rowButtons.hashCode()
+            }) { rowButtons ->
 
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceAround,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                rowButtons.forEach {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceAround,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    rowButtons.forEach {
 
-                    HomeCustomButton(
-                        modifier = modifier,
-                        text = it.title,
-                        onClick = { navController.navigate(it.route) },
-                        color = it.color,
-                        image = it.image,
+                        HomeCustomButton(
+                            modifier = modifier,
+                            text = it.title,
+                            onClick = { navController.navigate(it.route) },
+                            color = it.color,
+                            image = it.image,
 
-                        )
+                            )
+                    }
+                }
+            }
+        } else {
+
+            items(buttonList.chunked(chunks), key = { rowButtons ->
+                rowButtons.hashCode()
+            }) { rowButtons ->
+
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(MaterialTheme.colorScheme.surface)
+                        .clickable {
+                            navController.navigate(rowButtons.first().route)
+                        },
+                    horizontalArrangement = Arrangement.Start,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    rowButtons.forEach {
+
+
+                        HomeCustomButton(
+                            modifier = modifier,
+                            text = it.title,
+                            onClick = { navController.navigate(it.route) },
+                            color = it.color,
+                            image = it.image,
+
+                            )
+
+
+                        Text(it.title)
+                    }
+
+
                 }
             }
         }
 
-
     }
+
+
 }
+
 
 @Composable
 fun HomeCustomButton(
-    modifier: Modifier, text: String, onClick: () -> Unit, color: Color, image: Int
+    modifier: Modifier, text: String, onClick: () -> Unit, color: Color, image: Int,
 ) {
     Card(
         modifier = modifier

@@ -5,9 +5,7 @@ import androidx.compose.animation.AnimatedContentScope
 import androidx.compose.animation.AnimatedVisibilityScope
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.SharedTransitionScope
-import androidx.compose.animation.core.LinearEasing
-import androidx.compose.animation.core.LinearOutSlowInEasing
-import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -40,6 +38,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.bosch.composewithkotlin20.R
+import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
 import kotlinx.serialization.Serializable
 
 
@@ -63,6 +62,7 @@ fun SharedElementScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+      AppBar(navController = navController, icon =R.drawable.arrow_back)
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -131,8 +131,8 @@ fun Item(
                 .size(100.dp)
                 .sharedElement(state = rememberSharedContentState(key = "image$index"),
                     animatedVisibilityScope = animatedVisibilityScope,
-                    boundsTransform = { _, _ ->
-                        tween(durationMillis = 500, easing = LinearEasing)
+                    boundsTransform = { initial, target ->
+                       spring(dampingRatio = 0.8f, stiffness = 380f)
 
                     }
                 ), painter = painterResource(id = image),
@@ -181,7 +181,7 @@ fun DetailsScreen(
                         sharedTransitionScope.rememberSharedContentState(key = "image$id"),
                         animatedVisibilityScope = animatedContentScope,
                                 boundsTransform = { _, _ ->
-                            tween(durationMillis = 500, easing = LinearOutSlowInEasing)
+                                    spring(dampingRatio = 0.8f, stiffness = 380f)
                         }
                     )
                     .aspectRatio(1f)

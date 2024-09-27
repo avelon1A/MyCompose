@@ -29,7 +29,7 @@ import kotlinx.serialization.Serializable
 
 
 @Composable
-fun ScreenC(navController: NavController) {
+fun TapToExpandScreen(navController: NavController) {
     Column(modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally) {

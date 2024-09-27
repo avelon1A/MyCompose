@@ -38,7 +38,7 @@ import androidx.compose.ui.unit.dp
 import com.bosch.composewithkotlin20.data.model.data.Page
 import com.bosch.composewithkotlin20.data.model.data.pages
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.event.OnBoardingEvent
-import com.bosch.composewithkotlin20.util.Constants.MediumPadding2
+import com.bosch.composewithkotlin20.util.Const.MediumPadding2
 import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 

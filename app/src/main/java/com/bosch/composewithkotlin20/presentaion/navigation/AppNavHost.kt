@@ -30,7 +30,9 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.MusicScreenContent
 import com.bosch.composewithkotlin20.presentaion.ui.screen.NewHome
 import com.bosch.composewithkotlin20.presentaion.ui.screen.OnBoardingScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ScreenB
+import com.bosch.composewithkotlin20.presentaion.ui.screen.GridButtonScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ScreenC
+import com.bosch.composewithkotlin20.presentaion.ui.screen.TapToExpandScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.Seekbar
 import com.bosch.composewithkotlin20.presentaion.ui.screen.Snackbar
 import com.bosch.composewithkotlin20.presentaion.ui.screen.TextScreen
@@ -85,10 +87,10 @@ fun AppNavHost(
                 HomeScreen(navController = navController, name)
             }
             composable<ScreenB> {
-                ScreenB(navController = navController)
+                GridButtonScreen(navController = navController)
             }
             composable<ScreenC> {
-                ScreenC(navController = navController)
+                TapToExpandScreen(navController = navController)
             }
             composable<ThirdScreen> {
                 ThirdScreen(navController = navController)

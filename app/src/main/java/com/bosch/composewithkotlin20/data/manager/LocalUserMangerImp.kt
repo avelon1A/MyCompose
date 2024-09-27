@@ -7,8 +7,7 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
 import com.bosch.composewithkotlin20.domain.manger.LocalUserManager
-import com.bosch.composewithkotlin20.util.Constants
-import com.bosch.composewithkotlin20.util.Constants.USER_SETTING
+import com.bosch.composewithkotlin20.util.Const
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
@@ -38,8 +37,8 @@ class LocalUserMangerImp(private val context: Context): LocalUserManager {
 		}
 	}
 }
-val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = USER_SETTING)
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = Const.USER_SETTING)
 private object PrefrencesKeys {
-	val APP_ENTRY = booleanPreferencesKey(name = Constants.APP_ENTRY)
-	val LOGING_STATUS = booleanPreferencesKey(name = Constants.LOGING_STATUS)
+	val APP_ENTRY = booleanPreferencesKey(name = Const.APP_ENTRY)
+	val LOGING_STATUS = booleanPreferencesKey(name = Const.LOGING_STATUS)
 }

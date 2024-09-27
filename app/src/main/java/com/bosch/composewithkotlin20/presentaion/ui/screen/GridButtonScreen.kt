@@ -20,7 +20,7 @@ import androidx.navigation.NavController
 import kotlinx.serialization.Serializable
 
 @Composable
-fun ScreenB(navController: NavController) {
+fun GridButtonScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
