@@ -8,7 +8,7 @@ on:
 
 jobs:
   lint:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -43,7 +43,7 @@ jobs:
           path: app/build/reports/lint-results-debug.html
 
   test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     needs: lint
 
     steps:
@@ -84,7 +84,7 @@ jobs:
           name: codecov-coverage
 
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     needs: test
 
     steps:
@@ -133,7 +133,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           APP_FOLDER: app
-
 
       - name: Deploy APK and Lint Report to GitHub Pages
         if: always()

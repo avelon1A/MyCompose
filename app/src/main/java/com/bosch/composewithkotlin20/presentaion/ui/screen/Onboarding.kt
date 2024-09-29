@@ -141,8 +141,6 @@ fun OnBoarding(
 	}
 	
 }
-
-
 @Composable
 fun PageIndicator(
 	modifier: Modifier = Modifier,
