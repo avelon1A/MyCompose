@@ -24,17 +24,18 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.CoilScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.DropDown
 import com.bosch.composewithkotlin20.presentaion.ui.screen.GoogleButtonScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.GradientScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.GridButtonScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.HomeScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.LoginScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.MusicScreenContent
 import com.bosch.composewithkotlin20.presentaion.ui.screen.NewHome
 import com.bosch.composewithkotlin20.presentaion.ui.screen.OnBoardingScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ScreenB
-import com.bosch.composewithkotlin20.presentaion.ui.screen.GridButtonScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ScreenC
-import com.bosch.composewithkotlin20.presentaion.ui.screen.TapToExpandScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.Seekbar
 import com.bosch.composewithkotlin20.presentaion.ui.screen.Snackbar
+import com.bosch.composewithkotlin20.presentaion.ui.screen.SwipeToDelete
+import com.bosch.composewithkotlin20.presentaion.ui.screen.TapToExpandScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.TextScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.TextSelectable
 import com.bosch.composewithkotlin20.presentaion.ui.screen.Textfield
@@ -57,13 +58,14 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOval
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasOverlap
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.WaterBottleScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupaBaseMainScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupaBaseViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupabaseVideoPlayer
 import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupabaseVideoPlayerViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoScreen
 import com.bosch.composewithkotlin20.presentaion.ui.todo.TodoViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.OnBoardingViewModel
-import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupaBaseViewModel
+import com.bosch.composewithkotlin20.presentaion.ui.viewModel.SwipeToDeleteViewModel
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 
@@ -225,6 +227,10 @@ fun AppNavHost(
             composable<SupabaseVideoPlayer> {
                 val viewModel: SupabaseVideoPlayerViewModel = koinViewModel()
                 SupabaseVideoPlayer(navController,viewModel)
+            }
+            composable<SwipeToDelete> {
+                val viewModel: SwipeToDeleteViewModel = koinViewModel()
+                SwipeToDelete(viewModel)
             }
         }
 
