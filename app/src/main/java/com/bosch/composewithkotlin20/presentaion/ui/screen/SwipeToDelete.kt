@@ -146,7 +146,7 @@ fun DismissBackground(dismissState: SwipeToDismissBoxState) {
             contentDescription = "delete"
         )
         Spacer(modifier = Modifier)
-        Icon(modifier = Modifier.padding(10.dp),
+        Icon(modifier = Modifier.padding(12.dp),
             painter = painterResource(R.drawable.task_svgrepo_com),
             contentDescription = "Archive"
         )
