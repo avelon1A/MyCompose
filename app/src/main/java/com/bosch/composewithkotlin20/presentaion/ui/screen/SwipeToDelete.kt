@@ -84,7 +84,7 @@ fun EmailItem(
             }
             return@rememberSwipeToDismissBoxState true
         },
-        positionalThreshold = { it * .25f }
+        positionalThreshold = { it * .50f }
     )
     SwipeToDismissBox(
         state = dismissState,
@@ -117,7 +117,7 @@ fun EmailMessageCard(emailMessage: EmailMessage) {
                 contentDescription = "person icon",
                 Modifier
                     .clip(CircleShape)
-                    .background(MaterialTheme.colorScheme.primaryContainer)
+                    .background(MaterialTheme.colorScheme.background)
                     .padding(10.dp)
             )
         }
