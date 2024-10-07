@@ -41,45 +41,45 @@ import kotlinx.serialization.Serializable
 
 
 @Composable
-fun  SwipeToDelete(emailViewModel: SwipeToDeleteViewModel) {
+fun SwipeToDelete(emailViewModel: SwipeToDeleteViewModel) {
     val messages by emailViewModel.messagesState.collectAsState()
-
-   
-            LazyColumn(
-                modifier = Modifier
-                    .padding()
-                    .fillMaxSize(),
-                contentPadding = PaddingValues(vertical = 12.dp),
-            ) {
-                itemsIndexed(
-                    items = messages,
-                    key = { _, item -> item.hashCode() }
-                ) { _, emailContent ->
-                    EmailItem(emailContent, onRemove = emailViewModel::removeItem)
-                }
-            }
+    LazyColumn(
+        modifier = Modifier
+            .padding()
+            .fillMaxSize(),
+        contentPadding = PaddingValues(vertical = 12.dp),
+    ) {
+        itemsIndexed(
+            items = messages,
+            key = { _, item -> item.hashCode() }
+        ) { _, emailContent ->
+            EmailItem(emailContent, onRemove = emailViewModel::removeItem)
         }
+    }
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EmailItem(
     emailMessage: EmailMessage,
     modifier: Modifier = Modifier,
-    onRemove: (EmailMessage) -> Unit
+    onRemove: (EmailMessage) -> Unit,
 ) {
     val context = LocalContext.current
     val currentItem by rememberUpdatedState(emailMessage)
     val dismissState = rememberSwipeToDismissBoxState(
         confirmValueChange = {
-            when(it) {
+            when (it) {
                 SwipeToDismissBoxValue.StartToEnd -> {
                     onRemove(currentItem)
                     Toast.makeText(context, "Item deleted", Toast.LENGTH_SHORT).show()
                 }
+
                 SwipeToDismissBoxValue.EndToStart -> {
                     onRemove(currentItem)
                     Toast.makeText(context, "Item archived", Toast.LENGTH_SHORT).show()
                 }
+
                 SwipeToDismissBoxValue.Settled -> return@rememberSwipeToDismissBoxState false
             }
             return@rememberSwipeToDismissBoxState true
@@ -89,7 +89,7 @@ fun EmailItem(
     SwipeToDismissBox(
         state = dismissState,
         modifier = modifier,
-        backgroundContent = { DismissBackground(dismissState)},
+        backgroundContent = { DismissBackground(dismissState) },
         content = {
             EmailMessageCard(emailMessage)
         })
@@ -146,7 +146,8 @@ fun DismissBackground(dismissState: SwipeToDismissBoxState) {
             contentDescription = "delete"
         )
         Spacer(modifier = Modifier)
-        Icon(modifier = Modifier.padding(12.dp),
+        Icon(
+            modifier = Modifier.padding(12.dp),
             painter = painterResource(R.drawable.task_svgrepo_com),
             contentDescription = "Archive"
         )
