@@ -15,6 +15,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.OnBoardingScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.ScreenC
 import com.bosch.composewithkotlin20.presentaion.ui.screen.Seekbar
 import com.bosch.composewithkotlin20.presentaion.ui.screen.Snackbar
+import com.bosch.composewithkotlin20.presentaion.ui.screen.SwipeToDelete
 import com.bosch.composewithkotlin20.presentaion.ui.screen.TextScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.TextSelectable
 import com.bosch.composewithkotlin20.presentaion.ui.screen.Textfield
@@ -62,6 +63,7 @@ val ButtonList = listOf(
     ButtonInfo("Snack bar Notification", Snackbar),
     ButtonInfo("Dropdown Menu", DropDown),
     ButtonInfo("Type-Safe Navigation", TypeSafeNavigation),
+    ButtonInfo("Swipe To Delete", SwipeToDelete),
 )
 val animationList = listOf(
     ButtonInfo("lottie ", LottieAnimationScreen),
