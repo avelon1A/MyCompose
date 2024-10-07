@@ -14,24 +14,25 @@ import com.bosch.composewithkotlin20.data.manager.LocalUserMangerImp
 import com.bosch.composewithkotlin20.data.repo.AudioRepository
 import com.bosch.composewithkotlin20.data.repo.LoginRepository
 import com.bosch.composewithkotlin20.data.repo.SupabaseRepoImp
-import com.bosch.composewithkotlin20.domain.repo.SupabaseRepository
 import com.bosch.composewithkotlin20.domain.manger.CafeDao
 import com.bosch.composewithkotlin20.domain.manger.LocalUserManager
+import com.bosch.composewithkotlin20.domain.repo.SupabaseRepository
 import com.bosch.composewithkotlin20.domain.usecases.AppEntryUseCase
 import com.bosch.composewithkotlin20.domain.usecases.GetAppEntry
 import com.bosch.composewithkotlin20.domain.usecases.LoginStatus
 import com.bosch.composewithkotlin20.domain.usecases.SaveAppEntry
+import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupaBaseViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupabaseVideoPlayerViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.AudioViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.LoginViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.MainViewModel
 import com.bosch.composewithkotlin20.presentaion.ui.viewModel.OnBoardingViewModel
-import com.bosch.composewithkotlin20.presentaion.ui.screen.supabase.SupaBaseViewModel
+import com.bosch.composewithkotlin20.presentaion.ui.viewModel.SwipeToDeleteViewModel
 import com.bosch.composewithkotlin20.util.Const
 import com.bosch.composewithkotlin20.util.NetworkHelper
 import com.bosch.composewithkotlin20.util.ServiceStarter
-import com.bosch.composewithkotlin20.util.service.mediaPlayer.ContentResolverHelper
 import com.bosch.composewithkotlin20.util.service.mediaPlayer.AudioNotificationManager
+import com.bosch.composewithkotlin20.util.service.mediaPlayer.ContentResolverHelper
 import com.bosch.composewithkotlin20.util.service.mediaPlayer.JetAudioServiceHandler
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.createSupabaseClient
@@ -80,6 +81,7 @@ val appModule = module {
 	}
 	viewModel { OnBoardingViewModel(get()) }
 	viewModel { SupaBaseViewModel(get()) }
+	viewModel { SwipeToDeleteViewModel() }
 	viewModel { SupabaseVideoPlayerViewModel(get()) }
 }
 
