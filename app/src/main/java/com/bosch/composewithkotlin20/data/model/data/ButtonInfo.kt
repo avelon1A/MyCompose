@@ -25,6 +25,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.Anim
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.AnimatedContentScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.AnimatedContentScreenIcons
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.BouncingBallScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.ImageMover
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.LottieAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.SharedElementScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.VectorAnimationScreen
@@ -64,6 +65,7 @@ val ButtonList = listOf(
     ButtonInfo("Dropdown Menu", DropDown),
     ButtonInfo("Type-Safe Navigation", TypeSafeNavigation),
     ButtonInfo("Swipe To Delete", SwipeToDelete),
+    ButtonInfo("Animation Position", ImageMover),
 )
 val animationList = listOf(
     ButtonInfo("lottie ", LottieAnimationScreen),
