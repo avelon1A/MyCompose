@@ -57,6 +57,7 @@ fun AnimatedChildren() {
         Dropdown(expanded1, animationOut, OutAnimationOptions, "Exit Animation")
 
         Spacer(modifier = Modifier.height(16.dp))
+
         Button(onClick = { visible = !visible }) {
             Text(text = "Toggle Animation")
         }
