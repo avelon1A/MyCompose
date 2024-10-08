@@ -53,6 +53,7 @@ googleFirebaseCrashlytics = "3.0.2"
 uiTextGoogleFonts = "1.6.8"
 workRuntime = "2.9.1"
 animationGraphicsAndroid = "1.6.8"
+foundationAndroid = "1.6.8"
 
 [libraries]
 accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
@@ -112,6 +113,7 @@ androidx-room-common = { group = "androidx.room", name = "room-common", version.
 firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics", version.ref = "firebaseCrashlytics" }
 androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
 androidx-animation-graphics-android = { group = "androidx.compose.animation", name = "animation-graphics-android", version.ref = "animationGraphicsAndroid" }
+androidx-foundation-android = { group = "androidx.compose.foundation", name = "foundation-android", version.ref = "foundationAndroid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
