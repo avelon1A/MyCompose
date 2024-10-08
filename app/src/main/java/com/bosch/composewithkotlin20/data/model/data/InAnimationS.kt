@@ -27,10 +27,7 @@ data class Animations(
 
 val inAnimationOptions = listOf(
     Animations("fadeIn", enterAnim = fadeIn()),
-    Animations(
-        "slideIn",
-        enterAnim = slideIn(initialOffset = { fullSize -> IntOffset(-fullSize.width, 0) })
-    ),
+    Animations("slideIn", enterAnim = slideIn(initialOffset = { fullSize -> IntOffset(-fullSize.width, 0) })),
     Animations("slideInHorizontally", enterAnim = slideInHorizontally()),
     Animations("slideInVertically", enterAnim = slideInVertically()),
     Animations("scaleIn", enterAnim = scaleIn()),
@@ -39,10 +36,7 @@ val inAnimationOptions = listOf(
 )
 val OutAnimationOptions = listOf(
     Animations("fadeOut", exitAnim = fadeOut()),
-    Animations(
-        "slideOut",
-        exitAnim = slideOut(targetOffset = { fullSize -> IntOffset(-fullSize.width, 0) })
-    ),
+    Animations("slideOut", exitAnim = slideOut(targetOffset = { fullSize -> IntOffset(-fullSize.width, 0) })),
     Animations("slideOutHorizontally", exitAnim = slideOutHorizontally()),
     Animations("slideOutVertically", exitAnim = slideOutVertically()),
     Animations("scaleOut", exitAnim = scaleOut()),
