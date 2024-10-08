@@ -122,6 +122,7 @@ dependencies {
     implementation (libs.koin.androidx.compose)
     implementation(kotlin("test"))
     implementation(libs.androidx.animation.graphics.android)
+    implementation(libs.androidx.foundation.android)
     testImplementation (libs.junit)
     testImplementation (libs.kotlinx.coroutines.test)
     testImplementation (libs.mockito.core)
