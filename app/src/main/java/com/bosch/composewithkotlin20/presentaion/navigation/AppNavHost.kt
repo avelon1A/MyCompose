@@ -47,6 +47,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.Anim
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.AnimatedContentScreenIcons
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.BouncingBallScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.DetailsScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.ImageMover
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.LottieAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.SharedElementScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.VectorAnimationScreen
@@ -231,6 +232,9 @@ fun AppNavHost(
             composable<SwipeToDelete> {
                 val viewModel: SwipeToDeleteViewModel = koinViewModel()
                 SwipeToDelete(viewModel)
+            }
+            composable<ImageMover> {
+                ImageMover()
             }
         }
 
