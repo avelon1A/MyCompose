@@ -1,4 +1,4 @@
-package com.bosch.composewithkotlin20.presentaion.ui.screen
+package com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI
 
 import android.widget.Toast
 import androidx.compose.foundation.background

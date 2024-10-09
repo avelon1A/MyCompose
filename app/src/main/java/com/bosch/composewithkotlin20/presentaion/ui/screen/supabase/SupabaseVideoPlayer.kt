@@ -3,7 +3,6 @@ package com.bosch.composewithkotlin20.presentaion.ui.screen.supabase
 import android.app.Activity
 import android.content.Context
 import android.graphics.SurfaceTexture
-import android.util.Log
 import android.view.Surface
 import android.view.TextureView
 import android.view.WindowInsets
@@ -55,7 +54,7 @@ import coil.compose.rememberAsyncImagePainter
 import com.bosch.composewithkotlin20.R
 import com.bosch.composewithkotlin20.data.model.data.Video
 import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
-import com.bosch.composewithkotlin20.presentaion.ui.screen.ExandCards
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.ExandCards
 import kotlinx.serialization.Serializable
 
 
