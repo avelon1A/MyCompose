@@ -1,4 +1,4 @@
-package com.bosch.composewithkotlin20.presentaion.ui.screen
+package com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -33,7 +33,7 @@ import com.bosch.composewithkotlin20.R
 import com.bosch.composewithkotlin20.data.model.data.ButtonInfo
 import com.bosch.composewithkotlin20.data.model.data.getItemList
 import com.bosch.composewithkotlin20.presentaion.ui.common.AppBar
-import com.bosch.composewithkotlin20.util.Const.CANVAS_SCREEN
+import com.bosch.composewithkotlin20.util.Const.APPS_SCREEN
 import kotlinx.serialization.Serializable
 
 @Composable
@@ -119,7 +119,7 @@ fun CustomButton(
 @Composable
 fun HomeScreenPreview() {
     val fakeNavController = fakeNavController()
-    HomeScreen(navController = fakeNavController, HomeScreen(CANVAS_SCREEN))
+    HomeScreen(navController = fakeNavController, HomeScreen(APPS_SCREEN))
 }
 
 @Composable
