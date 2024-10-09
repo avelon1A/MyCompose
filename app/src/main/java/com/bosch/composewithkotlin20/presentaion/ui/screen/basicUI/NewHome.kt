@@ -1,4 +1,4 @@
-package com.bosch.composewithkotlin20.presentaion.ui.screen
+package com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI
 
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
