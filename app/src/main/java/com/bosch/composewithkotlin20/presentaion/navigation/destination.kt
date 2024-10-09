@@ -1,8 +1,8 @@
 package com.bosch.composewithkotlin20.presentaion.navigation
 
-import com.bosch.composewithkotlin20.presentaion.ui.screen.HomeScreen
-import com.bosch.composewithkotlin20.presentaion.ui.screen.NewHome
-import com.bosch.composewithkotlin20.presentaion.ui.screen.OnBoardingScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.HomeScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.NewHome
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.OnBoardingScreen
 import com.bosch.composewithkotlin20.util.Const.UI_SCREEN
 
 fun navigation(destination: String): Any {
