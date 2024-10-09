@@ -22,7 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import com.bosch.composewithkotlin20.data.model.data.Cafe
-import com.bosch.composewithkotlin20.presentaion.ui.screen.CoilImage
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.CoilImage
 import kotlinx.serialization.Serializable
 
 @Composable
