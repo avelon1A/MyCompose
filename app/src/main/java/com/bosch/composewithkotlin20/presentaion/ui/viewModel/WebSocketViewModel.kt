@@ -25,7 +25,7 @@ class WebSocketViewModel : ViewModel() {
         Log.d(TAG, "Connecting to WebSocket...")
 
         val request = Request.Builder()
-            .url("ws://spring.up.railway.app/hello")
+            .url("wss://spring.up.railway.app/hello")
             .build()
 
         webSocket = client.newWebSocket(request, object : WebSocketListener() {
