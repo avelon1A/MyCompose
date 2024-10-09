@@ -40,12 +40,12 @@ android {
             applicationIdSuffix = ".Dev"
             isDebuggable = true
             isJniDebuggable = true
-            resValue ("string", "app_name", "Dev compose 2")
+            resValue("string", "app_name", "Dev compose 2")
             signingConfig = signingConfigs.getByName("debug")
         }
-        
+
     }
-    
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -53,8 +53,8 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    
-    
+
+
     buildFeatures {
         compose = true
     }
@@ -74,7 +74,7 @@ android {
 }
 
 dependencies {
-    
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -85,13 +85,13 @@ dependencies {
     implementation(libs.androidx.datastore.core.android)
     implementation(libs.androidx.media3.ui)
     implementation(libs.androidbrowserhelper)
-	implementation(libs.androidx.runtime.livedata)
+    implementation(libs.androidx.runtime.livedata)
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.common)
     implementation(libs.firebase.crashlytics)
     implementation(libs.androidx.ui.text.google.fonts)
 
-    
+
     implementation(libs.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.foundation)
@@ -105,31 +105,31 @@ dependencies {
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.datastore.preferences.core)
     implementation(libs.androidx.datastore.preferences)
-    implementation (libs.exoplayer)
-    implementation (libs.accompanist.permissions)
-    implementation (libs.androidx.media3.exoplayer)
-    implementation (libs.accompanist.systemuicontroller)
-    implementation (libs.androidx.media3.session)
-    implementation (libs.glide)
-    implementation (libs.androidx.constraintlayout.compose)
-    implementation (libs.androidx.material.icons.extended)
+    implementation(libs.exoplayer)
+    implementation(libs.accompanist.permissions)
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.accompanist.systemuicontroller)
+    implementation(libs.androidx.media3.session)
+    implementation(libs.glide)
+    implementation(libs.androidx.constraintlayout.compose)
+    implementation(libs.androidx.material.icons.extended)
     implementation(libs.lottie.compose)
-    implementation (libs.koin.android)
-    implementation (libs.koin.android.compat)
-    implementation (libs.koin.androidx.workmanager)
-    implementation (libs.koin.androidx.navigation)
-    implementation (libs.koin.core)
-    implementation (libs.koin.androidx.compose)
+    implementation(libs.koin.android)
+    implementation(libs.koin.android.compat)
+    implementation(libs.koin.androidx.workmanager)
+    implementation(libs.koin.androidx.navigation)
+    implementation(libs.koin.core)
+    implementation(libs.koin.androidx.compose)
     implementation(kotlin("test"))
     implementation(libs.androidx.animation.graphics.android)
     implementation(libs.androidx.foundation.android)
-    testImplementation (libs.junit)
-    testImplementation (libs.kotlinx.coroutines.test)
-    testImplementation (libs.mockito.core)
-    testImplementation (libs.mockito.inline)
-    testImplementation (libs.mockito.kotlin)
-    testImplementation (libs.androidx.core.testing)
-    implementation (libs.androidx.work.runtime)
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.androidx.core.testing)
+    implementation(libs.androidx.work.runtime)
     ksp(libs.androidx.room.compiler)
 
     testImplementation(libs.junit)
@@ -146,8 +146,11 @@ dependencies {
     implementation("io.github.jan-tennert.supabase:realtime-kt:2.6.0")
 
     implementation("io.ktor:ktor-client-cio:2.3.5")
-    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
-    implementation ("androidx.compose.runtime:runtime-livedata:1.4.3")
+    implementation("com.google.code.gson:gson:2.11.0")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
+    implementation("com.google.ai.client.generativeai:generativeai:0.7.0")
+    implementation("org.java-websocket:Java-WebSocket:1.5.2")
+
 
 }
 

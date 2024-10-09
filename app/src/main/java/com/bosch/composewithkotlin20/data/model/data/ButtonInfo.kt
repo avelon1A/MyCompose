@@ -2,25 +2,6 @@ package com.bosch.composewithkotlin20.data.model.data
 
 import AnimatedVisibilityExample
 import FishCanvas
-import com.bosch.composewithkotlin20.presentaion.ui.screen.BottomNavigationBar
-import com.bosch.composewithkotlin20.presentaion.ui.screen.CameraScreen
-import com.bosch.composewithkotlin20.presentaion.ui.screen.CircularIndicatorScreen
-import com.bosch.composewithkotlin20.presentaion.ui.screen.CoilScreen
-import com.bosch.composewithkotlin20.presentaion.ui.screen.DropDown
-import com.bosch.composewithkotlin20.presentaion.ui.screen.GoogleButtonScreen
-import com.bosch.composewithkotlin20.presentaion.ui.screen.GradientScreen
-import com.bosch.composewithkotlin20.presentaion.ui.screen.LoginScreen
-import com.bosch.composewithkotlin20.presentaion.ui.screen.MusicScreenContent
-import com.bosch.composewithkotlin20.presentaion.ui.screen.OnBoardingScreen
-import com.bosch.composewithkotlin20.presentaion.ui.screen.ScreenC
-import com.bosch.composewithkotlin20.presentaion.ui.screen.Seekbar
-import com.bosch.composewithkotlin20.presentaion.ui.screen.Snackbar
-import com.bosch.composewithkotlin20.presentaion.ui.screen.SwipeToDelete
-import com.bosch.composewithkotlin20.presentaion.ui.screen.TextScreen
-import com.bosch.composewithkotlin20.presentaion.ui.screen.TextSelectable
-import com.bosch.composewithkotlin20.presentaion.ui.screen.Textfield
-import com.bosch.composewithkotlin20.presentaion.ui.screen.ThirdScreen
-import com.bosch.composewithkotlin20.presentaion.ui.screen.TypeSafeNavigation
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.AnimatedChildren
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.AnimatedContentScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.AnimatedContentScreenIcons
@@ -30,6 +11,25 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.Lott
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.SharedElementScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.VectorAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.WaterBottelCanvas
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.BottomNavigationBar
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.CameraScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.CircularIndicatorScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.CoilScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.DropDown
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.GoogleButtonScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.GradientScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.LoginScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.MusicScreenContent
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.OnBoardingScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.ScreenC
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.Seekbar
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.Snackbar
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.SwipeToDelete
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.TextScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.TextSelectable
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.Textfield
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.ThirdScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.TypeSafeNavigation
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasA
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasLine
 import com.bosch.composewithkotlin20.presentaion.ui.screen.canvas.CanvasMovement
@@ -94,7 +94,8 @@ val appList = listOf(
     ButtonInfo("Login Screen", LoginScreen),
     ButtonInfo("Supabase Screen", SupaBaseMainScreen),
     ButtonInfo("SupabaseVideo Screen", SupabaseVideoPlayer),
-)
+
+    )
 
 
 fun getItemList(itemList: String?): List<ButtonInfo> {

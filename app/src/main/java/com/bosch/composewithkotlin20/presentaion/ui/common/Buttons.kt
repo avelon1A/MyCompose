@@ -4,8 +4,8 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
-import com.bosch.composewithkotlin20.presentaion.ui.screen.HomeButton
-import com.bosch.composewithkotlin20.presentaion.ui.screen.MainScreenButtons
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.HomeButton
+import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.MainScreenButtons
 
 object Buttons {
 
