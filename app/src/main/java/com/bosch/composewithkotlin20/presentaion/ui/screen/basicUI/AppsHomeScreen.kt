@@ -1,5 +1,6 @@
-package com.bosch.composewithkotlin20.presentaion.ui.screen
+package com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI
 
+import Websocket
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -54,13 +55,25 @@ fun AppsHomeScreen(navController: NavController) {
             SupabaseVideoPlayer,
             Color.White,
             R.drawable.video_svgrepo_com
+        ),
+        MainScreenButtons(
+            "Websocket Screen",
+            Websocket,
+            Color.White,
+            androidx.media3.session.R.drawable.media3_icon_shuffle_star
         )
     )
 
     Scaffold(topBar = {
         AppBar(R.drawable.arrow_back, navController)
     }, content = { innerPadding ->
-        Buttons.AppScreenIcons(appListNew, navController, innerPadding, Modifier.size(100.dp), chunks = 1)
+        Buttons.AppScreenIcons(
+            appListNew,
+            navController,
+            innerPadding,
+            Modifier.size(100.dp),
+            chunks = 1
+        )
     })
 
 }
