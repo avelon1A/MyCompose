@@ -25,6 +25,7 @@ import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.Deta
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.ImageMover
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.LottieAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.SharedElementScreen
+import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.SlideBox
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.VectorAnimationScreen
 import com.bosch.composewithkotlin20.presentaion.ui.screen.animationScreens.WaterBottelCanvas
 import com.bosch.composewithkotlin20.presentaion.ui.screen.basicUI.AppsHomeScreen
@@ -245,6 +246,9 @@ fun AppNavHost(
             composable<Websocket> {
                 val viewModel: WebSocketViewModel = koinViewModel()
                 Websocket(viewModel)
+            }
+            composable<SlideBox> {
+                SlideBox()
             }
         }
 
