@@ -30,7 +30,7 @@ MyCompose is an Android application developed using Jetpack Compose. The app is 
 ### Installation
 
 Clone the repository:
-test 
+
 
 
 
