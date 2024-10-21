@@ -128,13 +128,6 @@ jobs:
           name: compose2.apk
           path: app/build/outputs/apk/debug/app-debug.apk
 
-      - name: Releasing using Hub
-        uses: kyze8439690/action-release-releaseapk@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-          APP_FOLDER: app
-
-
       - name: Deploy APK and Lint Report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3.9.3
