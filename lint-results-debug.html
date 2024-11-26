@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 170 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 179 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Sat Nov 23 17:49:35 UTC 2024 by AGP (8.4.2)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Nov 26 15:40:12 UTC 2024 by AGP (8.4.2)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -190,7 +190,7 @@ document.getElementById(id).style.display = 'none';
       <a class="mdl-navigation__link" href="#UnusedAttribute"><i class="material-icons warning-icon">warning</i>Attribute unused on older versions (1)</a>
       <a class="mdl-navigation__link" href="#VectorRaster"><i class="material-icons warning-icon">warning</i>Vector Image Generation (18)</a>
       <a class="mdl-navigation__link" href="#AndroidGradlePluginVersion"><i class="material-icons warning-icon">warning</i>Obsolete Android Gradle Plugin Version (3)</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (49)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (58)</a>
       <a class="mdl-navigation__link" href="#ModifierParameter"><i class="material-icons warning-icon">warning</i>Guidelines for Modifier parameters in a Composable function (1)</a>
       <a class="mdl-navigation__link" href="#Typos"><i class="material-icons warning-icon">warning</i>Spelling error (36)</a>
       <a class="mdl-navigation__link" href="#ExportedService"><i class="material-icons warning-icon">warning</i>Exported service does not require permission (1)</a>
@@ -227,7 +227,7 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#AndroidGradlePluginVersion">AndroidGradlePluginVersion</a>: Obsolete Android Gradle Plugin Version</td></tr>
 <tr>
-<td class="countColumn">49</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">58</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -693,7 +693,7 @@ Dismiss</button>            </div>
 <span class="lineno">  17 </span>koinAndroidCompat = "3.1.6"
 </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 44 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 53 More Occurrences...</button>
 <div id="GradleDependencyDiv" style="display: none">
 <span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:14</span>: <span class="message">Upgrade <code>androidx.compose.foundation</code> for keyboard and mouse support</span><br /><pre class="errorlines">
 <span class="lineno">  11 </span>coreTesting = "2.2.0"
@@ -895,6 +895,66 @@ Dismiss</button>            </div>
 <span class="lineno">  36 </span>mockitoInline = "5.2.0"
 </pre>
 
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:34</span>: <span class="message">A newer version of androidx.media3:media3-exoplayer than 1.4.1 is available: 1.5.0</span><br /><pre class="errorlines">
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="caretline"><span class="lineno">  34 </span>media3Exoplayer = <span class="warning">"1.4.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  35 </span>mockitoCore = "5.12.0"
+<span class="lineno">  36 </span>mockitoInline = "5.2.0"
+<span class="lineno">  37 </span>mockitoKotlin = "5.4.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:34</span>: <span class="message">A newer version of androidx.media3:media3-exoplayer than 1.4.1 is available: 1.5.0</span><br /><pre class="errorlines">
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="caretline"><span class="lineno">  34 </span>media3Exoplayer = <span class="warning">"1.4.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  35 </span>mockitoCore = "5.12.0"
+<span class="lineno">  36 </span>mockitoInline = "5.2.0"
+<span class="lineno">  37 </span>mockitoKotlin = "5.4.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:34</span>: <span class="message">A newer version of androidx.media3:media3-exoplayer than 1.4.1 is available: 1.5.0</span><br /><pre class="errorlines">
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="caretline"><span class="lineno">  34 </span>media3Exoplayer = <span class="warning">"1.4.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  35 </span>mockitoCore = "5.12.0"
+<span class="lineno">  36 </span>mockitoInline = "5.2.0"
+<span class="lineno">  37 </span>mockitoKotlin = "5.4.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:34</span>: <span class="message">A newer version of androidx.media3:media3-session than 1.4.1 is available: 1.5.0</span><br /><pre class="errorlines">
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="caretline"><span class="lineno">  34 </span>media3Exoplayer = <span class="warning">"1.4.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  35 </span>mockitoCore = "5.12.0"
+<span class="lineno">  36 </span>mockitoInline = "5.2.0"
+<span class="lineno">  37 </span>mockitoKotlin = "5.4.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:34</span>: <span class="message">A newer version of androidx.media3:media3-session than 1.4.1 is available: 1.5.0</span><br /><pre class="errorlines">
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="caretline"><span class="lineno">  34 </span>media3Exoplayer = <span class="warning">"1.4.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  35 </span>mockitoCore = "5.12.0"
+<span class="lineno">  36 </span>mockitoInline = "5.2.0"
+<span class="lineno">  37 </span>mockitoKotlin = "5.4.0"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:34</span>: <span class="message">A newer version of androidx.media3:media3-session than 1.4.1 is available: 1.5.0</span><br /><pre class="errorlines">
+<span class="lineno">  31 </span>composeNavigation = "2.8.0-rc01"
+<span class="lineno">  32 </span>lottieCompose = "6.5.0"
+<span class="lineno">  33 </span>materialIconsExtended = "1.6.8"
+<span class="caretline"><span class="lineno">  34 </span>media3Exoplayer = <span class="warning">"1.4.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  35 </span>mockitoCore = "5.12.0"
+<span class="lineno">  36 </span>mockitoInline = "5.2.0"
+<span class="lineno">  37 </span>mockitoKotlin = "5.4.0"
+</pre>
+
 <span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:41</span>: <span class="message">A newer version of androidx.compose.ui:ui than 1.6.8 is available: 1.7.5</span><br /><pre class="errorlines">
 <span class="lineno">  38 </span>retrofit = "2.11.0"
 <span class="lineno">  39 </span>roomCompiler = "2.6.1"
@@ -953,6 +1013,36 @@ Dismiss</button>            </div>
 <span class="lineno">  43 </span>ksp = "2.0.20-1.0.24"
 <span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
 <span class="lineno">  45 </span>media3Ui = "1.4.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:45</span>: <span class="message">A newer version of androidx.media3:media3-ui than 1.4.1 is available: 1.5.0</span><br /><pre class="errorlines">
+<span class="lineno">  42 </span>uiToolingPreview = "1.6.8"
+<span class="lineno">  43 </span>ksp = "2.0.20-1.0.24"
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+<span class="caretline"><span class="lineno">  45 </span>media3Ui = <span class="warning">"1.4.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  46 </span>androidbrowserhelper = "2.5.0"
+<span class="lineno">  47 </span>runtimeLivedata = "1.6.8"
+<span class="lineno">  48 </span>roomKtx = "2.6.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:45</span>: <span class="message">A newer version of androidx.media3:media3-ui than 1.4.1 is available: 1.5.0</span><br /><pre class="errorlines">
+<span class="lineno">  42 </span>uiToolingPreview = "1.6.8"
+<span class="lineno">  43 </span>ksp = "2.0.20-1.0.24"
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+<span class="caretline"><span class="lineno">  45 </span>media3Ui = <span class="warning">"1.4.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  46 </span>androidbrowserhelper = "2.5.0"
+<span class="lineno">  47 </span>runtimeLivedata = "1.6.8"
+<span class="lineno">  48 </span>roomKtx = "2.6.1"
+</pre>
+
+<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:45</span>: <span class="message">A newer version of androidx.media3:media3-ui than 1.4.1 is available: 1.5.0</span><br /><pre class="errorlines">
+<span class="lineno">  42 </span>uiToolingPreview = "1.6.8"
+<span class="lineno">  43 </span>ksp = "2.0.20-1.0.24"
+<span class="lineno">  44 </span>datastoreCoreAndroid = "1.1.1"
+<span class="caretline"><span class="lineno">  45 </span>media3Ui = <span class="warning">"1.4.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  46 </span>androidbrowserhelper = "2.5.0"
+<span class="lineno">  47 </span>runtimeLivedata = "1.6.8"
+<span class="lineno">  48 </span>roomKtx = "2.6.1"
 </pre>
 
 <span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:47</span>: <span class="message">A newer version of androidx.compose.runtime:runtime-livedata than 1.6.8 is available: 1.7.5</span><br /><pre class="errorlines">
@@ -1054,85 +1144,7 @@ Dismiss</button>            </div>
 <span class="lineno">  56 </span>foundationAndroid = "1.6.8"
 </pre>
 
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:54</span>: <span class="message">A newer version of androidx.work:work-runtime than 2.9.1 is available: 2.10.0</span><br /><pre class="errorlines">
-<span class="lineno">  51 </span>googleGmsGoogleServices = "4.4.2"
-<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
-<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
-<span class="caretline"><span class="lineno">  54 </span>workRuntime = <span class="warning">"2.9.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  55 </span>animationGraphicsAndroid = "1.6.8"
-<span class="lineno">  56 </span>foundationAndroid = "1.6.8"
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:54</span>: <span class="message">A newer version of androidx.work:work-runtime than 2.9.1 is available: 2.10.0</span><br /><pre class="errorlines">
-<span class="lineno">  51 </span>googleGmsGoogleServices = "4.4.2"
-<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
-<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
-<span class="caretline"><span class="lineno">  54 </span>workRuntime = <span class="warning">"2.9.1"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  55 </span>animationGraphicsAndroid = "1.6.8"
-<span class="lineno">  56 </span>foundationAndroid = "1.6.8"
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:55</span>: <span class="message">A newer version of androidx.compose.animation:animation-graphics-android than 1.6.8 is available: 1.7.5</span><br /><pre class="errorlines">
-<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
-<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
-<span class="lineno">  54 </span>workRuntime = "2.9.1"
-<span class="caretline"><span class="lineno">  55 </span>animationGraphicsAndroid = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  56 </span>foundationAndroid = "1.6.8"
-<span class="lineno">  57 </span>
-<span class="lineno">  58 </span>[libraries]
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:55</span>: <span class="message">A newer version of androidx.compose.animation:animation-graphics-android than 1.6.8 is available: 1.7.5</span><br /><pre class="errorlines">
-<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
-<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
-<span class="lineno">  54 </span>workRuntime = "2.9.1"
-<span class="caretline"><span class="lineno">  55 </span>animationGraphicsAndroid = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  56 </span>foundationAndroid = "1.6.8"
-<span class="lineno">  57 </span>
-<span class="lineno">  58 </span>[libraries]
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:55</span>: <span class="message">A newer version of androidx.compose.animation:animation-graphics-android than 1.6.8 is available: 1.7.5</span><br /><pre class="errorlines">
-<span class="lineno">  52 </span>googleFirebaseCrashlytics = "3.0.2"
-<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
-<span class="lineno">  54 </span>workRuntime = "2.9.1"
-<span class="caretline"><span class="lineno">  55 </span>animationGraphicsAndroid = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  56 </span>foundationAndroid = "1.6.8"
-<span class="lineno">  57 </span>
-<span class="lineno">  58 </span>[libraries]
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:56</span>: <span class="message">A newer version of androidx.compose.foundation:foundation-android than 1.6.8 is available: 1.7.5</span><br /><pre class="errorlines">
-<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
-<span class="lineno">  54 </span>workRuntime = "2.9.1"
-<span class="lineno">  55 </span>animationGraphicsAndroid = "1.6.8"
-<span class="caretline"><span class="lineno">  56 </span>foundationAndroid = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  57 </span>
-<span class="lineno">  58 </span>[libraries]
-<span class="lineno">  59 </span>accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:56</span>: <span class="message">A newer version of androidx.compose.foundation:foundation-android than 1.6.8 is available: 1.7.5</span><br /><pre class="errorlines">
-<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
-<span class="lineno">  54 </span>workRuntime = "2.9.1"
-<span class="lineno">  55 </span>animationGraphicsAndroid = "1.6.8"
-<span class="caretline"><span class="lineno">  56 </span>foundationAndroid = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  57 </span>
-<span class="lineno">  58 </span>[libraries]
-<span class="lineno">  59 </span>accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
-</pre>
-
-<span class="location"><a href="../../../gradle/libs.versions.toml">../../../gradle/libs.versions.toml</a>:56</span>: <span class="message">A newer version of androidx.compose.foundation:foundation-android than 1.6.8 is available: 1.7.5</span><br /><pre class="errorlines">
-<span class="lineno">  53 </span>uiTextGoogleFonts = "1.6.8"
-<span class="lineno">  54 </span>workRuntime = "2.9.1"
-<span class="lineno">  55 </span>animationGraphicsAndroid = "1.6.8"
-<span class="caretline"><span class="lineno">  56 </span>foundationAndroid = <span class="warning">"1.6.8"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  57 </span>
-<span class="lineno">  58 </span>[libraries]
-<span class="lineno">  59 </span>accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
-</pre>
-
-</div>
+<br/><b>NOTE: 8 results omitted.</b><br/><br/></div>
 </div>
 <div class="metadata"><div class="explanation" id="explanationGradleDependency" style="display: none;">
 This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
