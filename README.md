@@ -1,4 +1,4 @@
-# MyCompose.0 Android App
+# MyCompose Android App
 
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.0.0-blue.svg)
 [![codecov](https://codecov.io/gh/avelon1A/compose2.0/graph/badge.svg?token=GMHDKGGFHC)](https://app.codecov.io/gh/avelon1A/MyCompose)
